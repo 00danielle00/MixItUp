@@ -21,9 +21,11 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      # ---------- BUILD WEB ----------
       - name: Build Flutter Web
         run: flutter build web --release --base-href "/"
 
+      # ---------- BUILD ANDROID APK ----------
       - name: Setup Java (for Android)
         uses: actions/setup-java@v4
         with:
@@ -46,13 +48,14 @@ jobs:
         run: |
           mkdir -p out
           # Ruta correcta del APK generado por Flutter
-          cp build/app/outputs/flutter-apk/app-release.apk out/ || true
+          cp build/app/outputs/flutter-apk/app-release.apk out/app-release.apk
 
+      # ---------- DEPLOY APK A REPO SEPARADO ----------
       - name: Deploy to mobile
         run: |
           git clone https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/00danielle00/MixItUp_apk mobile-repo
           rm -rf mobile-repo/*
-          cp out/app-release.apk mobile-repo/ || true
+          cp out/app-release.apk mobile-repo/
           cd mobile-repo
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
