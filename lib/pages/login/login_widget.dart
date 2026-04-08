@@ -527,10 +527,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                         width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(12.0),
-                                        bottomRight: Radius.circular(12.0),
                                         topLeft: Radius.circular(12.0),
                                         topRight: Radius.circular(12.0),
+                                        bottomLeft: Radius.circular(12.0),
+                                        bottomRight: Radius.circular(12.0),
                                       ),
                                     ),
                                   ),

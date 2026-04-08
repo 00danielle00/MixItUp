@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -5,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'detalle_coctel_model.dart';
 export 'detalle_coctel_model.dart';
 
@@ -44,6 +46,8 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return FutureBuilder<List<RecetasRow>>(
       future: RecetasTable().querySingleRow(
         queryFn: (q) => q.eqOrNull(
@@ -58,8 +62,8 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 50.0,
-                height: 50.0,
+                width: 40.0,
+                height: 40.0,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
                     FlutterFlowTheme.of(context).primary,
@@ -158,13 +162,86 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
                                                     .secondaryText,
                                             icon: Icon(
                                               Icons.favorite_border_sharp,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .info,
+                                              color: FFAppState()
+                                                      .favoritos
+                                                      .contains(
+                                                          widget.idReceta)
+                                                  ? FlutterFlowTheme.of(context)
+                                                      .error
+                                                  : FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
                                               size: 24.0,
                                             ),
-                                            onPressed: () {
-                                              print('IconButton pressed ...');
+                                            onPressed: () async {
+                                              if (FFAppState()
+                                                      .favoritos
+                                                      .contains(
+                                                          widget.idReceta) ==
+                                                  false) {
+                                                await FavoritosTable().insert({
+                                                  'id_receta': widget.idReceta,
+                                                  'id_user': currentUserUid,
+                                                });
+                                                FFAppState().addToFavoritos(
+                                                    widget.idReceta!);
+                                                safeSetState(() {});
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      'uo',
+                                                      style: TextStyle(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
+                                                    ),
+                                                    duration: Duration(
+                                                        milliseconds: 4000),
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondary,
+                                                  ),
+                                                );
+                                              } else {
+                                                await FavoritosTable().delete(
+                                                  matchingRows: (rows) => rows
+                                                      .eqOrNull(
+                                                        'id_receta',
+                                                        widget.idReceta,
+                                                      )
+                                                      .eqOrNull(
+                                                        'id_user',
+                                                        currentUserUid,
+                                                      ),
+                                                );
+                                                FFAppState()
+                                                    .removeFromFavoritos(
+                                                        widget.idReceta!);
+                                                safeSetState(() {});
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      'ue',
+                                                      style: TextStyle(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
+                                                    ),
+                                                    duration: Duration(
+                                                        milliseconds: 4000),
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondary,
+                                                  ),
+                                                );
+                                              }
                                             },
                                           ),
                                         ],
