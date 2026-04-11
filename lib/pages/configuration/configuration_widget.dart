@@ -1,7 +1,9 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,8 +31,7 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
     super.initState();
     _model = createModel(context, () => ConfigurationModel());
 
-    _model.switchValue1 = true;
-    _model.switchValue2 = false;
+    _model.switchValue = true;
   }
 
   @override
@@ -68,7 +69,9 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
             },
           ),
           title: Text(
-            'Configuración',
+            FFLocalizations.of(context).getText(
+              'g2r2n2gn' /* Configuración */,
+            ),
             style: FlutterFlowTheme.of(context).titleLarge.override(
                   font: GoogleFonts.interTight(
                     fontWeight:
@@ -105,7 +108,9 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          'PERFIL',
+                          FFLocalizations.of(context).getText(
+                            'ekgs5ob2' /* PERFIL */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .labelMedium
                               .override(
@@ -137,7 +142,9 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                                   size: 24.0,
                                 ),
                                 Text(
-                                  'Editar perfil',
+                                  FFLocalizations.of(context).getText(
+                                    'pwg53tt2' /* Editar perfil */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
@@ -186,7 +193,9 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                                   size: 24.0,
                                 ),
                                 Text(
-                                  'Cócteles favoritos',
+                                  FFLocalizations.of(context).getText(
+                                    't3259fl6' /* Cócteles favoritos */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
@@ -222,51 +231,6 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                           thickness: 1.0,
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Icon(
-                                  Icons.history,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 24.0,
-                                ),
-                                Text(
-                                  'Historial de búsquedas',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyLarge
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ].divide(SizedBox(width: 12.0)),
-                            ),
-                            Icon(
-                              Icons.chevron_right,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 20.0,
-                            ),
-                          ],
-                        ),
                       ].divide(SizedBox(height: 12.0)),
                     ),
                   ),
@@ -286,7 +250,9 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          'PREFERENCIAS',
+                          FFLocalizations.of(context).getText(
+                            'kdhedwd5' /* PREFERENCIAS */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .labelMedium
                               .override(
@@ -313,70 +279,14 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Icon(
-                                  Icons.notifications_active_rounded,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 24.0,
-                                ),
-                                Text(
-                                  'Notificaciones',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyLarge
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ].divide(SizedBox(width: 12.0)),
-                            ),
-                            Switch(
-                              value: _model.switchValue1!,
-                              onChanged: (newValue) async {
-                                safeSetState(
-                                    () => _model.switchValue1 = newValue);
-                              },
-                              activeThumbColor: FlutterFlowTheme.of(context).primary,
-                              activeTrackColor:
-                                  FlutterFlowTheme.of(context).accent1,
-                              inactiveTrackColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              inactiveThumbColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          thickness: 1.0,
-                          color: FlutterFlowTheme.of(context).alternate,
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Icon(
                                   Icons.dark_mode_outlined,
                                   color: FlutterFlowTheme.of(context).primary,
                                   size: 24.0,
                                 ),
                                 Text(
-                                  'Modo oscuro',
+                                  FFLocalizations.of(context).getText(
+                                    'wsfsa0e9' /* Modo oscuro */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
@@ -401,21 +311,18 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                                 ),
                               ].divide(SizedBox(width: 12.0)),
                             ),
-                            Switch(
-                              value: _model.switchValue2!,
+                            Switch.adaptive(
+                              value: _model.switchValue!,
                               onChanged: (newValue) async {
                                 safeSetState(
-                                    () => _model.switchValue2 = newValue);
+                                    () => _model.switchValue = newValue);
                                 if (newValue) {
-                                  if (_model.switchValue2 == true) {
-                                    setDarkModeSetting(context, ThemeMode.dark);
-                                  } else {
-                                    setDarkModeSetting(
-                                        context, ThemeMode.light);
-                                  }
+                                  setDarkModeSetting(context, ThemeMode.dark);
+                                } else {
+                                  setDarkModeSetting(context, ThemeMode.light);
                                 }
                               },
-                              activeThumbColor: FlutterFlowTheme.of(context).primary,
+                              activeColor: FlutterFlowTheme.of(context).primary,
                               activeTrackColor:
                                   FlutterFlowTheme.of(context).accent1,
                               inactiveTrackColor:
@@ -442,7 +349,9 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                                   size: 24.0,
                                 ),
                                 Text(
-                                  'Idioma',
+                                  FFLocalizations.of(context).getText(
+                                    '6knh5xcz' /* Idioma */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
@@ -470,9 +379,29 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Text(
-                                  'Español',
-                                  style: FlutterFlowTheme.of(context)
+                                FlutterFlowDropDown<String>(
+                                  controller: _model.dropDownValueController ??=
+                                      FormFieldController<String>(null),
+                                  options: [
+                                    FFLocalizations.of(context).getText(
+                                      'wc10kaju' /* EN */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'uj7vt2zo' /* ES */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '2dli0vqo' /* PT */,
+                                    )
+                                  ],
+                                  onChanged: (val) async {
+                                    safeSetState(
+                                        () => _model.dropDownValue = val);
+                                    setAppLanguage(
+                                        context, _model.dropDownValue!);
+                                  },
+                                  width: 200.0,
+                                  height: 40.0,
+                                  textStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         font: GoogleFonts.inter(
@@ -485,8 +414,6 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                         letterSpacing: 0.0,
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -495,6 +422,27 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                                             .bodyMedium
                                             .fontStyle,
                                       ),
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'mazs14o2' /* Select... */,
+                                  ),
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  elevation: 2.0,
+                                  borderColor: Colors.transparent,
+                                  borderWidth: 0.0,
+                                  borderRadius: 8.0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 12.0, 0.0),
+                                  hidesUnderline: true,
+                                  isOverButton: false,
+                                  isSearchable: false,
+                                  isMultiSelect: false,
                                 ),
                                 Icon(
                                   Icons.chevron_right,
@@ -516,107 +464,101 @@ class _ConfigurationWidgetState extends State<ConfigurationWidget> {
                 ),
               ),
               Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Icon(
+                                    Icons.logout,
+                                    color: FlutterFlowTheme.of(context).error,
+                                    size: 24.0,
+                                  ),
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'sxbd3si8' /* Cerrar sesión */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(width: 12.0)),
+                              ),
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  GoRouter.of(context).prepareAuthEvent();
+                                  await authManager.signOut();
+                                  GoRouter.of(context).clearRedirectLocation();
+
+                                  context.goNamedAuth(
+                                      LoginWidget.routeName, context.mounted);
+                                },
+                                child: Icon(
+                                  Icons.chevron_right,
+                                  color: FlutterFlowTheme.of(context).error,
+                                  size: 20.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ].divide(SizedBox(height: 12.0)),
+                ),
+              ),
+              Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 0.0),
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 8.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Icon(
-                                        Icons.logout,
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        size: 24.0,
-                                      ),
-                                      Text(
-                                        'Cerrar sesión',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontStyle,
-                                              ),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                    ].divide(SizedBox(width: 12.0)),
-                                  ),
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      GoRouter.of(context).prepareAuthEvent();
-                                      await authManager.signOut();
-                                      GoRouter.of(context)
-                                          .clearRedirectLocation();
-
-                                      context.goNamedAuth(LoginWidget.routeName,
-                                          context.mounted);
-                                    },
-                                    child: Icon(
-                                      Icons.chevron_right,
-                                      color: FlutterFlowTheme.of(context).error,
-                                      size: 20.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Divider(
-                          thickness: 1.0,
-                          color: FlutterFlowTheme.of(context).alternate,
-                        ),
-                      ].divide(SizedBox(height: 12.0)),
-                    ),
                   ),
                 ),
               ),

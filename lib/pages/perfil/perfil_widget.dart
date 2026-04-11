@@ -85,7 +85,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'Mi Perfil',
+                      FFLocalizations.of(context).getText(
+                        'q188yi21' /* Mi Perfil */,
+                      ),
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 font: GoogleFonts.interTight(
@@ -157,7 +159,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
                           child: Text(
-                            'Bartender profesional apasionado por crear cócteles únicos y compartir recetas increíbles',
+                            FFLocalizations.of(context).getText(
+                              '6fxlnapb' /* Bartender profesional apasiona... */,
+                            ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -193,7 +197,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              '127',
+                              FFLocalizations.of(context).getText(
+                                'tlxklx1d' /* 127 */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -212,7 +218,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   ),
                             ),
                             Text(
-                              'RECETAS',
+                              FFLocalizations.of(context).getText(
+                                'w6i4xon3' /* RECETAS */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -242,7 +250,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              '2.4K',
+                              FFLocalizations.of(context).getText(
+                                'jkzdfjkm' /* 2.4K */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -261,7 +271,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   ),
                             ),
                             Text(
-                              'SEGUIDORES',
+                              FFLocalizations.of(context).getText(
+                                'kntax4cl' /* SEGUIDORES */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -291,7 +303,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              '89',
+                              FFLocalizations.of(context).getText(
+                                'hngmn2tp' /* 89 */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -310,7 +324,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   ),
                             ),
                             Text(
-                              'SIGUIENDO',
+                              FFLocalizations.of(context).getText(
+                                'yt34datf' /* SIGUIENDO */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -349,7 +365,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               onPressed: () {
                                 print('Button pressed ...');
                               },
-                              text: 'Editar Perfil',
+                              text: FFLocalizations.of(context).getText(
+                                'lutda63r' /* Editar Perfil */,
+                              ),
                               options: FFButtonOptions(
                                 height: 44.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -393,7 +411,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               onPressed: () {
                                 print('Button pressed ...');
                               },
-                              text: 'Compartir',
+                              text: FFLocalizations.of(context).getText(
+                                'lotahsgl' /* Compartir */,
+                              ),
                               options: FFButtonOptions(
                                 height: 44.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -458,7 +478,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               Align(
                                 alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Text(
-                                  'Especialidades',
+                                  FFLocalizations.of(context).getText(
+                                    '91a216pj' /* Especialidades */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -494,7 +516,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                       child: Padding(
                                         padding: EdgeInsets.all(8.0),
                                         child: Text(
-                                          'Cócteles Clásicos',
+                                          FFLocalizations.of(context).getText(
+                                            'zmgco59p' /* Cócteles Clásicos */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
@@ -533,7 +557,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                       child: Padding(
                                         padding: EdgeInsets.all(8.0),
                                         child: Text(
-                                          'Mixología',
+                                          FFLocalizations.of(context).getText(
+                                            'fgbpj9to' /* Mixología */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
@@ -578,7 +604,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                       child: Padding(
                                         padding: EdgeInsets.all(8.0),
                                         child: Text(
-                                          'Cócteles Tropicales',
+                                          FFLocalizations.of(context).getText(
+                                            'fvmmubm1' /* Cócteles Tropicales */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
@@ -617,7 +645,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                       child: Padding(
                                         padding: EdgeInsets.all(8.0),
                                         child: Text(
-                                          'Gin & Tonic',
+                                          FFLocalizations.of(context).getText(
+                                            'k50jrpmi' /* Gin & Tonic */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
@@ -671,7 +701,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Logros',
+                                FFLocalizations.of(context).getText(
+                                  '12kxdpfh' /* Logros */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -713,7 +745,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ),
                                         Text(
-                                          'Mixólogo',
+                                          FFLocalizations.of(context).getText(
+                                            '7ilbaaql' /* Mixólogo */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .labelSmall
@@ -765,7 +799,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ),
                                         Text(
-                                          '100 Me Gusta',
+                                          FFLocalizations.of(context).getText(
+                                            'jn79ft94' /* 100 Me Gusta */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .labelSmall
@@ -817,7 +853,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ),
                                         Text(
-                                          'Influencer',
+                                          FFLocalizations.of(context).getText(
+                                            'b5kq97eb' /* Influencer */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .labelSmall

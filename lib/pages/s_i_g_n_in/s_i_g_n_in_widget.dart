@@ -151,7 +151,9 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                               ),
                             ),
                             Text(
-                              'Registrarse',
+                              FFLocalizations.of(context).getText(
+                                'nk4ztf6q' /* Registrarse */,
+                              ),
                               textAlign: TextAlign.start,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -210,7 +212,9 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 24.0),
                                   child: Text(
-                                    'Rellena los datos para darte de alta en la aplicación.',
+                                    FFLocalizations.of(context).getText(
+                                      'djqy9vjx' /* Rellena los datos para darte d... */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -249,7 +253,10 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                       autofillHints: [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Nombre',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          '654rznd3' /* Nombre */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -355,7 +362,11 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                             20.0, 0.0, 30.0, 16.0),
                                         child: Text(
                                           dateTimeFormat(
-                                              "d/M/y", _model.datePicked),
+                                            "d/M/y",
+                                            _model.datePicked,
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -470,7 +481,10 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                                 });
                                               }
                                             },
-                                            text: 'Seleccionar fecha',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'nxjciswd' /* Seleccionar fecha */,
+                                            ),
                                             options: FFButtonOptions(
                                               height: 50.0,
                                               padding: EdgeInsetsDirectional
@@ -532,7 +546,10 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                       autofillHints: [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Correo electrónico',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          '3qpugb3l' /* Correo electrónico */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -638,7 +655,10 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                       autofillHints: [AutofillHints.password],
                                       obscureText: !_model.passwordVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'Contraseña',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          '6t9f123p' /* Contraseña */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -763,7 +783,10 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                       obscureText:
                                           !_model.confirmpasswordVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'Confirmar contraseña',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'uf81clam' /* Confirmar contraseña */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -988,7 +1011,9 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                         );
                                       }
                                     },
-                                    text: 'Crear Cuenta',
+                                    text: FFLocalizations.of(context).getText(
+                                      'yxvqrzy4' /* Crear Cuenta */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 44.0,
@@ -1042,11 +1067,17 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                     text: TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: '¿Ya tienes una cuenta?  ',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'i42wdxyr' /* ¿Ya tienes una cuenta?   */,
+                                          ),
                                           style: TextStyle(),
                                         ),
                                         TextSpan(
-                                          text: 'Iniciar sesión aquí',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'y7ak5v57' /* Iniciar sesión aquí */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

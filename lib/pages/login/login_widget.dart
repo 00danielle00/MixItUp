@@ -152,7 +152,9 @@ class _LoginWidgetState extends State<LoginWidget>
                               ),
                             ),
                             Text(
-                              'Iniciar sesión',
+                              FFLocalizations.of(context).getText(
+                                '1lvdbefj' /* Iniciar sesión */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
@@ -210,7 +212,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 24.0),
                                   child: Text(
-                                    'Let\'s get started by filling out the form below.',
+                                    FFLocalizations.of(context).getText(
+                                      'g2v4kwv8' /* Let's get started by filling o... */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -250,7 +254,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                       autofillHints: [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Email',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'hwl7q3vb' /* Email */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -356,7 +363,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                       autofillHints: [AutofillHints.password],
                                       obscureText: !_model.passwordVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'Password',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'ds8nmtuy' /* Password */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -487,7 +497,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                           CocktailHomeWidget.routeName,
                                           context.mounted);
                                     },
-                                    text: 'Log In',
+                                    text: FFLocalizations.of(context).getText(
+                                      '1yt0zz0z' /* Log In */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 44.0,
@@ -539,7 +551,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 24.0),
                                   child: Text(
-                                    'Or sign up with',
+                                    FFLocalizations.of(context).getText(
+                                      'ricag7zl' /* Or sign up with */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -573,7 +587,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Continue with Google',
+                                    text: FFLocalizations.of(context).getText(
+                                      '43e77fva' /* Continue with Google */,
+                                    ),
                                     icon: FaIcon(
                                       FontAwesomeIcons.google,
                                       size: 20.0,
@@ -632,7 +648,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Continue with Apple',
+                                    text: FFLocalizations.of(context).getText(
+                                      'j9yfplwk' /* Continue with Apple */,
+                                    ),
                                     icon: FaIcon(
                                       FontAwesomeIcons.apple,
                                       size: 20.0,
@@ -695,11 +713,17 @@ class _LoginWidgetState extends State<LoginWidget>
                                     text: TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: 'Don\'t have an account?  ',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '18wqk1f7' /* Don't have an account?   */,
+                                          ),
                                           style: TextStyle(),
                                         ),
                                         TextSpan(
-                                          text: 'Sign Up here',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'j5bs8out' /* Sign Up here */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

@@ -115,7 +115,9 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 32.0),
                             child: Text(
-                              'Crear Nuevo Cóctel',
+                              FFLocalizations.of(context).getText(
+                                'bvmv7gxt' /* Crear Nuevo Cóctel */,
+                              ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .headlineLarge
@@ -145,7 +147,9 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Nombre del Cóctel',
+                                      FFLocalizations.of(context).getText(
+                                        'yakyjnnl' /* Nombre del Cóctel */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -173,7 +177,10 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                       textInputAction: TextInputAction.next,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: 'Ej: Mojito Tropical',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'gi1xyplw' /* Ej: Mojito Tropical */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -287,7 +294,9 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Descripción',
+                                      FFLocalizations.of(context).getText(
+                                        '6eg6x9tr' /* Descripción */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -314,7 +323,9 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         hintText:
-                                            'Describe los ingredientes y sabores de tu cóctel...',
+                                            FFLocalizations.of(context).getText(
+                                          'lkac45rg' /* Describe los ingredientes y sa... */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -435,7 +446,9 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        'Imagen del Cóctel',
+                                        FFLocalizations.of(context).getText(
+                                          'jgwwllbz' /* Imagen del Cóctel */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -465,7 +478,9 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     hintText:
-                                        'Pon una imagen del coctel creado..',
+                                        FFLocalizations.of(context).getText(
+                                      'sv59449f' /* Pon una imagen del coctel crea... */,
+                                    ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -572,7 +587,9 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Nivel de Dificultad',
+                                      FFLocalizations.of(context).getText(
+                                        'c76dyir0' /* Nivel de Dificultad */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -595,7 +612,17 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                       controller:
                                           _model.dropDownValueController1 ??=
                                               FormFieldController<String>(null),
-                                      options: ['Fácil', 'Medio', 'Difícil'],
+                                      options: [
+                                        FFLocalizations.of(context).getText(
+                                          '09yrx1yr' /* Fácil */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'rlbgk4vy' /* Medio */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'twdlftaf' /* Difícil */,
+                                        )
+                                      ],
                                       onChanged: (val) => safeSetState(
                                           () => _model.dropDownValue1 = val),
                                       width: double.infinity,
@@ -624,7 +651,10 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                      hintText: 'Selecciona la dificultad',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'ramhg6t6' /* Selecciona la dificultad */,
+                                      ),
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -651,7 +681,9 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Contiene Alcohol',
+                                      FFLocalizations.of(context).getText(
+                                        '48ip56kg' /* Contiene Alcohol */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -677,7 +709,14 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                         _model.dropDownValue2 ??= false,
                                       ),
                                       options: List<bool>.from([true, false]),
-                                      optionLabels: ['Si', 'No'],
+                                      optionLabels: [
+                                        FFLocalizations.of(context).getText(
+                                          '9ogefnti' /* Si */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '7hakqnaj' /* No */,
+                                        )
+                                      ],
                                       onChanged: (val) => safeSetState(
                                           () => _model.dropDownValue2 = val),
                                       width: double.infinity,
@@ -706,7 +745,10 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                      hintText: 'Selecciona si es alcoholica',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'jdj2t7zu' /* Selecciona si es alcoholica */,
+                                      ),
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -733,7 +775,9 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Tiempo de preparación',
+                                      FFLocalizations.of(context).getText(
+                                        'eda3jquo' /* Tiempo de preparación */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -759,7 +803,10 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                           TextCapitalization.sentences,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: '(5,10,15...)',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'sfbxot7w' /* (5,10,15...) */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -908,7 +955,9 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                   },
                                 );
                               },
-                              text: 'Crear Cóctel',
+                              text: FFLocalizations.of(context).getText(
+                                's35nj3w0' /* Crear Cóctel */,
+                              ),
                               icon: Icon(
                                 Icons.local_bar_rounded,
                                 size: 24.0,

@@ -161,7 +161,7 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryText,
                                             icon: Icon(
-                                              Icons.favorite_border_sharp,
+                                              Icons.favorite_sharp,
                                               color: FFAppState()
                                                       .favoritos
                                                       .contains(
@@ -341,7 +341,9 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  'Ingredientes',
+                                  FFLocalizations.of(context).getText(
+                                    'abw416l1' /* Ingredientes */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -650,7 +652,9 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
                               onPressed: () {
                                 print('Button pressed ...');
                               },
-                              text: 'Empezar',
+                              text: FFLocalizations.of(context).getText(
+                                'c92nk00d' /* Empezar */,
+                              ),
                               icon: Icon(
                                 Icons.play_arrow,
                                 size: 15.0,
