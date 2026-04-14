@@ -10,3 +10,4 @@ export '/pages/detalle_coctel/detalle_coctel_widget.dart'
 export '/pages/lista_cocteles/lista_cocteles_widget.dart'
     show ListaCoctelesWidget;
 export '/pages/crear_coctel/crear_coctel_widget.dart' show CrearCoctelWidget;
+export '/pages/nickname_page/nickname_page_widget.dart' show NicknamePageWidget;

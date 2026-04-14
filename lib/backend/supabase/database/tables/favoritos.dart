@@ -17,8 +17,8 @@ class FavoritosRow extends SupabaseDataRow {
   int get idReceta => getField<int>('id_receta')!;
   set idReceta(int value) => setField<int>('id_receta', value);
 
-  String get idUser => getField<String>('id_user')!;
-  set idUser(String value) => setField<String>('id_user', value);
+  String? get idUser => getField<String>('id_user');
+  set idUser(String? value) => setField<String>('id_user', value);
 
   int get idFav => getField<int>('id_fav')!;
   set idFav(int value) => setField<int>('id_fav', value);

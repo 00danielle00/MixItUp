@@ -5,10 +5,10 @@ export '../supabase.dart';
 export 'row.dart';
 export 'table.dart';
 
-export 'tables/recetas.dart';
-export 'tables/receta_ingrediente.dart';
-export 'tables/ingredientes.dart';
 export 'tables/favoritos.dart';
+export 'tables/ingredientes.dart';
 export 'tables/logros.dart';
-export 'tables/users.dart';
+export 'tables/receta_ingrediente.dart';
+export 'tables/recetas.dart';
 export 'tables/user_logro.dart';
+export 'tables/users.dart';

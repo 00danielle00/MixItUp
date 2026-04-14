@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -38,11 +39,13 @@ class _CocktailHomeWidgetState extends State<CocktailHomeWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().recetaDelDia == null) {
-        _model.res = await actions.coctailDelDia();
-        FFAppState().recetaDelDia = _model.res!;
-        safeSetState(() {});
-      }
+      _model.recetasList = await actions.mostrarRecetas();
+      FFAppState().indexDelDia =
+          functions.calcularIndex(_model.recetasList!.length);
+      safeSetState(() {});
+      FFAppState().recetaDelDia =
+          (_model.recetasList!.elementAtOrNull(FFAppState().indexDelDia))!;
+      safeSetState(() {});
     });
 
     _model.textController ??= TextEditingController();
@@ -259,12 +262,13 @@ class _CocktailHomeWidgetState extends State<CocktailHomeWidget> {
                                 if (!snapshot.hasData) {
                                   return Center(
                                     child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
+                                      width: 40.0,
+                                      height: 40.0,
                                       child: CircularProgressIndicator(
                                         valueColor:
                                             AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
+                                          FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                         ),
                                       ),
                                     ),
@@ -911,13 +915,13 @@ class _CocktailHomeWidgetState extends State<CocktailHomeWidget> {
                                   if (!snapshot.hasData) {
                                     return Center(
                                       child: SizedBox(
-                                        width: 50.0,
-                                        height: 50.0,
+                                        width: 40.0,
+                                        height: 40.0,
                                         child: CircularProgressIndicator(
                                           valueColor:
                                               AlwaysStoppedAnimation<Color>(
                                             FlutterFlowTheme.of(context)
-                                                .primary,
+                                                .secondaryText,
                                           ),
                                         ),
                                       ),

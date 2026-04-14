@@ -635,6 +635,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
+  // NicknamePage
+  {
+    'wkll9xmz': {
+      'es': '¿Cómo quieres que te llamemos?',
+      'en': '',
+      'pt': '',
+    },
+    'e7pb8ztl': {
+      'es': 'Este será tu nombre visible en la app.',
+      'en': '',
+      'pt': '',
+    },
+    'kezkk663': {
+      'es': 'Tu nombre o nickname',
+      'en': '',
+      'pt': '',
+    },
+    'f7xmr09m': {
+      'es': 'Continuar',
+      'en': '',
+      'pt': '',
+    },
+  },
   // Miscellaneous
   {
     '3j4pyonz': {

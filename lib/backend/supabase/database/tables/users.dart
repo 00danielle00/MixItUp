@@ -14,8 +14,8 @@ class UsersRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => UsersTable();
 
-  String get id => getField<String>('id')!;
-  set id(String value) => setField<String>('id', value);
+  String? get id => getField<String>('id');
+  set id(String? value) => setField<String>('id', value);
 
   String? get nombre => getField<String>('nombre');
   set nombre(String? value) => setField<String>('nombre', value);
@@ -28,4 +28,7 @@ class UsersRow extends SupabaseDataRow {
 
   DateTime? get fechaNac => getField<DateTime>('fecha_nac');
   set fechaNac(DateTime? value) => setField<DateTime>('fecha_nac', value);
+
+  String? get nickname => getField<String>('nickname');
+  set nickname(String? value) => setField<String>('nickname', value);
 }

@@ -1,4 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -493,9 +494,29 @@ class _LoginWidgetState extends State<LoginWidget>
                                         return;
                                       }
 
-                                      context.goNamedAuth(
-                                          CocktailHomeWidget.routeName,
-                                          context.mounted);
+                                      _model.returneado =
+                                          await UsersTable().queryRows(
+                                        queryFn: (q) => q.eqOrNull(
+                                          'id',
+                                          currentUserUid,
+                                        ),
+                                      );
+                                      if (_model.returneado?.firstOrNull
+                                                  ?.nickname ==
+                                              null ||
+                                          _model.returneado?.firstOrNull
+                                                  ?.nickname ==
+                                              '') {
+                                        context.pushNamedAuth(
+                                            NicknamePageWidget.routeName,
+                                            context.mounted);
+                                      } else {
+                                        context.pushNamedAuth(
+                                            CocktailHomeWidget.routeName,
+                                            context.mounted);
+                                      }
+
+                                      safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '1yt0zz0z' /* Log In */,

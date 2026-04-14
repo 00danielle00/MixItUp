@@ -138,6 +138,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: CrearCoctelWidget.routeName,
           path: CrearCoctelWidget.routePath,
           builder: (context, params) => CrearCoctelWidget(),
+        ),
+        FFRoute(
+          name: NicknamePageWidget.routeName,
+          path: NicknamePageWidget.routePath,
+          builder: (context, params) => NicknamePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -18,3 +18,9 @@ bool isAdult(DateTime fechaNac) {
 
   return age >= 18;
 }
+
+int calcularIndex(int length) {
+  final now = DateTime.now();
+  final sum = now.day + now.month + now.year;
+  return sum % length;
+}
