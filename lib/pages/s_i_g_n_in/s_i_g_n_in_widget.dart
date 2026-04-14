@@ -968,7 +968,7 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                           });
 
                                           context.pushNamedAuth(
-                                              CocktailHomeWidget.routeName,
+                                              NicknamePageWidget.routeName,
                                               context.mounted);
                                         } else {
                                           ScaffoldMessenger.of(context)

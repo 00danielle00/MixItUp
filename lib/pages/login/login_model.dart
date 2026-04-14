@@ -18,6 +18,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<UsersRow>? returneado;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<FavoritosRow>? favorites;
 
   @override
   void initState(BuildContext context) {

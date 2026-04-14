@@ -511,9 +511,34 @@ class _LoginWidgetState extends State<LoginWidget>
                                             NicknamePageWidget.routeName,
                                             context.mounted);
                                       } else {
+                                        _model.favorites =
+                                            await FavoritosTable().queryRows(
+                                          queryFn: (q) => q.eqOrNull(
+                                            'id_user',
+                                            currentUserUid,
+                                          ),
+                                        );
+                                        FFAppState().favoritos = _model
+                                            .favorites!
+                                            .map((e) => e.idReceta)
+                                            .toList()
+                                            .cast<int>();
+                                        safeSetState(() {});
+
                                         context.pushNamedAuth(
-                                            CocktailHomeWidget.routeName,
-                                            context.mounted);
+                                          CocktailHomeWidget.routeName,
+                                          context.mounted,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 40),
+                                            ),
+                                          },
+                                        );
                                       }
 
                                       safeSetState(() {});
