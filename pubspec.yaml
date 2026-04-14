@@ -36,7 +36,11 @@ dependencies:
   carousel_slider: 5.0.0
   collection: 1.19.1
   csv: 6.0.0
-  dropdown_button2: 2.3.9
+  dropdown_button2: 
+    git:
+      url: https://github.com/FlutterFlow/dropdown_button2.git
+      ref: 9bbeb2fd68e12615251a67208eb21bc75628c02c
+      path: packages/dropdown_button2
   easy_debounce: 2.0.1
   flutter_animate: 4.5.0
   flutter_cache_manager: 3.4.1

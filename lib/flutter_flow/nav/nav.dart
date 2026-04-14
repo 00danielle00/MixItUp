@@ -123,11 +123,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: ListaCoctelesWidget.routeName,
-          path: ListaCoctelesWidget.routePath,
-          builder: (context, params) => ListaCoctelesWidget(),
-        ),
-        FFRoute(
           name: CrearCoctelWidget.routeName,
           path: CrearCoctelWidget.routePath,
           builder: (context, params) => CrearCoctelWidget(),

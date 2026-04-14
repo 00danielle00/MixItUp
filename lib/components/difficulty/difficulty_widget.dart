@@ -73,6 +73,15 @@ class _DifficultyWidgetState extends State<DifficultyWidget> {
                       fontStyle:
                           FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                     ),
+                    color: () {
+                      if (widget.difficulty == 'Fácil') {
+                        return Color(0x4D007F11);
+                      } else if (widget.difficulty == 'Medio') {
+                        return Color(0xFFCA9E30);
+                      } else {
+                        return Color(0xFF790000);
+                      }
+                    }(),
                     fontSize: 15.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,

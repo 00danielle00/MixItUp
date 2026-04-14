@@ -456,14 +456,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // listaCocteles
-  {
-    'mbui9yxg': {
-      'es': 'Lista de Cócteles',
-      'en': '',
-      'pt': '',
-    },
-  },
   // crearCoctel
   {
     'bvmv7gxt': {
