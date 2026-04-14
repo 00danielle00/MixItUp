@@ -153,8 +153,8 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'cocktailHome': CocktailHomeWidget(),
-      'configuration': ConfigurationWidget(),
       'Perfil': PerfilWidget(),
+      'ListaDeCocteles': ListaDeCoctelesWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -183,14 +183,14 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.settings_rounded,
+              Icons.person_sharp,
             ),
             label: '',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person_sharp,
+              Icons.local_bar,
             ),
             label: '',
             tooltip: '',

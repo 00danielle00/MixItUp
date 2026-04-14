@@ -101,13 +101,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : CocktailHomeWidget(),
         ),
         FFRoute(
-          name: ConfigurationWidget.routeName,
-          path: ConfigurationWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'configuration')
-              : ConfigurationWidget(),
-        ),
-        FFRoute(
           name: SIGNInWidget.routeName,
           path: SIGNInWidget.routePath,
           builder: (context, params) => SIGNInWidget(),
@@ -143,6 +136,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: NicknamePageWidget.routeName,
           path: NicknamePageWidget.routePath,
           builder: (context, params) => NicknamePageWidget(),
+        ),
+        FFRoute(
+          name: SettingsWidget.routeName,
+          path: SettingsWidget.routePath,
+          builder: (context, params) => SettingsWidget(),
+        ),
+        FFRoute(
+          name: ListaDeCoctelesWidget.routeName,
+          path: ListaDeCoctelesWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'ListaDeCocteles')
+              : ListaDeCoctelesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

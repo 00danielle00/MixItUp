@@ -285,79 +285,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    '2erepfl4': {
-      'es': 'Ver Todas',
-      'en': '',
-      'pt': '',
-    },
-  },
-  // configuration
-  {
-    'g2r2n2gn': {
-      'es': 'Configuración',
-      'en': '',
-      'pt': '',
-    },
-    'ekgs5ob2': {
-      'es': 'PERFIL',
-      'en': '',
-      'pt': '',
-    },
-    'pwg53tt2': {
-      'es': 'Editar perfil',
-      'en': '',
-      'pt': '',
-    },
-    't3259fl6': {
-      'es': 'Cócteles favoritos',
-      'en': '',
-      'pt': '',
-    },
-    'kdhedwd5': {
-      'es': 'PREFERENCIAS',
-      'en': '',
-      'pt': '',
-    },
-    'wsfsa0e9': {
-      'es': 'Modo oscuro',
-      'en': '',
-      'pt': '',
-    },
-    '6knh5xcz': {
-      'es': 'Idioma',
-      'en': '',
-      'pt': '',
-    },
-    'mazs14o2': {
-      'es': 'Select...',
-      'en': '',
-      'pt': '',
-    },
-    '20icggyt': {
-      'es': 'Search...',
-      'en': '',
-      'pt': '',
-    },
-    'wc10kaju': {
-      'es': 'EN',
-      'en': 'IN',
-      'pt': 'EM',
-    },
-    'uj7vt2zo': {
-      'es': 'ES',
-      'en': '',
-      'pt': '',
-    },
-    '2dli0vqo': {
-      'es': 'PT',
-      'en': '',
-      'pt': '',
-    },
-    'sxbd3si8': {
-      'es': 'Cerrar sesión',
-      'en': '',
-      'pt': '',
-    },
   },
   // SIGNIn
   {
@@ -531,8 +458,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // listaCocteles
   {
-    'd5wvc1qp': {
-      'es': 'Todos los cócteles',
+    'mbui9yxg': {
+      'es': 'Lista de Cócteles',
       'en': '',
       'pt': '',
     },
@@ -654,6 +581,92 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'f7xmr09m': {
       'es': 'Continuar',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // Settings
+  {
+    'mpb9whk9': {
+      'es': 'Configuración',
+      'en': '',
+      'pt': '',
+    },
+    'k5acsfsx': {
+      'es': 'PERFIL',
+      'en': '',
+      'pt': '',
+    },
+    'cxqlq8qy': {
+      'es': 'Editar perfil',
+      'en': '',
+      'pt': '',
+    },
+    'v7h4fltx': {
+      'es': 'Cócteles favoritos',
+      'en': '',
+      'pt': '',
+    },
+    'ze0k59ce': {
+      'es': 'PREFERENCIAS',
+      'en': '',
+      'pt': '',
+    },
+    'npzfedx2': {
+      'es': 'Modo oscuro',
+      'en': '',
+      'pt': '',
+    },
+    'rdim01vc': {
+      'es': 'Idioma',
+      'en': '',
+      'pt': '',
+    },
+    'd6n22rr2': {
+      'es': 'Select...',
+      'en': '',
+      'pt': '',
+    },
+    'uawt67l2': {
+      'es': 'Search...',
+      'en': '',
+      'pt': '',
+    },
+    'hxvq7p9i': {
+      'es': 'EN',
+      'en': 'IN',
+      'pt': 'EM',
+    },
+    'w5dzmit6': {
+      'es': 'ES',
+      'en': '',
+      'pt': '',
+    },
+    'betptmqt': {
+      'es': 'PT',
+      'en': '',
+      'pt': '',
+    },
+    'potr0reo': {
+      'es': 'Cerrar Sesión',
+      'en': '',
+      'pt': '',
+    },
+    'wufaynkn': {
+      'es': 'Home',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // ListaDeCocteles
+  {
+    'ywzfs4lr': {
+      'es': 'Cócteles',
+      'en': '',
+      'pt': '',
+    },
+    'sghxjrax': {
+      'es': 'Descubre nuestra selección de cócteles artesanales',
       'en': '',
       'pt': '',
     },

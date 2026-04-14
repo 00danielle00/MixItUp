@@ -1,8 +1,10 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'perfil_model.dart';
@@ -84,6 +86,29 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FlutterFlowIconButton(
+                            borderRadius: 20.0,
+                            buttonSize: 40.0,
+                            fillColor: Color(0xFFFFC681),
+                            icon: Icon(
+                              Icons.settings_sharp,
+                              color: FlutterFlowTheme.of(context).info,
+                              size: 24.0,
+                            ),
+                            onPressed: () async {
+                              context.pushNamed(SettingsWidget.routeName);
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
                     Text(
                       FFLocalizations.of(context).getText(
                         'q188yi21' /* Mi Perfil */,
