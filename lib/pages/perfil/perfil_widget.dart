@@ -136,8 +136,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                       children: [
                         Text(
                           valueOrDefault<String>(
-                            perfilUsersRow?.nombre,
-                            'name',
+                            perfilUsersRow?.nickname,
+                            'nickname',
                           ),
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium

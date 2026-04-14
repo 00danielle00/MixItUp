@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -345,8 +346,13 @@ class _NicknamePageWidgetState extends State<NicknamePageWidget>
                             data: {
                               'nickname': _model.textController.text,
                             },
-                            matchingRows: (rows) => rows,
+                            matchingRows: (rows) => rows.eqOrNull(
+                              'id',
+                              currentUserUid,
+                            ),
                           );
+                          FFAppState().nickname = _model.textController.text;
+                          safeSetState(() {});
 
                           context.pushNamed(
                             CocktailHomeWidget.routeName,
