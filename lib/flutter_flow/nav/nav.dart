@@ -143,6 +143,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'ListaDeCocteles')
               : ListaDeCoctelesWidget(),
+        ),
+        FFRoute(
+          name: PasoScreenWidget.routeName,
+          path: PasoScreenWidget.routePath,
+          builder: (context, params) => PasoScreenWidget(
+            recetaId: params.getParam(
+              'recetaId',
+              ParamType.int,
+            ),
+            pasosNumActual: params.getParam(
+              'pasosNumActual',
+              ParamType.int,
+            ),
+            totalPasos: params.getParam(
+              'totalPasos',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: SuccessPageWidget.routeName,
+          path: SuccessPageWidget.routePath,
+          builder: (context, params) => SuccessPageWidget(),
+        ),
+        FFRoute(
+          name: SnsWidget.routeName,
+          path: SnsWidget.routePath,
+          builder: (context, params) => SnsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

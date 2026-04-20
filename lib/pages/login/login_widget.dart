@@ -131,52 +131,46 @@ class _LoginWidgetState extends State<LoginWidget>
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Expanded(
-                      child: Container(
-                        width: 200.0,
-                        height: 70.0,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16.0),
-                        ),
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 2.0, 0.0),
-                              child: Icon(
-                                Icons.local_bar_rounded,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 27.0,
-                              ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 2.0, 0.0),
+                            child: Icon(
+                              Icons.local_bar_rounded,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 27.0,
                             ),
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                '1lvdbefj' /* Iniciar sesión */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .displaySmall
-                                  .override(
-                                    font: GoogleFonts.lato(
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 27.0,
-                                    letterSpacing: 0.0,
+                          ),
+                          Text(
+                            FFLocalizations.of(context).getText(
+                              '1lvdbefj' /* Iniciar sesión */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .displaySmall
+                                .override(
+                                  font: GoogleFonts.lato(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .fontStyle,
                                   ),
-                            ),
-                          ],
-                        ),
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 27.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .fontStyle,
+                                ),
+                          ),
+                        ],
                       ),
                     ),
                     Padding(

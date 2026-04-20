@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'detalle_coctel_widget.dart' show DetalleCoctelWidget;
+import 'sns_widget.dart' show SnsWidget;
 import 'package:flutter/material.dart';
 
-class DetalleCoctelModel extends FlutterFlowModel<DetalleCoctelWidget> {
+class SnsModel extends FlutterFlowModel<SnsWidget> {
   @override
   void initState(BuildContext context) {}
 

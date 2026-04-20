@@ -10,3 +10,6 @@ export '/pages/nickname_page/nickname_page_widget.dart' show NicknamePageWidget;
 export '/pages/settings/settings_widget.dart' show SettingsWidget;
 export '/pages/lista_de_cocteles/lista_de_cocteles_widget.dart'
     show ListaDeCoctelesWidget;
+export '/pages/paso_screen/paso_screen_widget.dart' show PasoScreenWidget;
+export '/pages/success_page/success_page_widget.dart' show SuccessPageWidget;
+export '/sns/sns_widget.dart' show SnsWidget;

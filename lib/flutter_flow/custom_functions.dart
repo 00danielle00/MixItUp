@@ -24,3 +24,26 @@ int calcularIndex(int length) {
   final sum = now.day + now.month + now.year;
   return sum % length;
 }
+
+int siguientePaso(
+  int pasoActual,
+  int totalPasos,
+) {
+  if (pasoActual < totalPasos) {
+    return pasoActual + 1;
+  } else {
+    return pasoActual;
+  }
+}
+
+int pasoAnt(int pasoActual) {
+  if (pasoActual > 1) {
+    return pasoActual - 1;
+  } else {
+    return pasoActual; // ya está en el primer paso
+  }
+}
+
+int segundosAms(int segundos) {
+  return segundos * 1000;
+}

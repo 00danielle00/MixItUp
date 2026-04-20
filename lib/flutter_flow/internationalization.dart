@@ -663,6 +663,75 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
+  // PasoScreen
+  {
+    'muozfel0': {
+      'es': 'Paso ',
+      'en': '',
+      'pt': '',
+    },
+    'a9sn4rm7': {
+      'es': 'de ',
+      'en': '',
+      'pt': '',
+    },
+    'v3gb0svs': {
+      'es': '50%',
+      'en': '',
+      'pt': '',
+    },
+    'k1dtlsfr': {
+      'es': 'Anterior',
+      'en': '',
+      'pt': '',
+    },
+    'vjj33lif': {
+      'es': 'Siguiente',
+      'en': '',
+      'pt': '',
+    },
+    'ie61p4xn': {
+      'es': 'Finalizar',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // SuccessPage
+  {
+    'wxcxwgip': {
+      'es': '¡Receta completada!',
+      'en': '',
+      'pt': '',
+    },
+    '1u6rhngr': {
+      'es': 'Has terminado todos los pasos de esta receta.',
+      'en': '',
+      'pt': '',
+    },
+    'iv0wmebp': {
+      'es': 'Volver al inicio',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // sns
+  {
+    'cudritfl': {
+      'es': '¡Receta completada!',
+      'en': '',
+      'pt': '',
+    },
+    'vw8avp77': {
+      'es': 'Has terminado todos los pasos de esta receta.',
+      'en': '',
+      'pt': '',
+    },
+    '2oh41jtr': {
+      'es': 'Volver al inicio',
+      'en': '',
+      'pt': '',
+    },
+  },
   // Miscellaneous
   {
     '3j4pyonz': {

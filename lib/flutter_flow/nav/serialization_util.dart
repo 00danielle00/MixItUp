@@ -222,6 +222,8 @@ dynamic deserializeParam<T>(
             return IngredientesRow(data);
           case LogrosRow:
             return LogrosRow(data);
+          case PasosRow:
+            return PasosRow(data);
           case RecetaIngredienteRow:
             return RecetaIngredienteRow(data);
           case RecetasRow:

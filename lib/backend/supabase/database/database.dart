@@ -8,6 +8,7 @@ export 'table.dart';
 export 'tables/favoritos.dart';
 export 'tables/ingredientes.dart';
 export 'tables/logros.dart';
+export 'tables/pasos.dart';
 export 'tables/receta_ingrediente.dart';
 export 'tables/recetas.dart';
 export 'tables/user_logro.dart';
