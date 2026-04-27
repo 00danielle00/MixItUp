@@ -184,9 +184,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              '6fxlnapb' /* Bartender profesional apasiona... */,
-                            ),
+                            currentUserEmail,
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium

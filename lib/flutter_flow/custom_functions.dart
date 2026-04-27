@@ -47,3 +47,18 @@ int pasoAnt(int pasoActual) {
 int segundosAms(int segundos) {
   return segundos * 1000;
 }
+
+double calcularProgreso(
+  int pasoActual,
+  int totalPasos,
+) {
+  if (totalPasos <= 1) {
+    return 1.0;
+  }
+  final progreso = pasoActual / totalPasos;
+  return progreso >= 1.0 ? 1.0 : progreso;
+}
+
+int calcularPasoNum(int index) {
+  return index + 1;
+}

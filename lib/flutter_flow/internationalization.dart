@@ -351,12 +351,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    '6fxlnapb': {
-      'es':
-          'Bartender profesional apasionado por crear cócteles únicos y compartir recetas increíbles',
-      'en': '',
-      'pt': '',
-    },
     'tlxklx1d': {
       'es': '127',
       'en': '',
@@ -456,104 +450,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // crearCoctel
-  {
-    'bvmv7gxt': {
-      'es': 'Crear Nuevo Cóctel',
-      'en': '',
-      'pt': '',
-    },
-    'yakyjnnl': {
-      'es': 'Nombre del Cóctel',
-      'en': '',
-      'pt': '',
-    },
-    'gi1xyplw': {
-      'es': 'Ej: Mojito Tropical',
-      'en': '',
-      'pt': '',
-    },
-    '6eg6x9tr': {
-      'es': 'Descripción',
-      'en': '',
-      'pt': '',
-    },
-    'lkac45rg': {
-      'es': 'Describe los ingredientes y sabores de tu cóctel...',
-      'en': '',
-      'pt': '',
-    },
-    'jgwwllbz': {
-      'es': 'Imagen del Cóctel',
-      'en': '',
-      'pt': '',
-    },
-    'sv59449f': {
-      'es': 'Pon una imagen del coctel creado..',
-      'en': '',
-      'pt': '',
-    },
-    'c76dyir0': {
-      'es': 'Nivel de Dificultad',
-      'en': '',
-      'pt': '',
-    },
-    'ramhg6t6': {
-      'es': 'Selecciona la dificultad',
-      'en': '',
-      'pt': '',
-    },
-    '09yrx1yr': {
-      'es': 'Fácil',
-      'en': '',
-      'pt': '',
-    },
-    'rlbgk4vy': {
-      'es': 'Medio',
-      'en': '',
-      'pt': '',
-    },
-    'twdlftaf': {
-      'es': 'Difícil',
-      'en': '',
-      'pt': '',
-    },
-    '48ip56kg': {
-      'es': 'Contiene Alcohol',
-      'en': '',
-      'pt': '',
-    },
-    'jdj2t7zu': {
-      'es': 'Selecciona si es alcoholica',
-      'en': '',
-      'pt': '',
-    },
-    '9ogefnti': {
-      'es': 'Si',
-      'en': '',
-      'pt': '',
-    },
-    '7hakqnaj': {
-      'es': 'No',
-      'en': '',
-      'pt': '',
-    },
-    'eda3jquo': {
-      'es': 'Tiempo de preparación',
-      'en': '',
-      'pt': '',
-    },
-    'sfbxot7w': {
-      'es': '(5,10,15...)',
-      'en': '',
-      'pt': '',
-    },
-    's35nj3w0': {
-      'es': 'Crear Cóctel',
-      'en': '',
-      'pt': '',
-    },
-  },
   // NicknamePage
   {
     'wkll9xmz': {
@@ -599,6 +495,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
+    '7y48s077': {
+      'es': 'Mis cócteles',
+      'en': '',
+      'pt': '',
+    },
     'ze0k59ce': {
       'es': 'PREFERENCIAS',
       'en': '',
@@ -606,36 +507,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'npzfedx2': {
       'es': 'Modo oscuro',
-      'en': '',
-      'pt': '',
-    },
-    'rdim01vc': {
-      'es': 'Idioma',
-      'en': '',
-      'pt': '',
-    },
-    'd6n22rr2': {
-      'es': 'Select...',
-      'en': '',
-      'pt': '',
-    },
-    'uawt67l2': {
-      'es': 'Search...',
-      'en': '',
-      'pt': '',
-    },
-    'hxvq7p9i': {
-      'es': 'EN',
-      'en': 'IN',
-      'pt': 'EM',
-    },
-    'w5dzmit6': {
-      'es': 'ES',
-      'en': '',
-      'pt': '',
-    },
-    'betptmqt': {
-      'es': 'PT',
       'en': '',
       'pt': '',
     },
@@ -650,7 +521,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // ListaDeCocteles
+  // pepelu
   {
     'ywzfs4lr': {
       'es': 'Cócteles',
@@ -676,7 +547,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'v3gb0svs': {
-      'es': '50%',
+      'es': '',
       'en': '',
       'pt': '',
     },
@@ -714,20 +585,248 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // sns
+  // CrearCoctel
   {
-    'cudritfl': {
-      'es': '¡Receta completada!',
+    'jnwagdek': {
+      'es': 'Crear Cóctel',
       'en': '',
       'pt': '',
     },
-    'vw8avp77': {
-      'es': 'Has terminado todos los pasos de esta receta.',
+    'd2njfw50': {
+      'es': 'Haz clic para añadir la imagen\nde tu cóctel',
       'en': '',
       'pt': '',
     },
-    '2oh41jtr': {
-      'es': 'Volver al inicio',
+    '2v96sysl': {
+      'es': 'Nombre del Cóctel',
+      'en': '',
+      'pt': '',
+    },
+    'ph7o4t3q': {
+      'es': 'Ej. Mojito Tropical',
+      'en': '',
+      'pt': '',
+    },
+    'y4tlkgpi': {
+      'es': 'Descripción',
+      'en': '',
+      'pt': '',
+    },
+    'v7s0k4ub': {
+      'es': 'Describe tu cóctel...',
+      'en': '',
+      'pt': '',
+    },
+    'vtdhff1u': {
+      'es': 'Dificultad',
+      'en': '',
+      'pt': '',
+    },
+    'lqm55c7e': {
+      'es': 'Selecciona la dificultad',
+      'en': '',
+      'pt': '',
+    },
+    'hvalc9ia': {
+      'es': 'Fácil',
+      'en': '',
+      'pt': '',
+    },
+    '7qarwb99': {
+      'es': 'Medio',
+      'en': '',
+      'pt': '',
+    },
+    'n71veshx': {
+      'es': 'Difícil',
+      'en': '',
+      'pt': '',
+    },
+    'ghmap2vt': {
+      'es': 'Tiempo de preparación',
+      'en': '',
+      'pt': '',
+    },
+    '0trcstv6': {
+      'es': 'Ej. 15 minutos',
+      'en': '',
+      'pt': '',
+    },
+    'sb006xth': {
+      'es': '¿Es alcohólica?',
+      'en': '',
+      'pt': '',
+    },
+    '530b8m96': {
+      'es': 'Indica si contiene alcohol',
+      'en': '',
+      'pt': '',
+    },
+    '9jnpxjk4': {
+      'es': 'Continuar',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // anyadirIngrediente
+  {
+    'h5hgehz1': {
+      'es': 'Ingredientes',
+      'en': '',
+      'pt': '',
+    },
+    'a1l52yub': {
+      'es': 'Ingrediente',
+      'en': '',
+      'pt': '',
+    },
+    'yjq2g26n': {
+      'es': 'Ej: Vodka',
+      'en': '',
+      'pt': '',
+    },
+    'uym94kvm': {
+      'es': 'Cantidad',
+      'en': '',
+      'pt': '',
+    },
+    'e0n5pz3i': {
+      'es': 'Ej: 50',
+      'en': '',
+      'pt': '',
+    },
+    '5dken9nm': {
+      'es': 'Unidad',
+      'en': '',
+      'pt': '',
+    },
+    'am20x5a7': {
+      'es': 'ml / g / oz',
+      'en': '',
+      'pt': '',
+    },
+    '67bklsmn': {
+      'es': 'Añadir ingrediente',
+      'en': '',
+      'pt': '',
+    },
+    'jmksszeh': {
+      'es': 'Lista de ingredientes',
+      'en': '',
+      'pt': '',
+    },
+    '233uck5d': {
+      'es': 'items',
+      'en': '',
+      'pt': '',
+    },
+    'jajcf722': {
+      'es': 'Guardar ingredientes',
+      'en': '',
+      'pt': '',
+    },
+    '9ihhckzv': {
+      'es': 'Continuar',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // anyadirPasos
+  {
+    'md8yjo8k': {
+      'es': 'Añadir Pasos',
+      'en': '',
+      'pt': '',
+    },
+    '7ocny1n2': {
+      'es': 'Descripción del paso',
+      'en': '',
+      'pt': '',
+    },
+    'jvbz19qc': {
+      'es': 'Escribe el paso…',
+      'en': '',
+      'pt': '',
+    },
+    '13xi7lg1': {
+      'es': 'Tiempo de cada paso',
+      'en': '',
+      'pt': '',
+    },
+    'xchucyw2': {
+      'es': 'Escribe el tiempo del paso…',
+      'en': '',
+      'pt': '',
+    },
+    'm3w8ynb4': {
+      'es': 'Añadir paso',
+      'en': '',
+      'pt': '',
+    },
+    'guu1z17b': {
+      'es': 'Pasos añadidos',
+      'en': '',
+      'pt': '',
+    },
+    '3zt68cwu': {
+      'es': 'Paso ',
+      'en': '',
+      'pt': '',
+    },
+    '5njn1qqk': {
+      'es':
+          'Mezclar todos los ingredientes en una coctelera con hielo durante 30 segundos.',
+      'en': '',
+      'pt': '',
+    },
+    'milzhxjz': {
+      'es': 'Guardar pasos',
+      'en': '',
+      'pt': '',
+    },
+    'j1t9rgqe': {
+      'es': 'Finalizar receta',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // listaDeCocteles
+  {
+    'z3jc55n4': {
+      'es': 'Cócteles',
+      'en': '',
+      'pt': '',
+    },
+    'me9c4kxt': {
+      'es': 'Descubre tu próxima bebida favorita',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // ingedientItem
+  {
+    '6ssflcdo': {
+      'es': '1',
+      'en': '',
+      'pt': '',
+    },
+    'c21hcfo4': {
+      'es': 'Ingrediente',
+      'en': '',
+      'pt': '',
+    },
+    'y015bx41': {
+      'es': 'Nombre del ingrediente (ej. Harina)',
+      'en': '',
+      'pt': '',
+    },
+    'imlwtn8r': {
+      'es': 'Cantidad',
+      'en': '',
+      'pt': '',
+    },
+    'd5nqf6az': {
+      'es': 'Unidad (ej. gr, ml)',
       'en': '',
       'pt': '',
     },

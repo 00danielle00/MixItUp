@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
     final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
         ? lastMatch.matches
         : _router.routerDelegate.currentConfiguration;
-    return matchList.uri.toString();
+    return matchList.uri.path;
   }
 
   List<String> getRouteStack() =>
@@ -153,7 +153,7 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'cocktailHome': CocktailHomeWidget(),
-      'ListaDeCocteles': ListaDeCoctelesWidget(),
+      'listaDeCocteles': ListaDeCoctelesWidget(),
       'Perfil': PerfilWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -183,7 +183,7 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.local_bar,
+              Icons.local_bar_sharp,
             ),
             label: '',
             tooltip: '',

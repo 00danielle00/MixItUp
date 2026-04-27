@@ -1,10 +1,10 @@
 import '/components/difficulty/difficulty_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'lista_de_cocteles_widget.dart' show ListaDeCoctelesWidget;
+import 'pepelu_widget.dart' show PepeluWidget;
 import 'package:flutter/material.dart';
 
-class ListaDeCoctelesModel extends FlutterFlowModel<ListaDeCoctelesWidget> {
+class PepeluModel extends FlutterFlowModel<PepeluWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Models for Difficulty dynamic component.

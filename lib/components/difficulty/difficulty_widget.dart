@@ -46,16 +46,16 @@ class _DifficultyWidgetState extends State<DifficultyWidget> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
-          width: 100.0,
+          width: 80.0,
           height: 30.0,
           decoration: BoxDecoration(
             color: () {
               if (widget.difficulty == 'Fácil') {
-                return Color(0xFF83FFC5);
+                return Color(0xFFE8F5E9);
               } else if (widget.difficulty == 'Medio') {
-                return Color(0xFFFCFF93);
+                return Color(0xFFFFF3E0);
               } else {
-                return Color(0xFFFF6D75);
+                return Color(0xFFFCE4EC);
               }
             }(),
             borderRadius: BorderRadius.circular(20.0),
@@ -75,11 +75,11 @@ class _DifficultyWidgetState extends State<DifficultyWidget> {
                     ),
                     color: () {
                       if (widget.difficulty == 'Fácil') {
-                        return Color(0x4D007F11);
+                        return Color(0xFF2E7D32);
                       } else if (widget.difficulty == 'Medio') {
-                        return Color(0xFFCA9E30);
+                        return Color(0xFFE65100);
                       } else {
-                        return Color(0xFF790000);
+                        return Color(0xFFC62828);
                       }
                     }(),
                     fontSize: 15.0,

@@ -137,7 +137,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                     padding: EdgeInsets.all(8.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Colors.green,
+                    color: Color(0xFFFFAD49),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           font: GoogleFonts.interTight(
                             fontWeight: FontWeight.w600,

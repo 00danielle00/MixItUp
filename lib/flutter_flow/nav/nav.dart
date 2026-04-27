@@ -123,11 +123,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: CrearCoctelWidget.routeName,
-          path: CrearCoctelWidget.routePath,
-          builder: (context, params) => CrearCoctelWidget(),
-        ),
-        FFRoute(
           name: NicknamePageWidget.routeName,
           path: NicknamePageWidget.routePath,
           builder: (context, params) => NicknamePageWidget(),
@@ -138,11 +133,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => SettingsWidget(),
         ),
         FFRoute(
-          name: ListaDeCoctelesWidget.routeName,
-          path: ListaDeCoctelesWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'ListaDeCocteles')
-              : ListaDeCoctelesWidget(),
+          name: PepeluWidget.routeName,
+          path: PepeluWidget.routePath,
+          builder: (context, params) => PepeluWidget(),
         ),
         FFRoute(
           name: PasoScreenWidget.routeName,
@@ -168,9 +161,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => SuccessPageWidget(),
         ),
         FFRoute(
-          name: SnsWidget.routeName,
-          path: SnsWidget.routePath,
-          builder: (context, params) => SnsWidget(),
+          name: CrearCoctelWidget.routeName,
+          path: CrearCoctelWidget.routePath,
+          builder: (context, params) => CrearCoctelWidget(),
+        ),
+        FFRoute(
+          name: AnyadirIngredienteWidget.routeName,
+          path: AnyadirIngredienteWidget.routePath,
+          builder: (context, params) => AnyadirIngredienteWidget(
+            idReceta: params.getParam(
+              'idReceta',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: AnyadirPasosWidget.routeName,
+          path: AnyadirPasosWidget.routePath,
+          builder: (context, params) => AnyadirPasosWidget(
+            idReceta: params.getParam(
+              'idReceta',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ListaDeCoctelesWidget.routeName,
+          path: ListaDeCoctelesWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'listaDeCocteles')
+              : ListaDeCoctelesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

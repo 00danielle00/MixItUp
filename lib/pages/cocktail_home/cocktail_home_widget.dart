@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -45,6 +46,18 @@ class _CocktailHomeWidgetState extends State<CocktailHomeWidget> {
       safeSetState(() {});
       FFAppState().recetaDelDia =
           (_model.recetasList!.elementAtOrNull(FFAppState().indexDelDia))!;
+      safeSetState(() {});
+      _model.favorites = await FavoritosTable().queryRows(
+        queryFn: (q) => q.eqOrNull(
+          'id_user',
+          currentUserUid,
+        ),
+      );
+      FFAppState().favoritos = _model.favorites!
+          .map((e) => e.idReceta)
+          .toList()
+          .toList()
+          .cast<int>();
       safeSetState(() {});
     });
 

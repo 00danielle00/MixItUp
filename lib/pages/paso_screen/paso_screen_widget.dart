@@ -316,41 +316,16 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                                 ),
                               ),
                               child: LinearPercentIndicator(
-                                percent: 0.5,
-                                width: 120.0,
-                                lineHeight: 12.0,
+                                percent: functions.calcularProgreso(
+                                    widget.pasosNumActual!,
+                                    widget.totalPasos!),
+                                lineHeight: 15.0,
                                 animation: true,
                                 animateFromLastPercent: true,
                                 progressColor:
                                     FlutterFlowTheme.of(context).primary,
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).accent4,
-                                center: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'v3gb0svs' /* 50% */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        font: GoogleFonts.interTight(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontStyle,
-                                      ),
-                                ),
                                 padding: EdgeInsets.zero,
                               ),
                             ),
@@ -446,153 +421,38 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                         ),
                       ].divide(SizedBox(height: 20.0)),
                     ),
-                    Row(
+                    Column(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        if (widget.pasosNumActual! > 1)
-                          Expanded(
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed(
-                                  PasoScreenWidget.routeName,
-                                  queryParameters: {
-                                    'recetaId': serializeParam(
-                                      widget.recetaId,
-                                      ParamType.int,
-                                    ),
-                                    'pasosNumActual': serializeParam(
-                                      functions
-                                          .pasoAnt(widget.pasosNumActual!),
-                                      ParamType.int,
-                                    ),
-                                    'totalPasos': serializeParam(
-                                      widget.totalPasos,
-                                      ParamType.int,
-                                    ),
-                                  }.withoutNulls,
-                                  extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 200),
-                                    ),
-                                  },
-                                );
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'k1dtlsfr' /* Anterior */,
-                              ),
-                              options: FFButtonOptions(
-                                height: 52.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      font: GoogleFonts.interTight(
-                                        fontWeight: FontWeight.w600,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontStyle,
-                                      ),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
-                                elevation: 0.0,
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  width: 1.5,
-                                ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                            ),
-                          ),
-                        Expanded(
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              context.pushNamed(
-                                PasoScreenWidget.routeName,
-                                queryParameters: {
-                                  'recetaId': serializeParam(
-                                    widget.recetaId,
-                                    ParamType.int,
-                                  ),
-                                  'pasosNumActual': serializeParam(
-                                    functions.siguientePaso(
-                                        widget.pasosNumActual!,
-                                        widget.totalPasos!),
-                                    ParamType.int,
-                                  ),
-                                  'totalPasos': serializeParam(
-                                    widget.totalPasos,
-                                    ParamType.int,
-                                  ),
-                                }.withoutNulls,
-                                extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 200),
-                                  ),
-                                },
-                              );
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'vjj33lif' /* Siguiente */,
-                            ),
-                            options: FFButtonOptions(
-                              height: 52.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    font: GoogleFonts.interTight(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 0.0,
-                              ),
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                          ),
-                        ),
-                        Expanded(
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              if (widget.pasosNumActual == widget.totalPasos)
+                              if (widget.pasosNumActual! > 1)
                                 Expanded(
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       context.pushNamed(
-                                        SuccessPageWidget.routeName,
+                                        PasoScreenWidget.routeName,
+                                        queryParameters: {
+                                          'recetaId': serializeParam(
+                                            widget.recetaId,
+                                            ParamType.int,
+                                          ),
+                                          'pasosNumActual': serializeParam(
+                                            functions.pasoAnt(
+                                                widget.pasosNumActual!),
+                                            ParamType.int,
+                                          ),
+                                          'totalPasos': serializeParam(
+                                            widget.totalPasos,
+                                            ParamType.int,
+                                          ),
+                                        }.withoutNulls,
                                         extra: <String, dynamic>{
                                           '__transition_info__': TransitionInfo(
                                             hasTransition: true,
@@ -605,31 +465,159 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                                       );
                                     },
                                     text: FFLocalizations.of(context).getText(
-                                      'ie61p4xn' /* Finalizar */,
+                                      'k1dtlsfr' /* Anterior */,
                                     ),
                                     options: FFButtonOptions(
                                       height: 52.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
+                                          24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: Colors.white,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
                                             font: GoogleFonts.interTight(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontWeight,
+                                              fontWeight: FontWeight.w600,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .fontStyle,
                                             ),
-                                            color: Color(0xFFEF6C39),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
                                             letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                      elevation: 0.0,
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        width: 1.5,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                  ),
+                                ),
+                            ].divide(SizedBox(width: 0.0)),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 5.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      PasoScreenWidget.routeName,
+                                      queryParameters: {
+                                        'recetaId': serializeParam(
+                                          widget.recetaId,
+                                          ParamType.int,
+                                        ),
+                                        'pasosNumActual': serializeParam(
+                                          functions.siguientePaso(
+                                              widget.pasosNumActual!,
+                                              widget.totalPasos!),
+                                          ParamType.int,
+                                        ),
+                                        'totalPasos': serializeParam(
+                                          widget.totalPasos,
+                                          ParamType.int,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        '__transition_info__': TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 200),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'vjj33lif' /* Siguiente */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    height: 52.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          font: GoogleFonts.interTight(
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 0.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            if (widget.pasosNumActual == widget.totalPasos)
+                              Expanded(
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      SuccessPageWidget.routeName,
+                                      extra: <String, dynamic>{
+                                        '__transition_info__': TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 200),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'ie61p4xn' /* Finalizar */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    height: 52.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: Colors.white,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          font: GoogleFonts.interTight(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -639,18 +627,28 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                                                     .titleSmall
                                                     .fontStyle,
                                           ),
-                                      elevation: 0.0,
-                                      borderSide: BorderSide(
-                                        color: Color(0xFFEF6C39),
-                                      ),
-                                      borderRadius: BorderRadius.circular(15.0),
+                                          color: Color(0xFFEF6C39),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: BorderSide(
+                                      color: Color(0xFFEF6C39),
                                     ),
+                                    borderRadius: BorderRadius.circular(15.0),
                                   ),
                                 ),
-                            ].divide(SizedBox(width: 12.0)),
-                          ),
+                              ),
+                          ],
                         ),
-                      ].divide(SizedBox(width: 12.0)),
+                      ],
                     ),
                   ],
                 ),
