@@ -96,9 +96,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: CocktailHomeWidget.routeName,
           path: CocktailHomeWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'cocktailHome')
-              : CocktailHomeWidget(),
+          builder: (context, params) => CocktailHomeWidget(),
         ),
         FFRoute(
           name: SIGNInWidget.routeName,
@@ -131,11 +129,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: SettingsWidget.routeName,
           path: SettingsWidget.routePath,
           builder: (context, params) => SettingsWidget(),
-        ),
-        FFRoute(
-          name: PepeluWidget.routeName,
-          path: PepeluWidget.routePath,
-          builder: (context, params) => PepeluWidget(),
         ),
         FFRoute(
           name: PasoScreenWidget.routeName,
@@ -191,6 +184,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'listaDeCocteles')
               : ListaDeCoctelesWidget(),
+        ),
+        FFRoute(
+          name: HommWidget.routeName,
+          path: HommWidget.routePath,
+          builder: (context, params) => HommWidget(),
+        ),
+        FFRoute(
+          name: HomeWidget.routeName,
+          path: HomeWidget.routePath,
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
+        ),
+        FFRoute(
+          name: FffWidget.routeName,
+          path: FffWidget.routePath,
+          builder: (context, params) => FffWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

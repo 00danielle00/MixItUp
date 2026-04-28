@@ -351,43 +351,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    'tlxklx1d': {
-      'es': '127',
-      'en': '',
-      'pt': '',
-    },
-    'w6i4xon3': {
-      'es': 'RECETAS',
-      'en': '',
-      'pt': '',
-    },
-    'jkzdfjkm': {
-      'es': '2.4K',
-      'en': '',
-      'pt': '',
-    },
-    'kntax4cl': {
-      'es': 'SEGUIDORES',
-      'en': '',
-      'pt': '',
-    },
-    'hngmn2tp': {
-      'es': '89',
-      'en': '',
-      'pt': '',
-    },
-    'yt34datf': {
-      'es': 'SIGUIENDO',
-      'en': '',
-      'pt': '',
-    },
     'lutda63r': {
       'es': 'Editar Perfil',
-      'en': '',
-      'pt': '',
-    },
-    'lotahsgl': {
-      'es': 'Compartir',
       'en': '',
       'pt': '',
     },
@@ -521,19 +486,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // pepelu
-  {
-    'ywzfs4lr': {
-      'es': 'Cócteles',
-      'en': '',
-      'pt': '',
-    },
-    'sghxjrax': {
-      'es': 'Descubre nuestra selección de cócteles artesanales',
-      'en': '',
-      'pt': '',
-    },
-  },
   // PasoScreen
   {
     'muozfel0': {
@@ -587,7 +539,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // CrearCoctel
   {
-    'jnwagdek': {
+    'uqkjr60t': {
       'es': 'Crear Cóctel',
       'en': '',
       'pt': '',
@@ -648,7 +600,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     '0trcstv6': {
-      'es': 'Ej. 15 minutos',
+      'es': 'Ej. 15 ',
       'en': '',
       'pt': '',
     },
@@ -701,7 +653,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'am20x5a7': {
-      'es': 'ml / g / oz',
+      'es': 'ml / g / oz / cucharadas / al gusto',
       'en': '',
       'pt': '',
     },
@@ -773,12 +725,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    '5njn1qqk': {
-      'es':
-          'Mezclar todos los ingredientes en una coctelera con hielo durante 30 segundos.',
-      'en': '',
-      'pt': '',
-    },
     'milzhxjz': {
       'es': 'Guardar pasos',
       'en': '',
@@ -803,30 +749,381 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // ingedientItem
+  // homm
   {
-    '6ssflcdo': {
-      'es': '1',
+    'su09qpo1': {
+      'es': 'Discover\nYour Perfect Cocktail',
       'en': '',
       'pt': '',
     },
-    'c21hcfo4': {
-      'es': 'Ingrediente',
+    '6440ewh0': {
+      'es': 'Search cocktails, ingredients...',
       'en': '',
       'pt': '',
     },
-    'y015bx41': {
-      'es': 'Nombre del ingrediente (ej. Harina)',
+    '8fq3wwe3': {
+      'es': 'Categories',
       'en': '',
       'pt': '',
     },
-    'imlwtn8r': {
-      'es': 'Cantidad',
+    'ax8g90c5': {
+      'es': 'Explore by style',
       'en': '',
       'pt': '',
     },
-    'd5nqf6az': {
-      'es': 'Unidad (ej. gr, ml)',
+    'fcjoh3jz': {
+      'es': 'Tropical',
+      'en': '',
+      'pt': '',
+    },
+    'rzlslmdg': {
+      'es': 'Classic',
+      'en': '',
+      'pt': '',
+    },
+    'olehnvtr': {
+      'es': 'Sour',
+      'en': '',
+      'pt': '',
+    },
+    '1237yy8y': {
+      'es': 'Mocktail',
+      'en': '',
+      'pt': '',
+    },
+    'y96af45y': {
+      'es': 'Sparkling',
+      'en': '',
+      'pt': '',
+    },
+    'm4qsat4b': {
+      'es': 'Featured Cocktails',
+      'en': '',
+      'pt': '',
+    },
+    'vjqxnm5u': {
+      'es': 'See all',
+      'en': '',
+      'pt': '',
+    },
+    'akm8xrrk': {
+      'es': 'Handpicked for tonight',
+      'en': '',
+      'pt': '',
+    },
+    'zivjgcpt': {
+      'es': 'CLASSIC',
+      'en': '',
+      'pt': '',
+    },
+    '4g0krje4': {
+      'es': 'Margarita',
+      'en': '',
+      'pt': '',
+    },
+    'mlctyrrn': {
+      'es': '4.8',
+      'en': '',
+      'pt': '',
+    },
+    'gjl59kh3': {
+      'es': '· 12 min',
+      'en': '',
+      'pt': '',
+    },
+    'vv6jrt68': {
+      'es': 'TROPICAL',
+      'en': '',
+      'pt': '',
+    },
+    'si5tano3': {
+      'es': 'Mojito',
+      'en': '',
+      'pt': '',
+    },
+    'zmd5uyvn': {
+      'es': '4.9',
+      'en': '',
+      'pt': '',
+    },
+    'rhru6hyh': {
+      'es': '· 8 min',
+      'en': '',
+      'pt': '',
+    },
+    '51kahqwj': {
+      'es': 'CLASSIC',
+      'en': '',
+      'pt': '',
+    },
+    'nokel5f7': {
+      'es': 'Negroni',
+      'en': '',
+      'pt': '',
+    },
+    'vjhra1d2': {
+      'es': '4.7',
+      'en': '',
+      'pt': '',
+    },
+    'ew4lnn23': {
+      'es': '· 5 min',
+      'en': '',
+      'pt': '',
+    },
+    '8btk7rt4': {
+      'es': 'Popular This Week',
+      'en': '',
+      'pt': '',
+    },
+    '53rzs2rz': {
+      'es': 'See all',
+      'en': '',
+      'pt': '',
+    },
+    '8h1gkvnu': {
+      'es': 'Trending among cocktail lovers',
+      'en': '',
+      'pt': '',
+    },
+    'q8cihdne': {
+      'es': 'WHISKEY',
+      'en': '',
+      'pt': '',
+    },
+    'fji3s3vd': {
+      'es': 'Old Fashioned',
+      'en': '',
+      'pt': '',
+    },
+    'ovfk60ts': {
+      'es': '4.9',
+      'en': '',
+      'pt': '',
+    },
+    'o9wldymv': {
+      'es': '· 6 min',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // Home
+  {
+    'gvdh9a74': {
+      'es': 'Cóctel del día',
+      'en': '',
+      'pt': '',
+    },
+    'tm8rzhg9': {
+      'es': 'Categorías',
+      'en': '',
+      'pt': '',
+    },
+    'mbpwegsj': {
+      'es': 'Clásicos',
+      'en': '',
+      'pt': '',
+    },
+    'omblp37i': {
+      'es': 'Tropicales',
+      'en': '',
+      'pt': '',
+    },
+    'vliafja7': {
+      'es': 'Dulces',
+      'en': '',
+      'pt': '',
+    },
+    'dod35aog': {
+      'es': 'Ácidos',
+      'en': '',
+      'pt': '',
+    },
+    'aoawgcg1': {
+      'es': 'Sin alcohol',
+      'en': '',
+      'pt': '',
+    },
+    'u5tx0xzo': {
+      'es': 'Fuertes',
+      'en': '',
+      'pt': '',
+    },
+    'ovg4b9oa': {
+      'es': 'Explora nuestras recetas',
+      'en': '',
+      'pt': '',
+    },
+    'e5h1d7i3': {
+      'es': 'min',
+      'en': '',
+      'pt': '',
+    },
+    'e9obd0xp': {
+      'es': 'Recientes',
+      'en': '',
+      'pt': '',
+    },
+    'pg481wri': {
+      'es': 'Ver todos',
+      'en': '',
+      'pt': '',
+    },
+    '98y4bblb': {
+      'es': 'Aperol Spritz',
+      'en': '',
+      'pt': '',
+    },
+    '3mnzwqd4': {
+      'es': 'Aperol · Prosecco · Soda',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // fff
+  {
+    'ap3afqfs': {
+      'es': 'Buenas noches,',
+      'en': '',
+      'pt': '',
+    },
+    'c67wpra7': {
+      'es': 'Mixólogo',
+      'en': '',
+      'pt': '',
+    },
+    'wwsml55c': {
+      'es': 'Cóctel del día',
+      'en': '',
+      'pt': '',
+    },
+    'hacgkymx': {
+      'es': 'Negroni Sbagliato',
+      'en': '',
+      'pt': '',
+    },
+    'mxy3fvrx': {
+      'es': 'Prosecco · Campari · Vermut rosso',
+      'en': '',
+      'pt': '',
+    },
+    'fxox5q81': {
+      'es': '4.8',
+      'en': '',
+      'pt': '',
+    },
+    'm9xg4myg': {
+      'es': '5 min',
+      'en': '',
+      'pt': '',
+    },
+    'ozjy28cl': {
+      'es': 'Bajo en alcohol',
+      'en': '',
+      'pt': '',
+    },
+    '8y646fgn': {
+      'es': 'Categorías',
+      'en': '',
+      'pt': '',
+    },
+    'ofpvce1g': {
+      'es': 'Clásicos',
+      'en': '',
+      'pt': '',
+    },
+    'mtm5riy4': {
+      'es': 'Frescos',
+      'en': '',
+      'pt': '',
+    },
+    'bkleyk84': {
+      'es': 'Tropicales',
+      'en': '',
+      'pt': '',
+    },
+    '8942jsyy': {
+      'es': 'Nocturnos',
+      'en': '',
+      'pt': '',
+    },
+    'nu14gyjw': {
+      'es': 'Sin alcohol',
+      'en': '',
+      'pt': '',
+    },
+    '3dflfwy1': {
+      'es': 'Más populares',
+      'en': '',
+      'pt': '',
+    },
+    'zoky75nj': {
+      'es': 'Ver todos',
+      'en': '',
+      'pt': '',
+    },
+    'o28ah657': {
+      'es': '4.9',
+      'en': '',
+      'pt': '',
+    },
+    'bovjrwkn': {
+      'es': 'Mojito',
+      'en': '',
+      'pt': '',
+    },
+    'dnxeh1tx': {
+      'es': 'Ron · Menta · Lima · Azúcar',
+      'en': '',
+      'pt': '',
+    },
+    '1pthhjb4': {
+      'es': '4.7',
+      'en': '',
+      'pt': '',
+    },
+    'v9egcgc2': {
+      'es': '6 min',
+      'en': '',
+      'pt': '',
+    },
+    'oknzajv0': {
+      'es': 'Old Fashioned',
+      'en': '',
+      'pt': '',
+    },
+    'xs7cq930': {
+      'es': 'Bourbon · Angostura · Azúcar',
+      'en': '',
+      'pt': '',
+    },
+    '64s61uw2': {
+      'es': '4.8',
+      'en': '',
+      'pt': '',
+    },
+    '9ltj8eci': {
+      'es': '5 min',
+      'en': '',
+      'pt': '',
+    },
+    '9257pxub': {
+      'es': 'Recientes',
+      'en': '',
+      'pt': '',
+    },
+    'g6lrft7b': {
+      'es': 'Ver todos',
+      'en': '',
+      'pt': '',
+    },
+    '8y2v9q48': {
+      'es': 'Aperol Spritz',
+      'en': '',
+      'pt': '',
+    },
+    'dgrhfeyr': {
+      'es': 'Aperol · Prosecco · Soda',
       'en': '',
       'pt': '',
     },

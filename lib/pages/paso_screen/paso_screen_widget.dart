@@ -1,11 +1,9 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -64,8 +62,6 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
         ),
       );
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -93,7 +89,7 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: Color(0xFFF8F5F0),
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -120,65 +116,7 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
           },
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-              automaticallyImplyLeading: true,
-              title: FutureBuilder<List<RecetasRow>>(
-                future: RecetasTable().querySingleRow(
-                  queryFn: (q) => q.eqOrNull(
-                    'receta_id',
-                    widget.recetaId,
-                  ),
-                ),
-                builder: (context, snapshot) {
-                  // Customize what your widget looks like when it's loading.
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: SizedBox(
-                        width: 50.0,
-                        height: 50.0,
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            FlutterFlowTheme.of(context).primary,
-                          ),
-                        ),
-                      ),
-                    );
-                  }
-                  List<RecetasRow> textRecetasRowList = snapshot.data!;
-
-                  final textRecetasRow = textRecetasRowList.isNotEmpty
-                      ? textRecetasRowList.first
-                      : null;
-
-                  return Text(
-                    valueOrDefault<String>(
-                      textRecetasRow?.nombre,
-                      'Nombre',
-                    ),
-                    style: FlutterFlowTheme.of(context).titleMedium.override(
-                          font: GoogleFonts.interTight(
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .fontStyle,
-                          ),
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          fontSize: 17.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .titleMedium
-                              .fontStyle,
-                        ),
-                  );
-                },
-              ),
-              actions: [],
-              centerTitle: true,
-              elevation: 0.0,
-            ),
+            backgroundColor: Color(0xFFF8F5F0),
             body: SafeArea(
               top: true,
               child: Padding(
@@ -191,6 +129,70 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FutureBuilder<List<RecetasRow>>(
+                              future: RecetasTable().querySingleRow(
+                                queryFn: (q) => q.eqOrNull(
+                                  'receta_id',
+                                  widget.recetaId,
+                                ),
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<RecetasRow> textRecetasRowList =
+                                    snapshot.data!;
+
+                                final textRecetasRow =
+                                    textRecetasRowList.isNotEmpty
+                                        ? textRecetasRowList.first
+                                        : null;
+
+                                return Text(
+                                  valueOrDefault<String>(
+                                    textRecetasRow?.nombre,
+                                    'Nombre',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        font: GoogleFonts.interTight(
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 23.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
+                                      ),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -311,8 +313,7 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                                     .secondaryBackground,
                                 borderRadius: BorderRadius.circular(100.0),
                                 border: Border.all(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
+                                  color: Color(0xFFD4D4D4),
                                 ),
                               ),
                               child: LinearPercentIndicator(
@@ -324,98 +325,45 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                                 animateFromLastPercent: true,
                                 progressColor:
                                     FlutterFlowTheme.of(context).primary,
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).accent4,
+                                backgroundColor: Color(0xFFD3D3D3),
                                 padding: EdgeInsets.zero,
                               ),
                             ),
                           ].divide(SizedBox(height: 8.0)),
                         ),
-                        Divider(
-                          height: 1.0,
-                          thickness: 1.0,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              valueOrDefault<String>(
-                                pasoScreenPasosRow?.descripcion,
-                                'descripción',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyLarge
-                                  .override(
-                                    font: GoogleFonts.inter(
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 0.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  pasoScreenPasosRow?.descripcion,
+                                  'descripción',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FontWeight.normal,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 20.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontStyle,
+                                      lineHeight: 1.6,
                                     ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 20.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.normal,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .fontStyle,
-                                    lineHeight: 1.6,
-                                  ),
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Icon(
-                                  Icons.timer_outlined,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 30.0,
-                                ),
-                                FlutterFlowTimer(
-                                  initialTime: _model.timerInitialTimeMs,
-                                  getDisplayTime: (value) =>
-                                      StopWatchTimer.getDisplayTime(
-                                    value,
-                                    hours: false,
-                                    milliSecond: false,
-                                  ),
-                                  controller: _model.timerController,
-                                  updateStateInterval:
-                                      Duration(milliseconds: 1000),
-                                  onChanged:
-                                      (value, displayTime, shouldUpdate) {
-                                    _model.timerMilliseconds = value;
-                                    _model.timerValue = displayTime;
-                                    if (shouldUpdate) safeSetState(() {});
-                                  },
-                                  textAlign: TextAlign.start,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        font: GoogleFonts.interTight(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ].divide(SizedBox(width: 6.0)),
+                                overflow: TextOverflow.clip,
+                              ),
                             ),
                           ].divide(SizedBox(height: 16.0)),
                         ),

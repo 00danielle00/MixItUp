@@ -60,7 +60,7 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: Color(0xFFF8F5F0),
             body: Center(
               child: SizedBox(
                 width: 40.0,
@@ -87,7 +87,7 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
           },
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: Color(0xFFF8F5F0),
             body: SafeArea(
               top: true,
               child: Align(
@@ -119,7 +119,7 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 10.0, 10.0, 0.0),
+                                    15.0, 20.0, 15.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -130,11 +130,9 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           FlutterFlowIconButton(
-                                            borderRadius: 20.0,
+                                            borderRadius: 10.0,
                                             buttonSize: 40.0,
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryText,
+                                            fillColor: Colors.black,
                                             icon: Icon(
                                               Icons.arrow_back,
                                               color:
@@ -156,11 +154,11 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
                                             CrossAxisAlignment.end,
                                         children: [
                                           FlutterFlowIconButton(
-                                            borderRadius: 20.0,
+                                            borderRadius: 10.0,
                                             buttonSize: 40.0,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .secondaryText,
+                                                    .primaryText,
                                             icon: Icon(
                                               Icons.favorite_sharp,
                                               color: FFAppState()
@@ -709,7 +707,8 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
                                         16.0, 0.0, 16.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFF7A69FF),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(

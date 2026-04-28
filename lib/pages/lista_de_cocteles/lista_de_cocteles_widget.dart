@@ -85,7 +85,8 @@ class _ListaDeCoctelesWidgetState extends State<ListaDeCoctelesWidget> {
                           color: Colors.transparent,
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(16.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 16.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,

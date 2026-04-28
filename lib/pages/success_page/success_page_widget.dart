@@ -56,7 +56,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFFF8F4F0),
         body: SafeArea(
           top: true,
           child: Padding(
@@ -137,7 +137,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                     padding: EdgeInsets.all(8.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Color(0xFFFFAD49),
+                    color: FlutterFlowTheme.of(context).primaryText,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           font: GoogleFonts.interTight(
                             fontWeight: FontWeight.w600,
@@ -145,7 +145,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                 .titleSmall
                                 .fontStyle,
                           ),
-                          color: Colors.white,
+                          color: FlutterFlowTheme.of(context).primaryBackground,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                           fontStyle:

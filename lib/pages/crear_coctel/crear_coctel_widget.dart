@@ -73,43 +73,7 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 22.0,
-            borderWidth: 0.0,
-            buttonSize: 44.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
-              size: 24.0,
-            ),
-            onPressed: () {
-              print('IconButton pressed ...');
-            },
-          ),
-          title: Text(
-            FFLocalizations.of(context).getText(
-              'jnwagdek' /* Crear Cóctel */,
-            ),
-            style: FlutterFlowTheme.of(context).titleLarge.override(
-                  font: GoogleFonts.interTight(
-                    fontWeight: FontWeight.bold,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).titleLarge.fontStyle,
-                  ),
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
-                ),
-          ),
-          actions: [],
-          centerTitle: false,
-          elevation: 0.0,
-        ),
+        backgroundColor: Color(0xFFF8F5F0),
         body: SafeArea(
           top: true,
           child: Padding(
@@ -118,6 +82,83 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        FlutterFlowIconButton(
+                          borderColor: FlutterFlowTheme.of(context).primaryText,
+                          borderRadius: 8.0,
+                          buttonSize: 35.0,
+                          fillColor: FlutterFlowTheme.of(context).primaryText,
+                          icon: Icon(
+                            Icons.arrow_back,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            size: 20.0,
+                          ),
+                          onPressed: () async {
+                            var confirmDialogResponse = await showDialog<bool>(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Crear receta'),
+                                      content: Text(
+                                          '¿Estás seguro que quieres salir de esta pantalla?'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () => Navigator.pop(
+                                              alertDialogContext, false),
+                                          child: Text('Cancelar'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () => Navigator.pop(
+                                              alertDialogContext, true),
+                                          child: Text('Continuar'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                ) ??
+                                false;
+                            if (confirmDialogResponse) {
+                              context
+                                  .pushNamed(ListaDeCoctelesWidget.routeName);
+                            } else {
+                              context.pushNamed(CrearCoctelWidget.routeName);
+                            }
+                          },
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'uqkjr60t' /* Crear Cóctel */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  font: GoogleFonts.interTight(
+                                    fontWeight: FontWeight.w600,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                                  fontSize: 22.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w600,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -580,7 +621,7 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                         borderWidth: 1.0,
                         borderRadius: 12.0,
                         margin:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         hidesUnderline: true,
                         isOverButton: false,
                         isSearchable: false,
@@ -620,7 +661,7 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: FFLocalizations.of(context).getText(
-                              '0trcstv6' /* Ej. 15 minutos */,
+                              '0trcstv6' /* Ej. 15  */,
                             ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -700,77 +741,62 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
+                          keyboardType: TextInputType.number,
                           validator: _model.textController3Validator
                               .asValidator(context),
                         ),
                       ),
                     ].divide(SizedBox(height: 8.0)),
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: 60.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(12.0),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 1.0,
-                        ),
+                  Container(
+                    width: double.infinity,
+                    height: 60.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: BorderRadius.circular(12.0),
+                      border: Border.all(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 1.0,
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'sb006xth' /* ¿Es alcohólica? */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'sb006xth' /* ¿Es alcohólica? */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FontWeight.w600,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .fontStyle,
                                       ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                              ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  '530b8m96' /* Indica si contiene alcohol */,
                                 ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '530b8m96' /* Indica si contiene alcohol */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodySmall
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        letterSpacing: 0.0,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodySmall
+                                    .override(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .fontWeight,
@@ -778,25 +804,34 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                             .bodySmall
                                             .fontStyle,
                                       ),
-                                ),
-                              ],
-                            ),
-                            Switch(
-                              value: _model.switchValue!,
-                              onChanged: (newValue) async {
-                                safeSetState(
-                                    () => _model.switchValue = newValue);
-                              },
-                              activeThumbColor: FlutterFlowTheme.of(context).primary,
-                              activeTrackColor:
-                                  FlutterFlowTheme.of(context).accent1,
-                              inactiveTrackColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              inactiveThumbColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                            ),
-                          ],
-                        ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ],
+                          ),
+                          Switch(
+                            value: _model.switchValue!,
+                            onChanged: (newValue) async {
+                              safeSetState(
+                                  () => _model.switchValue = newValue);
+                            },
+                            activeThumbColor: FlutterFlowTheme.of(context).primary,
+                            activeTrackColor:
+                                FlutterFlowTheme.of(context).accent1,
+                            inactiveTrackColor:
+                                FlutterFlowTheme.of(context).alternate,
+                            inactiveThumbColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -900,7 +935,7 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: FlutterFlowTheme.of(context).primaryText,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 font: GoogleFonts.interTight(

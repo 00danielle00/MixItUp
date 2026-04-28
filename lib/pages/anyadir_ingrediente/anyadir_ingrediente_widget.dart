@@ -1,5 +1,6 @@
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -75,32 +76,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFF5F5F5),
-        appBar: AppBar(
-          backgroundColor: Color(0xFFF5F5F5),
-          automaticallyImplyLeading: false,
-          title: Text(
-            FFLocalizations.of(context).getText(
-              'h5hgehz1' /* Ingredientes */,
-            ),
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  font: GoogleFonts.interTight(
-                    fontWeight: FontWeight.bold,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).headlineMedium.fontStyle,
-                  ),
-                  color: Color(0xFF1A1A2E),
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
-                  fontStyle:
-                      FlutterFlowTheme.of(context).headlineMedium.fontStyle,
-                ),
-          ),
-          actions: [],
-          centerTitle: false,
-          elevation: 0.0,
-        ),
+        backgroundColor: Color(0xFFF8F4F0),
         body: SafeArea(
           top: true,
           child: Padding(
@@ -114,6 +90,58 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 20.0, 0.0, 20.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 10.0,
+                              borderWidth: 1.0,
+                              buttonSize: 35.0,
+                              fillColor:
+                                  FlutterFlowTheme.of(context).primaryText,
+                              icon: Icon(
+                                Icons.arrow_back_rounded,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                size: 20.0,
+                              ),
+                              onPressed: () async {
+                                context.safePop();
+                              },
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'h5hgehz1' /* Ingredientes */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .override(
+                                      font: GoogleFonts.interTight(
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineMedium
+                                            .fontStyle,
+                                      ),
+                                      color: Color(0xFF1A1A2E),
+                                      fontSize: 22.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       Text(
                         FFLocalizations.of(context).getText(
                           'a1l52yub' /* Ingrediente */,
@@ -380,7 +408,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           hintText: FFLocalizations.of(context).getText(
-                            'am20x5a7' /* ml / g / oz */,
+                            'am20x5a7' /* ml / g / oz / cucharadas / al ... */,
                           ),
                           hintStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -497,22 +525,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                         width: double.infinity,
                         height: 52.0,
                         decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 12.0,
-                              color: Color(0x406C63FF),
-                              offset: Offset(
-                                0.0,
-                                6.0,
-                              ),
-                            )
-                          ],
-                          gradient: LinearGradient(
-                            colors: [Color(0xFF6C63FF), Color(0xFF9B59B6)],
-                            stops: [0.0, 1.0],
-                            begin: AlignmentDirectional(1.0, -1.0),
-                            end: AlignmentDirectional(-1.0, 1.0),
-                          ),
+                          color: FlutterFlowTheme.of(context).primaryText,
                           borderRadius: BorderRadius.circular(14.0),
                         ),
                         child: Row(
@@ -586,7 +599,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                         Container(
                           height: 26.0,
                           decoration: BoxDecoration(
-                            color: Color(0xFF6C63FF),
+                            color: FlutterFlowTheme.of(context).primaryText,
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           child: Row(

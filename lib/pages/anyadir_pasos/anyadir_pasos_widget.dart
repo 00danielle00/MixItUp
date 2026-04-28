@@ -72,46 +72,7 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 22.0,
-            borderWidth: 1.0,
-            buttonSize: 44.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
-              size: 24.0,
-            ),
-            onPressed: () {
-              print('IconButton pressed ...');
-            },
-          ),
-          title: Text(
-            FFLocalizations.of(context).getText(
-              'md8yjo8k' /* Añadir Pasos */,
-            ),
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  font: GoogleFonts.interTight(
-                    fontWeight: FontWeight.bold,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).headlineMedium.fontStyle,
-                  ),
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
-                  fontStyle:
-                      FlutterFlowTheme.of(context).headlineMedium.fontStyle,
-                ),
-          ),
-          actions: [],
-          centerTitle: false,
-          elevation: 0.0,
-        ),
+        backgroundColor: Color(0xFFF8F4F0),
         body: SafeArea(
           top: true,
           child: Column(
@@ -125,6 +86,55 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 10.0,
+                              borderWidth: 1.0,
+                              buttonSize: 35.0,
+                              fillColor:
+                                  FlutterFlowTheme.of(context).primaryText,
+                              icon: Icon(
+                                Icons.arrow_back_rounded,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                size: 20.0,
+                              ),
+                              onPressed: () async {
+                                context.safePop();
+                              },
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'md8yjo8k' /* Añadir Pasos */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .override(
+                                      font: GoogleFonts.interTight(
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineMedium
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 22.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -501,7 +511,7 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primary,
+                                                      .primaryText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           16.0),
@@ -587,7 +597,7 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                                                                   ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primary,
+                                                                      .primaryText,
                                                                   fontSize:
                                                                       15.0,
                                                                   letterSpacing:
@@ -623,7 +633,7 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                                                                   ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primary,
+                                                                      .primaryText,
                                                                   fontSize:
                                                                       15.0,
                                                                   letterSpacing:
@@ -640,11 +650,7 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                                                         ],
                                                       ),
                                                       Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '5njn1qqk' /* Mezclar todos los ingredientes... */,
-                                                        ),
+                                                        pasosItem.descripcion,
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyMedium
@@ -675,6 +681,8 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                                                                       .fontStyle,
                                                               lineHeight: 1.5,
                                                             ),
+                                                        overflow:
+                                                            TextOverflow.clip,
                                                       ),
                                                     ].divide(
                                                         SizedBox(height: 4.0)),
@@ -685,7 +693,7 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                                                 borderColor:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
-                                                borderRadius: 18.0,
+                                                borderRadius: 10.0,
                                                 borderWidth: 1.0,
                                                 buttonSize: 36.0,
                                                 icon: Icon(
@@ -720,62 +728,43 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 32.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primaryBackground,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 12.0,
-                        color: Color(0x1A000000),
-                        offset: Offset(
-                          0.0,
-                          -2.0,
-                        ),
-                      )
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            for (int loop1Index = 0;
-                                loop1Index < _model.listaDePasos.length;
-                                loop1Index++) {
-                              final currentLoop1Item =
-                                  _model.listaDePasos[loop1Index];
-                              await PasosTable().insert({
-                                'receta_id': widget.idReceta,
-                                'paso_num':
-                                    functions.calcularPasoNum(loop1Index),
-                                'descripcion': currentLoop1Item.descripcion,
-                                'duracion_segundos':
-                                    currentLoop1Item.duracionSegundos,
-                              });
-                            }
-                            _model.listaDePasos = [];
-                            safeSetState(() {});
-                          },
-                          text: FFLocalizations.of(context).getText(
-                            'milzhxjz' /* Guardar pasos */,
-                          ),
-                          options: FFButtonOptions(
-                            width: double.infinity,
-                            height: 54.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 10.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        for (int loop1Index = 0;
+                            loop1Index < _model.listaDePasos.length;
+                            loop1Index++) {
+                          final currentLoop1Item =
+                              _model.listaDePasos[loop1Index];
+                          await PasosTable().insert({
+                            'receta_id': widget.idReceta,
+                            'paso_num': functions.calcularPasoNum(loop1Index),
+                            'descripcion': currentLoop1Item.descripcion,
+                            'duracion_segundos':
+                                currentLoop1Item.duracionSegundos,
+                          });
+                        }
+                        _model.listaDePasos = [];
+                        safeSetState(() {});
+                      },
+                      text: FFLocalizations.of(context).getText(
+                        'milzhxjz' /* Guardar pasos */,
+                      ),
+                      options: FFButtonOptions(
+                        width: double.infinity,
+                        height: 54.0,
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
                                   font: GoogleFonts.interTight(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
@@ -790,57 +779,59 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                                       .titleSmall
                                       .fontStyle,
                                 ),
-                            elevation: 0.0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(16.0),
-                          ),
+                        elevation: 0.0,
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1.0,
                         ),
+                        borderRadius: BorderRadius.circular(16.0),
                       ),
-                      FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
-                        text: FFLocalizations.of(context).getText(
-                          'j1t9rgqe' /* Finalizar receta */,
-                        ),
-                        options: FFButtonOptions(
-                          width: double.infinity,
-                          height: 54.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.interTight(
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
+                    child: FFButtonWidget(
+                      onPressed: () {
+                        print('Button pressed ...');
+                      },
+                      text: FFLocalizations.of(context).getText(
+                        'j1t9rgqe' /* Finalizar receta */,
+                      ),
+                      options: FFButtonOptions(
+                        width: double.infinity,
+                        height: 54.0,
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  font: GoogleFonts.interTight(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .fontStyle,
                                   ),
-                          elevation: 0.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
-                          ),
-                          borderRadius: BorderRadius.circular(16.0),
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
+                        elevation: 0.0,
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1.0,
                         ),
+                        borderRadius: BorderRadius.circular(16.0),
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
             ],
           ),

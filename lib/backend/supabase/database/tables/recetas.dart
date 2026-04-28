@@ -37,4 +37,7 @@ class RecetasRow extends SupabaseDataRow {
 
   int? get tiempo => getField<int>('tiempo');
   set tiempo(int? value) => setField<int>('tiempo', value);
+
+  String? get categoria => getField<String>('categoria');
+  set categoria(String? value) => setField<String>('categoria', value);
 }

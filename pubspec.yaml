@@ -99,7 +99,6 @@ dependencies:
   sign_in_with_apple_web: 3.0.0
   sqflite: 2.3.3+1
   sqflite_common: 2.5.4+3
-  stop_watch_timer: 3.0.2
   storage_client: 2.4.0
   supabase: 2.7.0
   supabase_flutter: 2.9.0
