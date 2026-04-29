@@ -94,21 +94,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: CocktailHomeWidget.routeName,
-          path: CocktailHomeWidget.routePath,
-          builder: (context, params) => CocktailHomeWidget(),
-        ),
-        FFRoute(
           name: SIGNInWidget.routeName,
           path: SIGNInWidget.routePath,
           builder: (context, params) => SIGNInWidget(),
-        ),
-        FFRoute(
-          name: PerfilWidget.routeName,
-          path: PerfilWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Perfil')
-              : PerfilWidget(),
         ),
         FFRoute(
           name: DetalleCoctelWidget.routeName,
@@ -186,20 +174,47 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : ListaDeCoctelesWidget(),
         ),
         FFRoute(
-          name: HommWidget.routeName,
-          path: HommWidget.routePath,
-          builder: (context, params) => HommWidget(),
-        ),
-        FFRoute(
           name: HomeWidget.routeName,
           path: HomeWidget.routePath,
           builder: (context, params) =>
               params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
         ),
         FFRoute(
-          name: FffWidget.routeName,
-          path: FffWidget.routePath,
-          builder: (context, params) => FffWidget(),
+          name: ProfileWidget.routeName,
+          path: ProfileWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'Profile')
+              : ProfileWidget(),
+        ),
+        FFRoute(
+          name: GestionRecetaPageWidget.routeName,
+          path: GestionRecetaPageWidget.routePath,
+          builder: (context, params) => GestionRecetaPageWidget(
+            recetaiD: params.getParam(
+              'recetaiD',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: EditarCoctelWidget.routeName,
+          path: EditarCoctelWidget.routePath,
+          builder: (context, params) => EditarCoctelWidget(
+            idReceta: params.getParam(
+              'idReceta',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: CategoriaWidget.routeName,
+          path: CategoriaWidget.routePath,
+          builder: (context, params) => CategoriaWidget(
+            tipoCat: params.getParam(
+              'tipoCat',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

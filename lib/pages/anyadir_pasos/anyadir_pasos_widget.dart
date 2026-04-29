@@ -383,16 +383,37 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                         ),
                         FFButtonWidget(
                           onPressed: () async {
-                            _model.addToListaDePasos(PasosStruct(
-                              descripcion: _model.textController1.text,
-                              duracionSegundos:
-                                  int.tryParse(_model.textController2.text),
-                            ));
-                            safeSetState(() {});
-                            safeSetState(() {
-                              _model.textController1?.clear();
-                              _model.textController2?.clear();
-                            });
+                            if ((_model.textController1.text == '') ||
+                                (_model.textController2.text == '')) {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Pasos'),
+                                    content: Text(
+                                        'Parece que has dejado algún campo de los pasos vacío, por favor, revíselo.'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            } else {
+                              _model.addToListaDePasos(PasosStruct(
+                                descripcion: _model.textController1.text,
+                                duracionSegundos:
+                                    int.tryParse(_model.textController2.text),
+                              ));
+                              safeSetState(() {});
+                              safeSetState(() {
+                                _model.textController1?.clear();
+                                _model.textController2?.clear();
+                              });
+                            }
                           },
                           text: FFLocalizations.of(context).getText(
                             'm3w8ynb4' /* Añadir paso */,
@@ -415,7 +436,8 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                                         .titleSmall
                                         .fontStyle,
                                   ),
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 15.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
@@ -425,7 +447,7 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                                 ),
                             elevation: 0.0,
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: FlutterFlowTheme.of(context).primaryText,
                               width: 1.5,
                             ),
                             borderRadius: BorderRadius.circular(14.0),
@@ -695,13 +717,13 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                                                         .error,
                                                 borderRadius: 10.0,
                                                 borderWidth: 1.0,
-                                                buttonSize: 36.0,
+                                                buttonSize: 38.0,
                                                 icon: Icon(
                                                   Icons.delete_outline_rounded,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .error,
-                                                  size: 20.0,
+                                                  size: 22.0,
                                                 ),
                                                 onPressed: () async {
                                                   _model.removeFromListaDePasos(
@@ -762,7 +784,7 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   font: GoogleFonts.interTight(
@@ -805,7 +827,7 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   font: GoogleFonts.interTight(

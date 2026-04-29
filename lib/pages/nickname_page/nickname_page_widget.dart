@@ -370,7 +370,7 @@ class _NicknamePageWidgetState extends State<NicknamePageWidget>
                           safeSetState(() {});
 
                           context.pushNamed(
-                            CocktailHomeWidget.routeName,
+                            HomeWidget.routeName,
                             extra: <String, dynamic>{
                               '__transition_info__': TransitionInfo(
                                 hasTransition: true,

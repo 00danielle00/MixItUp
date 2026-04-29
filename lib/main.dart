@@ -154,7 +154,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Home': HomeWidget(),
       'listaDeCocteles': ListaDeCoctelesWidget(),
-      'Perfil': PerfilWidget(),
+      'Profile': ProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -190,7 +190,7 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person_sharp,
+              Icons.person_rounded,
             ),
             label: '',
             tooltip: '',

@@ -492,7 +492,9 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                                       16.0, 0.0, 16.0, 0.0),
                                               iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0xFF7A9EFF),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
@@ -1022,7 +1024,8 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: Color(0xFF7A9EFF),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -1082,16 +1085,18 @@ class _SIGNInWidgetState extends State<SIGNInWidget>
                                               .bodyMedium
                                               .override(
                                                 font: GoogleFonts.inter(
-                                                  fontWeight: FontWeight.w600,
+                                                  fontWeight: FontWeight.bold,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
-                                                color: Color(0xFF7A9EFF),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
                                                 letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
+                                                fontWeight: FontWeight.bold,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium

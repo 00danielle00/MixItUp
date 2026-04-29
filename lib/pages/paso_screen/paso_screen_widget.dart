@@ -6,6 +6,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'paso_screen_model.dart';
@@ -127,7 +128,8 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                   children: [
                     Column(
                       mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
                           mainAxisSize: MainAxisSize.max,
@@ -369,234 +371,291 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                         ),
                       ].divide(SizedBox(height: 20.0)),
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 5.0),
-                          child: Row(
+                    Expanded(
+                      child: Stack(
+                        children: [
+                          Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              if (widget.pasosNumActual! > 1)
-                                Expanded(
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed(
-                                        PasoScreenWidget.routeName,
-                                        queryParameters: {
-                                          'recetaId': serializeParam(
-                                            widget.recetaId,
-                                            ParamType.int,
-                                          ),
-                                          'pasosNumActual': serializeParam(
-                                            functions.pasoAnt(
-                                                widget.pasosNumActual!),
-                                            ParamType.int,
-                                          ),
-                                          'totalPasos': serializeParam(
-                                            widget.totalPasos,
-                                            ParamType.int,
-                                          ),
-                                        }.withoutNulls,
-                                        extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.fade,
-                                            duration:
-                                                Duration(milliseconds: 200),
-                                          ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  if (widget.pasosNumActual! > 1)
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          context.pushNamed(
+                                            PasoScreenWidget.routeName,
+                                            queryParameters: {
+                                              'recetaId': serializeParam(
+                                                widget.recetaId,
+                                                ParamType.int,
+                                              ),
+                                              'pasosNumActual': serializeParam(
+                                                functions.pasoAnt(
+                                                    widget.pasosNumActual!),
+                                                ParamType.int,
+                                              ),
+                                              'totalPasos': serializeParam(
+                                                widget.totalPasos,
+                                                ParamType.int,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 200),
+                                              ),
+                                            },
+                                          );
                                         },
-                                      );
-                                    },
-                                    text: FFLocalizations.of(context).getText(
-                                      'k1dtlsfr' /* Anterior */,
-                                    ),
-                                    options: FFButtonOptions(
-                                      height: 52.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            font: GoogleFonts.interTight(
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
-                                            ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
-                                          ),
-                                      elevation: 0.0,
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 1.5,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                  ),
-                                ),
-                            ].divide(SizedBox(width: 0.0)),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 5.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed(
-                                      PasoScreenWidget.routeName,
-                                      queryParameters: {
-                                        'recetaId': serializeParam(
-                                          widget.recetaId,
-                                          ParamType.int,
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'k1dtlsfr' /*  */,
                                         ),
-                                        'pasosNumActual': serializeParam(
-                                          functions.siguientePaso(
-                                              widget.pasosNumActual!,
-                                              widget.totalPasos!),
-                                          ParamType.int,
+                                        icon: FaIcon(
+                                          FontAwesomeIcons.arrowLeft,
+                                          size: 15.0,
                                         ),
-                                        'totalPasos': serializeParam(
-                                          widget.totalPasos,
-                                          ParamType.int,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.fade,
-                                          duration: Duration(milliseconds: 200),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'vjj33lif' /* Siguiente */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    height: 52.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          font: GoogleFonts.interTight(
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
-                                          ),
-                                          color: Colors.white,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
+                                        options: FFButtonOptions(
+                                          height: 52.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  24.0, 0.0, 24.0, 0.0),
+                                          iconAlignment: IconAlignment.start,
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconColor:
                                               FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
+                                                  .primaryBackground,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                font: GoogleFonts.interTight(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontStyle,
+                                              ),
+                                          elevation: 0.0,
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            width: 1.5,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
                                         ),
-                                    elevation: 0.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 0.0,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(12.0),
+                                  Expanded(
+                                    child: Stack(
+                                      alignment: AlignmentDirectional(1.0, 0.0),
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(1.0, 0.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              context.pushNamed(
+                                                PasoScreenWidget.routeName,
+                                                queryParameters: {
+                                                  'recetaId': serializeParam(
+                                                    widget.recetaId,
+                                                    ParamType.int,
+                                                  ),
+                                                  'pasosNumActual':
+                                                      serializeParam(
+                                                    functions.siguientePaso(
+                                                        widget.pasosNumActual!,
+                                                        widget.totalPasos!),
+                                                    ParamType.int,
+                                                  ),
+                                                  'totalPasos': serializeParam(
+                                                    widget.totalPasos,
+                                                    ParamType.int,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  '__transition_info__':
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .rightToLeft,
+                                                    duration: Duration(
+                                                        milliseconds: 200),
+                                                  ),
+                                                },
+                                              );
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'vjj33lif' /*  */,
+                                            ),
+                                            icon: FaIcon(
+                                              FontAwesomeIcons.arrowRight,
+                                              size: 15.0,
+                                            ),
+                                            options: FFButtonOptions(
+                                              height: 52.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    font:
+                                                        GoogleFonts.interTight(
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                                    color: Colors.white,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                              elevation: 0.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 0.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                            ),
+                                          ),
+                                        ),
+                                        if (widget.pasosNumActual ==
+                                            widget.totalPasos)
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(1.08, 0.0),
+                                            child: FFButtonWidget(
+                                              onPressed: () async {
+                                                context.pushNamed(
+                                                  SuccessPageWidget.routeName,
+                                                  extra: <String, dynamic>{
+                                                    '__transition_info__':
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 200),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'ie61p4xn' /* Finalizar */,
+                                              ),
+                                              options: FFButtonOptions(
+                                                height: 52.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color: Color(0x1AFF3B30),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .interTight(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                          ),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          fontSize: 18.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                elevation: 0.0,
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                              ),
+                                            ),
+                                          ),
+                                      ],
+                                    ),
                                   ),
-                                ),
+                                ],
                               ),
                             ],
                           ),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            if (widget.pasosNumActual == widget.totalPasos)
-                              Expanded(
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed(
-                                      SuccessPageWidget.routeName,
-                                      extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.fade,
-                                          duration: Duration(milliseconds: 200),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'ie61p4xn' /* Finalizar */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    height: 52.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: Colors.white,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          font: GoogleFonts.interTight(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
-                                          ),
-                                          color: Color(0xFFEF6C39),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
-                                        ),
-                                    elevation: 0.0,
-                                    borderSide: BorderSide(
-                                      color: Color(0xFFEF6C39),
-                                    ),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
-                                ),
-                              ),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),

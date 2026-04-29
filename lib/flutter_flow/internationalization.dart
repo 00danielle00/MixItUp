@@ -203,89 +203,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // cocktailHome
-  {
-    'guwqijwj': {
-      'es': 'Descubre tu cóctel perfecto',
-      'en': '',
-      'pt': '',
-    },
-    '8lu0ju06': {
-      'es': 'Explora nuestra colección de recetas clásicas y modernas',
-      'en': '',
-      'pt': '',
-    },
-    'yz7rl1w4': {
-      'es': 'Buscar cócteles, ingredientes...',
-      'en': '',
-      'pt': '',
-    },
-    'aii2m5y6': {
-      'es': 'Margarita Premium',
-      'en': '',
-      'pt': '',
-    },
-    '6egd7gy7': {
-      'es': 'Tequila premium, cointreau, lima fresca',
-      'en': '',
-      'pt': '',
-    },
-    '7rvwfyzv': {
-      'es': '4.9',
-      'en': '',
-      'pt': '',
-    },
-    'bs1b5hd7': {
-      'es': '10 min',
-      'en': '',
-      'pt': '',
-    },
-    '0lz85vfi': {
-      'es': 'Piña Colada',
-      'en': '',
-      'pt': '',
-    },
-    'tvto2n2i': {
-      'es': 'Ron blanco, crema de coco, piña natural',
-      'en': '',
-      'pt': '',
-    },
-    '144x6qvu': {
-      'es': '4.7',
-      'en': '',
-      'pt': '',
-    },
-    'b95k9o2p': {
-      'es': '12 min',
-      'en': '',
-      'pt': '',
-    },
-    'vn65ijn7': {
-      'es': 'Cóctel del día',
-      'en': '',
-      'pt': '',
-    },
-    'izueaxle': {
-      'es': '8 min',
-      'en': '',
-      'pt': '',
-    },
-    'dktdh8s8': {
-      'es': 'Medio',
-      'en': '',
-      'pt': '',
-    },
-    'vfi5e7kt': {
-      'es': 'Ver receta',
-      'en': '',
-      'pt': '',
-    },
-    'uroawwsm': {
-      'es': 'Recetas populares',
-      'en': '',
-      'pt': '',
-    },
-  },
   // SIGNIn
   {
     'nk4ztf6q': {
@@ -340,64 +257,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ey1n9c91': {
       'es': 'Home',
-      'en': '',
-      'pt': '',
-    },
-  },
-  // Perfil
-  {
-    'q188yi21': {
-      'es': 'Mi Perfil',
-      'en': '',
-      'pt': '',
-    },
-    'lutda63r': {
-      'es': 'Editar Perfil',
-      'en': '',
-      'pt': '',
-    },
-    '91a216pj': {
-      'es': 'Especialidades',
-      'en': '',
-      'pt': '',
-    },
-    'zmgco59p': {
-      'es': 'Cócteles Clásicos',
-      'en': '',
-      'pt': '',
-    },
-    'fgbpj9to': {
-      'es': 'Mixología',
-      'en': '',
-      'pt': '',
-    },
-    'fvmmubm1': {
-      'es': 'Cócteles Tropicales',
-      'en': '',
-      'pt': '',
-    },
-    'k50jrpmi': {
-      'es': 'Gin & Tonic',
-      'en': '',
-      'pt': '',
-    },
-    '12kxdpfh': {
-      'es': 'Logros',
-      'en': '',
-      'pt': '',
-    },
-    '7ilbaaql': {
-      'es': 'Mixólogo',
-      'en': '',
-      'pt': '',
-    },
-    'jn79ft94': {
-      'es': '100 Me Gusta',
-      'en': '',
-      'pt': '',
-    },
-    'b5kq97eb': {
-      'es': 'Influencer',
       'en': '',
       'pt': '',
     },
@@ -465,16 +324,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    'ze0k59ce': {
-      'es': 'PREFERENCIAS',
-      'en': '',
-      'pt': '',
-    },
-    'npzfedx2': {
-      'es': 'Modo oscuro',
-      'en': '',
-      'pt': '',
-    },
     'potr0reo': {
       'es': 'Cerrar Sesión',
       'en': '',
@@ -504,12 +353,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'k1dtlsfr': {
-      'es': 'Anterior',
+      'es': '',
       'en': '',
       'pt': '',
     },
     'vjj33lif': {
-      'es': 'Siguiente',
+      'es': '',
       'en': '',
       'pt': '',
     },
@@ -594,13 +443,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
+    'suhrvylm': {
+      'es': 'Categoría',
+      'en': '',
+      'pt': '',
+    },
+    'iqer54t3': {
+      'es': 'Selecciona la categoría  del cóctel',
+      'en': '',
+      'pt': '',
+    },
     'ghmap2vt': {
       'es': 'Tiempo de preparación',
       'en': '',
       'pt': '',
     },
     '0trcstv6': {
-      'es': 'Ej. 15 ',
+      'es': 'Ej. 15 min',
       'en': '',
       'pt': '',
     },
@@ -749,166 +608,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // homm
-  {
-    'su09qpo1': {
-      'es': 'Discover\nYour Perfect Cocktail',
-      'en': '',
-      'pt': '',
-    },
-    '6440ewh0': {
-      'es': 'Search cocktails, ingredients...',
-      'en': '',
-      'pt': '',
-    },
-    '8fq3wwe3': {
-      'es': 'Categories',
-      'en': '',
-      'pt': '',
-    },
-    'ax8g90c5': {
-      'es': 'Explore by style',
-      'en': '',
-      'pt': '',
-    },
-    'fcjoh3jz': {
-      'es': 'Tropical',
-      'en': '',
-      'pt': '',
-    },
-    'rzlslmdg': {
-      'es': 'Classic',
-      'en': '',
-      'pt': '',
-    },
-    'olehnvtr': {
-      'es': 'Sour',
-      'en': '',
-      'pt': '',
-    },
-    '1237yy8y': {
-      'es': 'Mocktail',
-      'en': '',
-      'pt': '',
-    },
-    'y96af45y': {
-      'es': 'Sparkling',
-      'en': '',
-      'pt': '',
-    },
-    'm4qsat4b': {
-      'es': 'Featured Cocktails',
-      'en': '',
-      'pt': '',
-    },
-    'vjqxnm5u': {
-      'es': 'See all',
-      'en': '',
-      'pt': '',
-    },
-    'akm8xrrk': {
-      'es': 'Handpicked for tonight',
-      'en': '',
-      'pt': '',
-    },
-    'zivjgcpt': {
-      'es': 'CLASSIC',
-      'en': '',
-      'pt': '',
-    },
-    '4g0krje4': {
-      'es': 'Margarita',
-      'en': '',
-      'pt': '',
-    },
-    'mlctyrrn': {
-      'es': '4.8',
-      'en': '',
-      'pt': '',
-    },
-    'gjl59kh3': {
-      'es': '· 12 min',
-      'en': '',
-      'pt': '',
-    },
-    'vv6jrt68': {
-      'es': 'TROPICAL',
-      'en': '',
-      'pt': '',
-    },
-    'si5tano3': {
-      'es': 'Mojito',
-      'en': '',
-      'pt': '',
-    },
-    'zmd5uyvn': {
-      'es': '4.9',
-      'en': '',
-      'pt': '',
-    },
-    'rhru6hyh': {
-      'es': '· 8 min',
-      'en': '',
-      'pt': '',
-    },
-    '51kahqwj': {
-      'es': 'CLASSIC',
-      'en': '',
-      'pt': '',
-    },
-    'nokel5f7': {
-      'es': 'Negroni',
-      'en': '',
-      'pt': '',
-    },
-    'vjhra1d2': {
-      'es': '4.7',
-      'en': '',
-      'pt': '',
-    },
-    'ew4lnn23': {
-      'es': '· 5 min',
-      'en': '',
-      'pt': '',
-    },
-    '8btk7rt4': {
-      'es': 'Popular This Week',
-      'en': '',
-      'pt': '',
-    },
-    '53rzs2rz': {
-      'es': 'See all',
-      'en': '',
-      'pt': '',
-    },
-    '8h1gkvnu': {
-      'es': 'Trending among cocktail lovers',
-      'en': '',
-      'pt': '',
-    },
-    'q8cihdne': {
-      'es': 'WHISKEY',
-      'en': '',
-      'pt': '',
-    },
-    'fji3s3vd': {
-      'es': 'Old Fashioned',
-      'en': '',
-      'pt': '',
-    },
-    'ovfk60ts': {
-      'es': '4.9',
-      'en': '',
-      'pt': '',
-    },
-    'o9wldymv': {
-      'es': '· 6 min',
-      'en': '',
-      'pt': '',
-    },
-  },
   // Home
   {
+    'gbiamgfi': {
+      'es': 'Descubre tu cóctel perfecto',
+      'en': '',
+      'pt': '',
+    },
     'gvdh9a74': {
       'es': 'Cóctel del día',
       'en': '',
@@ -919,32 +625,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    'mbpwegsj': {
-      'es': 'Clásicos',
-      'en': '',
-      'pt': '',
-    },
-    'omblp37i': {
+    'dtbsklvp': {
       'es': 'Tropicales',
       'en': '',
       'pt': '',
     },
-    'vliafja7': {
-      'es': 'Dulces',
+    'qwgt7xv3': {
+      'es': 'Clásicos',
       'en': '',
       'pt': '',
     },
-    'dod35aog': {
+    'uqixidzx': {
       'es': 'Ácidos',
       'en': '',
       'pt': '',
     },
-    'aoawgcg1': {
-      'es': 'Sin alcohol',
+    'ciwms7mz': {
+      'es': 'Dulces',
       'en': '',
       'pt': '',
     },
-    'u5tx0xzo': {
+    '0fgbob86': {
+      'es': 'Sin Alcohol',
+      'en': '',
+      'pt': '',
+    },
+    '24b43is9': {
       'es': 'Fuertes',
       'en': '',
       'pt': '',
@@ -980,150 +686,189 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // fff
+  // Profile
   {
-    'ap3afqfs': {
-      'es': 'Buenas noches,',
+    't3cdqgll': {
+      'es': 'Mi Perfil',
       'en': '',
       'pt': '',
     },
-    'c67wpra7': {
-      'es': 'Mixólogo',
+    'jvf3vv0n': {
+      'es': 'Favoritos',
       'en': '',
       'pt': '',
     },
-    'wwsml55c': {
-      'es': 'Cóctel del día',
+    'ezn7k0lq': {
+      'es': 'Cócteles hechos',
       'en': '',
       'pt': '',
     },
-    'hacgkymx': {
-      'es': 'Negroni Sbagliato',
+    'x1a2jq6v': {
+      'es': 'Editar Perfil',
       'en': '',
       'pt': '',
     },
-    'mxy3fvrx': {
-      'es': 'Prosecco · Campari · Vermut rosso',
+    'gkjwi8p9': {
+      'es': 'Mis Favoritos',
       'en': '',
       'pt': '',
     },
-    'fxox5q81': {
-      'es': '4.8',
+    'a6qbv5av': {
+      'es': 'Mis Cócteles',
       'en': '',
       'pt': '',
     },
-    'm9xg4myg': {
-      'es': '5 min',
+    'hkodpzpw': {
+      'es': 'No has creado aún ninguna receta',
       'en': '',
       'pt': '',
     },
-    'ozjy28cl': {
-      'es': 'Bajo en alcohol',
+  },
+  // GestionRecetaPage
+  {
+    'trfvnytm': {
+      'es': 'Gestión de Receta',
       'en': '',
       'pt': '',
     },
-    '8y646fgn': {
-      'es': 'Categorías',
+    'fsfoz9ur': {
+      'es': 'Descripción',
       'en': '',
       'pt': '',
     },
-    'ofpvce1g': {
-      'es': 'Clásicos',
+    'j0kdfnmf': {
+      'es': 'Ingredientes',
       'en': '',
       'pt': '',
     },
-    'mtm5riy4': {
-      'es': 'Frescos',
+    '9lsqs88y': {
+      'es': '• ',
       'en': '',
       'pt': '',
     },
-    'bkleyk84': {
-      'es': 'Tropicales',
+    '5vcczjjr': {
+      'es': 'Preparación',
       'en': '',
       'pt': '',
     },
-    '8942jsyy': {
-      'es': 'Nocturnos',
+    'i6ewcc21': {
+      'es': '• ',
       'en': '',
       'pt': '',
     },
-    'nu14gyjw': {
-      'es': 'Sin alcohol',
+    'h9kkvtxk': {
+      'es': 'Editar receta',
       'en': '',
       'pt': '',
     },
-    '3dflfwy1': {
-      'es': 'Más populares',
+    'ga5zber0': {
+      'es': 'Eliminar receta',
       'en': '',
       'pt': '',
     },
-    'zoky75nj': {
-      'es': 'Ver todos',
+  },
+  // EditarCoctel
+  {
+    'zfcvmb0y': {
+      'es': 'Crear Cóctel',
       'en': '',
       'pt': '',
     },
-    'o28ah657': {
-      'es': '4.9',
+    '4fts2bp0': {
+      'es': 'Haz clic para añadir la imagen\nde tu cóctel',
       'en': '',
       'pt': '',
     },
-    'bovjrwkn': {
-      'es': 'Mojito',
+    'l23qapsp': {
+      'es': 'Nombre del Cóctel',
       'en': '',
       'pt': '',
     },
-    'dnxeh1tx': {
-      'es': 'Ron · Menta · Lima · Azúcar',
+    '1qd49zqv': {
+      'es': 'Ej. Mojito Tropical',
       'en': '',
       'pt': '',
     },
-    '1pthhjb4': {
-      'es': '4.7',
+    'b98ssq1e': {
+      'es': 'Descripción',
       'en': '',
       'pt': '',
     },
-    'v9egcgc2': {
-      'es': '6 min',
+    '8g5g3vu9': {
+      'es': 'Describe tu cóctel...',
       'en': '',
       'pt': '',
     },
-    'oknzajv0': {
-      'es': 'Old Fashioned',
+    'ahkmg7rz': {
+      'es': 'Dificultad',
       'en': '',
       'pt': '',
     },
-    'xs7cq930': {
-      'es': 'Bourbon · Angostura · Azúcar',
+    '282gh8hs': {
+      'es': 'Selecciona la dificultad',
       'en': '',
       'pt': '',
     },
-    '64s61uw2': {
-      'es': '4.8',
+    '0nn597nk': {
+      'es': 'Fácil',
       'en': '',
       'pt': '',
     },
-    '9ltj8eci': {
-      'es': '5 min',
+    '29kpnjun': {
+      'es': 'Medio',
       'en': '',
       'pt': '',
     },
-    '9257pxub': {
-      'es': 'Recientes',
+    'lfonqlhd': {
+      'es': 'Difícil',
       'en': '',
       'pt': '',
     },
-    'g6lrft7b': {
-      'es': 'Ver todos',
+    '0fstfp5c': {
+      'es': 'Categoría',
       'en': '',
       'pt': '',
     },
-    '8y2v9q48': {
-      'es': 'Aperol Spritz',
+    'r4i1z1kk': {
+      'es': 'Selecciona la categoría',
       'en': '',
       'pt': '',
     },
-    'dgrhfeyr': {
-      'es': 'Aperol · Prosecco · Soda',
+    '9gyi67rv': {
+      'es': 'Tiempo de preparación',
+      'en': '',
+      'pt': '',
+    },
+    '0sqolu7a': {
+      'es': 'Ej. 15 min',
+      'en': '',
+      'pt': '',
+    },
+    '23kjhk8v': {
+      'es': '¿Es alcohólica?',
+      'en': '',
+      'pt': '',
+    },
+    'v45rtk3d': {
+      'es': 'Indica si contiene alcohol',
+      'en': '',
+      'pt': '',
+    },
+    'yza6sw29': {
+      'es': 'Guardar y continuar',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // categoria
+  {
+    'dm529dlk': {
+      'es': 'Cócteles ',
+      'en': '',
+      'pt': '',
+    },
+    'f79wjgm0': {
+      'es': 'resultados',
       'en': '',
       'pt': '',
     },

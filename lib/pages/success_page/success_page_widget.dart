@@ -126,7 +126,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                 ),
                 FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed(CocktailHomeWidget.routeName);
+                    context.pushNamed(HomeWidget.routeName);
                   },
                   text: FFLocalizations.of(context).getText(
                     'iv0wmebp' /* Volver al inicio */,

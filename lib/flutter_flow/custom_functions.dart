@@ -62,3 +62,14 @@ double calcularProgreso(
 int calcularPasoNum(int index) {
   return index + 1;
 }
+
+List<String> listaCategorias() {
+  return [
+    'Clásico',
+    'Tropical',
+    'Dulce',
+    'Ácido',
+    'Fuerte',
+    'Sin alcohol',
+  ];
+}

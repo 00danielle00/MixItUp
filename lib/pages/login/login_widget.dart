@@ -520,7 +520,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                         safeSetState(() {});
 
                                         context.pushNamedAuth(
-                                          CocktailHomeWidget.routeName,
+                                          HomeWidget.routeName,
                                           context.mounted,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
@@ -548,7 +548,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: Color(0xFF7A9EFF),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -768,16 +769,18 @@ class _LoginWidgetState extends State<LoginWidget>
                                               .bodyMedium
                                               .override(
                                                 font: GoogleFonts.inter(
-                                                  fontWeight: FontWeight.w600,
+                                                  fontWeight: FontWeight.bold,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
-                                                color: Color(0xFF7A9EFF),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
                                                 letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
+                                                fontWeight: FontWeight.bold,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium

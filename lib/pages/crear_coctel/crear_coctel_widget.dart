@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -77,7 +78,7 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 10.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -570,7 +571,7 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                             ),
                       ),
                       FlutterFlowDropDown<String>(
-                        controller: _model.dropDownValueController ??=
+                        controller: _model.dropDownValueController1 ??=
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
@@ -584,7 +585,7 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                           )
                         ],
                         onChanged: (val) =>
-                            safeSetState(() => _model.dropDownValue = val),
+                            safeSetState(() => _model.dropDownValue1 = val),
                         width: double.infinity,
                         height: 52.0,
                         textStyle:
@@ -608,6 +609,78 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                 ),
                         hintText: FFLocalizations.of(context).getText(
                           'lqm55c7e' /* Selecciona la dificultad */,
+                        ),
+                        icon: Icon(
+                          Icons.keyboard_arrow_down_rounded,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          size: 24.0,
+                        ),
+                        fillColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        elevation: 2.0,
+                        borderColor: FlutterFlowTheme.of(context).alternate,
+                        borderWidth: 1.0,
+                        borderRadius: 12.0,
+                        margin:
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        hidesUnderline: true,
+                        isOverButton: false,
+                        isSearchable: false,
+                        isMultiSelect: false,
+                      ),
+                    ].divide(SizedBox(height: 8.0)),
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        FFLocalizations.of(context).getText(
+                          'suhrvylm' /* Categoría */,
+                        ),
+                        style: FlutterFlowTheme.of(context).labelLarge.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.w600,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .fontStyle,
+                              ),
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .fontStyle,
+                            ),
+                      ),
+                      FlutterFlowDropDown<String>(
+                        controller: _model.dropDownValueController2 ??=
+                            FormFieldController<String>(null),
+                        options: functions.listaCategorias(),
+                        onChanged: (val) =>
+                            safeSetState(() => _model.dropDownValue2 = val),
+                        width: double.infinity,
+                        height: 52.0,
+                        textStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                  lineHeight: 1.2,
+                                ),
+                        hintText: FFLocalizations.of(context).getText(
+                          'iqer54t3' /* Selecciona la categoría  del c... */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -661,7 +734,7 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: FFLocalizations.of(context).getText(
-                              '0trcstv6' /* Ej. 15  */,
+                              '0trcstv6' /* Ej. 15 min */,
                             ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -837,90 +910,120 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      {
-                        safeSetState(
-                            () => _model.isDataUploading_uploadData2ds = true);
-                        var selectedUploadedFiles = <FFUploadedFile>[];
-                        var selectedMedia = <SelectedFile>[];
-                        var downloadUrls = <String>[];
-                        try {
-                          selectedUploadedFiles =
-                              _model.imagenCoctel!.bytes!.isNotEmpty
-                                  ? [_model.imagenCoctel!]
-                                  : <FFUploadedFile>[];
-                          selectedMedia = selectedFilesFromUploadedFiles(
-                            selectedUploadedFiles,
-                            storageFolderPath: 'fotosSubidasUsuarios',
-                          );
-                          downloadUrls = await uploadSupabaseStorageFiles(
-                            bucketName: 'recetas',
-                            selectedFiles: selectedMedia,
-                          );
-                        } finally {
-                          _model.isDataUploading_uploadData2ds = false;
-                        }
-                        if (selectedUploadedFiles.length ==
-                                selectedMedia.length &&
-                            downloadUrls.length == selectedMedia.length) {
-                          safeSetState(() {
-                            _model.uploadedLocalFile_uploadData2ds =
-                                selectedUploadedFiles.first;
-                            _model.uploadedFileUrl_uploadData2ds =
-                                downloadUrls.first;
-                          });
-                        } else {
-                          safeSetState(() {});
-                          return;
-                        }
-                      }
-
-                      _model.recetaEnviada = await RecetasTable().insert({
-                        'esAlcoholica': _model.switchValue,
-                        'nombre': _model.textController1.text,
-                        'dificultad': _model.dropDownValue,
-                        'descripcion': _model.textController2.text,
-                        'creador_id': currentUserUid,
-                        'tiempo': int.tryParse(_model.textController3.text),
-                        'imagen': _model.uploadedFileUrl_uploadData2ds,
-                      });
-                      if (_model.isDataUploading_uploadData2ds == false) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'receta  creada con foto',
-                              style: TextStyle(
-                                color: FlutterFlowTheme.of(context).primaryText,
-                              ),
-                            ),
-                            duration: Duration(milliseconds: 4000),
-                            backgroundColor:
-                                FlutterFlowTheme.of(context).secondary,
-                          ),
-                        );
-
-                        context.pushNamed(
-                          AnyadirIngredienteWidget.routeName,
-                          queryParameters: {
-                            'idReceta': serializeParam(
-                              _model.recetaEnviada?.recetaId,
-                              ParamType.int,
-                            ),
-                          }.withoutNulls,
+                      if (((_model.uploadedLocalFile_uploadDataS0p.bytes
+                                      ?.isEmpty ??
+                                  true)) ||
+                          (_model.textController1.text == '') ||
+                          (_model.textController2.text == '') ||
+                          (_model.dropDownValue1 == null ||
+                              _model.dropDownValue1 == '') ||
+                          (_model.dropDownValue2 == null ||
+                              _model.dropDownValue2 == '') ||
+                          (_model.textController3.text == '')) {
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              title: Text('Crear receta'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: Text('Ok'),
+                                ),
+                              ],
+                            );
+                          },
                         );
                       } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'receta no creada con foto',
-                              style: TextStyle(
-                                color: FlutterFlowTheme.of(context).primaryText,
+                        {
+                          safeSetState(() =>
+                              _model.isDataUploading_uploadImagen2 = true);
+                          var selectedUploadedFiles = <FFUploadedFile>[];
+                          var selectedMedia = <SelectedFile>[];
+                          var downloadUrls = <String>[];
+                          try {
+                            selectedUploadedFiles =
+                                _model.imagenCoctel!.bytes!.isNotEmpty
+                                    ? [_model.imagenCoctel!]
+                                    : <FFUploadedFile>[];
+                            selectedMedia = selectedFilesFromUploadedFiles(
+                              selectedUploadedFiles,
+                              storageFolderPath: 'fotosSubidasUsuarios',
+                            );
+                            downloadUrls = await uploadSupabaseStorageFiles(
+                              bucketName: 'recetas',
+                              selectedFiles: selectedMedia,
+                            );
+                          } finally {
+                            _model.isDataUploading_uploadImagen2 = false;
+                          }
+                          if (selectedUploadedFiles.length ==
+                                  selectedMedia.length &&
+                              downloadUrls.length == selectedMedia.length) {
+                            safeSetState(() {
+                              _model.uploadedLocalFile_uploadImagen2 =
+                                  selectedUploadedFiles.first;
+                              _model.uploadedFileUrl_uploadImagen2 =
+                                  downloadUrls.first;
+                            });
+                          } else {
+                            safeSetState(() {});
+                            return;
+                          }
+                        }
+
+                        _model.recetaEnviada = await RecetasTable().insert({
+                          'esAlcoholica': _model.switchValue,
+                          'nombre': _model.textController1.text,
+                          'dificultad': _model.dropDownValue1,
+                          'descripcion': _model.textController2.text,
+                          'creador_id': currentUserUid,
+                          'tiempo': int.tryParse(_model.textController3.text),
+                          'imagen': _model.uploadedFileUrl_uploadImagen2,
+                          'categoria': _model.dropDownValue2,
+                        });
+                        if (_model.uploadedFileUrl_uploadImagen2 == 'FALSE') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Receta creada exitósamente',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 16.0,
+                                ),
                               ),
+                              duration: Duration(milliseconds: 4000),
+                              backgroundColor: Color(0xB97EFFF2),
                             ),
-                            duration: Duration(milliseconds: 4000),
-                            backgroundColor:
-                                FlutterFlowTheme.of(context).secondary,
-                          ),
-                        );
+                          );
+
+                          context.pushNamed(
+                            AnyadirIngredienteWidget.routeName,
+                            queryParameters: {
+                              'idReceta': serializeParam(
+                                _model.recetaEnviada?.recetaId,
+                                ParamType.int,
+                              ),
+                            }.withoutNulls,
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'UPS, ha ocurrido un error',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              duration: Duration(milliseconds: 4000),
+                              backgroundColor: Color(0xBBFF5963),
+                            ),
+                          );
+                        }
                       }
 
                       safeSetState(() {});

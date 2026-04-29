@@ -25,18 +25,21 @@ class CrearCoctelModel extends FlutterFlowModel<CrearCoctelWidget> {
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  String? dropDownValue1;
+  FormFieldController<String>? dropDownValueController1;
+  // State field(s) for DropDown widget.
+  String? dropDownValue2;
+  FormFieldController<String>? dropDownValueController2;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
   // State field(s) for Switch widget.
   bool? switchValue;
-  bool isDataUploading_uploadData2ds = false;
-  FFUploadedFile uploadedLocalFile_uploadData2ds =
+  bool isDataUploading_uploadImagen2 = false;
+  FFUploadedFile uploadedLocalFile_uploadImagen2 =
       FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
-  String uploadedFileUrl_uploadData2ds = '';
+  String uploadedFileUrl_uploadImagen2 = '';
 
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   RecetasRow? recetaEnviada;

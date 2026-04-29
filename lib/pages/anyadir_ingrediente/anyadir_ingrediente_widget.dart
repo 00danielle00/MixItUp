@@ -496,30 +496,53 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        _model.addToListaIngredientes(IngredientesStruct(
-                          nombre: _model.textController1.text,
-                          cantidad: int.tryParse(_model.textController2.text),
-                          unidad: _model.textController3.text,
-                        ));
-                        safeSetState(() {});
-                        safeSetState(() {
-                          _model.textController1?.clear();
-                          _model.textController2?.clear();
-                          _model.textController3?.clear();
-                        });
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'Has añadido un ingrediente',
-                              style: TextStyle(
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                fontSize: 15.0,
+                        if ((_model.textController1.text == '') ||
+                            (_model.textController2.text == '') ||
+                            (_model.textController3.text == '')) {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: Text('Ingredientes'),
+                                content: Text(
+                                    'Has dejado algún campo vacío, por favor, revíselo'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        } else {
+                          _model.addToListaIngredientes(IngredientesStruct(
+                            nombre: _model.textController1.text,
+                            cantidad: int.tryParse(_model.textController2.text),
+                            unidad: _model.textController3.text,
+                          ));
+                          safeSetState(() {});
+                          safeSetState(() {
+                            _model.textController1?.clear();
+                            _model.textController2?.clear();
+                            _model.textController3?.clear();
+                          });
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Has añadido un ingrediente',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 15.0,
+                                ),
                               ),
+                              duration: Duration(milliseconds: 2000),
+                              backgroundColor: Color(0x00FFFFFF),
                             ),
-                            duration: Duration(milliseconds: 2000),
-                            backgroundColor: Color(0x00FFFFFF),
-                          ),
-                        );
+                          );
+                        }
                       },
                       child: Container(
                         width: double.infinity,
@@ -719,7 +742,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                                                 width: 44.0,
                                                 height: 44.0,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xFFF0EEFF),
+                                                  color: Color(0xFFFFFEEE),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           12.0),
@@ -730,7 +753,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                                                           0.0, 0.0),
                                                   child: Icon(
                                                     Icons.local_bar_outlined,
-                                                    color: Color(0xFF6C63FF),
+                                                    color: Color(0xFFB0A600),
                                                     size: 22.0,
                                                   ),
                                                 ),
@@ -1028,7 +1051,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconColor: Colors.white,
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   font: GoogleFonts.interTight(
@@ -1102,7 +1125,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: FlutterFlowTheme.of(context).primaryText,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 font: GoogleFonts.interTight(
