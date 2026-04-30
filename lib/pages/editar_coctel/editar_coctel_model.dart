@@ -43,6 +43,8 @@ class EditarCoctelModel extends FlutterFlowModel<EditarCoctelWidget> {
 
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<RecetasRow>? recetaEnviada;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<RecetasRow>? aa;
 
   @override
   void initState(BuildContext context) {}

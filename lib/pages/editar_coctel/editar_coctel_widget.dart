@@ -176,7 +176,7 @@ class _EditarCoctelWidgetState extends State<EditarCoctelWidget> {
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'zfcvmb0y' /* Crear Cóctel */,
+                                  'zfcvmb0y' /* Editar Cóctel */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -1010,24 +1010,6 @@ class _EditarCoctelWidgetState extends State<EditarCoctelWidget> {
                           if (_model.imagenCoctel != null &&
                               (_model.imagenCoctel?.bytes?.isNotEmpty ??
                                   false)) {
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Editar receta'),
-                                  content: Text(
-                                      'Te has dejado algún campo vacío, revíselo'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
-                          } else {
                             {
                               safeSetState(() =>
                                   _model.isDataUploading_uploadDataIj8 = true);
@@ -1075,13 +1057,8 @@ class _EditarCoctelWidgetState extends State<EditarCoctelWidget> {
                                 'creador_id': currentUserUid,
                                 'tiempo': int.tryParse(
                                     _model.tiempoTextController.text),
-                                'imagen': _model.imagenCoctel == null ||
-                                        (_model.imagenCoctel?.bytes?.isEmpty ??
-                                            true)
-                                    ? editarCoctelRecetasRow.imagen
-                                    : _model.uploadedFileUrl_uploadDataIj8,
                                 'categoria': _model.categoriaValue,
-                                'receta_id': widget.idReceta,
+                                'imagen': _model.uploadedFileUrl_uploadDataIj8,
                               },
                               matchingRows: (rows) => rows.eqOrNull(
                                 'receta_id',
@@ -1101,6 +1078,58 @@ class _EditarCoctelWidgetState extends State<EditarCoctelWidget> {
                                 duration: Duration(milliseconds: 4000),
                                 backgroundColor: Color(0xB97EFFF2),
                               ),
+                            );
+
+                            context.pushNamed(
+                              EditarIngredientesWidget.routeName,
+                              queryParameters: {
+                                'idReceta': serializeParam(
+                                  widget.idReceta,
+                                  ParamType.int,
+                                ),
+                              }.withoutNulls,
+                            );
+                          } else {
+                            await RecetasTable().update(
+                              data: {
+                                'esAlcoholica': _model.switchValue,
+                                'nombre': _model.nombreTextController.text,
+                                'dificultad': _model.dificultadValue,
+                                'descripcion':
+                                    _model.descripcionTextController.text,
+                                'creador_id': currentUserUid,
+                                'tiempo': int.tryParse(
+                                    _model.tiempoTextController.text),
+                                'categoria': _model.categoriaValue,
+                              },
+                              matchingRows: (rows) => rows.eqOrNull(
+                                'receta_id',
+                                widget.idReceta,
+                              ),
+                            );
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  'La receta se ha editado exitósamente',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                duration: Duration(milliseconds: 4000),
+                                backgroundColor: Color(0xB97EFFF2),
+                              ),
+                            );
+
+                            context.pushNamed(
+                              EditarIngredientesWidget.routeName,
+                              queryParameters: {
+                                'idReceta': serializeParam(
+                                  widget.idReceta,
+                                  ParamType.int,
+                                ),
+                              }.withoutNulls,
                             );
                           }
 

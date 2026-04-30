@@ -163,7 +163,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         Icon(
                                           Icons.person_outline,
                                           color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                              .primaryText,
                                           size: 24.0,
                                         ),
                                         Text(
@@ -221,7 +221,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         Icon(
                                           Icons.favorite_outline,
                                           color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                              .primaryText,
                                           size: 24.0,
                                         ),
                                         Text(
@@ -279,7 +279,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         Icon(
                                           Icons.local_bar,
                                           color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                              .primaryText,
                                           size: 24.0,
                                         ),
                                         Text(

@@ -215,6 +215,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: EditarIngredientesWidget.routeName,
+          path: EditarIngredientesWidget.routePath,
+          builder: (context, params) => EditarIngredientesWidget(
+            idReceta: params.getParam(
+              'idReceta',
+              ParamType.int,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

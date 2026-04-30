@@ -19,3 +19,5 @@ export '/pages/gestion_receta_page/gestion_receta_page_widget.dart'
     show GestionRecetaPageWidget;
 export '/pages/editar_coctel/editar_coctel_widget.dart' show EditarCoctelWidget;
 export '/pages/categoria/categoria_widget.dart' show CategoriaWidget;
+export '/pages/editar_ingredientes/editar_ingredientes_widget.dart'
+    show EditarIngredientesWidget;

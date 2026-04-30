@@ -770,7 +770,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // EditarCoctel
   {
     'zfcvmb0y': {
-      'es': 'Crear Cóctel',
+      'es': 'Editar Cóctel',
       'en': '',
       'pt': '',
     },
@@ -869,6 +869,84 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'f79wjgm0': {
       'es': 'resultados',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // EditarIngredientes
+  {
+    '1stuxa2m': {
+      'es': 'Editar Ingredientes',
+      'en': '',
+      'pt': '',
+    },
+    'buq7w68d': {
+      'es': 'Ingrediente',
+      'en': '',
+      'pt': '',
+    },
+    'nqg0z95e': {
+      'es': 'Ej: Vodka',
+      'en': '',
+      'pt': '',
+    },
+    'ufdn2mn4': {
+      'es': 'Cantidad',
+      'en': '',
+      'pt': '',
+    },
+    '1wwf3qob': {
+      'es': 'Ej: 50',
+      'en': '',
+      'pt': '',
+    },
+    '8vvv7nvk': {
+      'es': 'Unidad',
+      'en': '',
+      'pt': '',
+    },
+    '12sd3mv8': {
+      'es': 'ml / g / oz / cucharadas / al gusto',
+      'en': '',
+      'pt': '',
+    },
+    '1wyx1vwi': {
+      'es': 'Añadir ingrediente',
+      'en': '',
+      'pt': '',
+    },
+    '9hlf829t': {
+      'es': 'Lista de ingredientes',
+      'en': '',
+      'pt': '',
+    },
+    '25h456m5': {
+      'es': 'items',
+      'en': '',
+      'pt': '',
+    },
+    'rwy5heot': {
+      'es': '',
+      'en': '',
+      'pt': '',
+    },
+    'wikf7jy2': {
+      'es': '',
+      'en': '',
+      'pt': '',
+    },
+    '9zdicmkg': {
+      'es': '',
+      'en': '',
+      'pt': '',
+    },
+    'qcibcofg': {
+      'es': 'Guardar ingredientes',
+      'en': '',
+      'pt': '',
+    },
+    'nggire5f': {
+      'es': 'Continuar',
       'en': '',
       'pt': '',
     },

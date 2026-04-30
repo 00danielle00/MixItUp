@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -241,28 +242,46 @@ class _CategoriaWidgetState extends State<CategoriaWidget> {
                               itemBuilder: (context, categoriasIndex) {
                                 final categoriasItem =
                                     categorias[categoriasIndex];
-                                return ClipRRect(
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 160.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 8.0,
-                                          color: Color(0x0A000000),
-                                          offset: Offset(
-                                            0.0,
-                                            2.0,
+                                return InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      DetalleCoctelWidget.routeName,
+                                      queryParameters: {
+                                        'idReceta': serializeParam(
+                                          getJsonField(
+                                            categoriasItem,
+                                            r'''$.receta_id''',
                                           ),
-                                        )
-                                      ],
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(16.0),
+                                          ParamType.int,
+                                        ),
+                                      }.withoutNulls,
+                                    );
+                                  },
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 160.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 8.0,
+                                            color: Color(0x0A000000),
+                                            offset: Offset(
+                                              0.0,
+                                              2.0,
+                                            ),
+                                          )
+                                        ],
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                      ),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -376,7 +395,7 @@ class _CategoriaWidgetState extends State<CategoriaWidget> {
                                                         ),
                                                   ),
                                                 ),
-                                                Row(
+                                                Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
@@ -385,7 +404,7 @@ class _CategoriaWidgetState extends State<CategoriaWidget> {
                                                         categoriasItem,
                                                         r'''$.descripcion''',
                                                       ).toString(),
-                                                      maxLines: 1,
+                                                      maxLines: 2,
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -418,7 +437,7 @@ class _CategoriaWidgetState extends State<CategoriaWidget> {
                                                                     .fontStyle,
                                                               ),
                                                       overflow:
-                                                          TextOverflow.ellipsis,
+                                                          TextOverflow.clip,
                                                     ),
                                                   ],
                                                 ),

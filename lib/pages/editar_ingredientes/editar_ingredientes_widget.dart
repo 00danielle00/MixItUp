@@ -1,15 +1,14 @@
-import '/backend/schema/structs/index.dart';
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/index.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'anyadir_ingrediente_model.dart';
-export 'anyadir_ingrediente_model.dart';
+import 'editar_ingredientes_model.dart';
+export 'editar_ingredientes_model.dart';
 
 /// Crea una sección para añadir ingredientes de forma simple.
 ///
@@ -24,31 +23,38 @@ export 'anyadir_ingrediente_model.dart';
 /// texto más pequeño. Añade un icono de papelera a la derecha para eliminar
 /// ese ingrediente. Todo debe verse limpio, moderno y con estilo premium,
 /// como una app profesional de recetas.
-class AnyadirIngredienteWidget extends StatefulWidget {
-  const AnyadirIngredienteWidget({
+class EditarIngredientesWidget extends StatefulWidget {
+  const EditarIngredientesWidget({
     super.key,
     this.idReceta,
   });
 
   final int? idReceta;
 
-  static String routeName = 'anyadirIngrediente';
-  static String routePath = '/anyadirIngrediente';
+  static String routeName = 'EditarIngredientes';
+  static String routePath = '/editarIngredientes';
 
   @override
-  State<AnyadirIngredienteWidget> createState() =>
-      _AnyadirIngredienteWidgetState();
+  State<EditarIngredientesWidget> createState() =>
+      _EditarIngredientesWidgetState();
 }
 
-class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
-  late AnyadirIngredienteModel _model;
+class _EditarIngredientesWidgetState extends State<EditarIngredientesWidget> {
+  late EditarIngredientesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AnyadirIngredienteModel());
+    _model = createModel(context, () => EditarIngredientesModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await actions.obtenerIngrRec(
+        widget.idReceta!,
+      );
+    });
 
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
@@ -118,7 +124,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'h5hgehz1' /* Ingredientes */,
+                                  '1stuxa2m' /* Editar Ingredientes */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -144,7 +150,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                       ),
                       Text(
                         FFLocalizations.of(context).getText(
-                          'a1l52yub' /* Ingrediente */,
+                          'buq7w68d' /* Ingrediente */,
                         ),
                         style:
                             FlutterFlowTheme.of(context).labelMedium.override(
@@ -172,7 +178,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           hintText: FFLocalizations.of(context).getText(
-                            'yjq2g26n' /* Ej: Vodka */,
+                            'nqg0z95e' /* Ej: Vodka */,
                           ),
                           hintStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -268,7 +274,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                     children: [
                       Text(
                         FFLocalizations.of(context).getText(
-                          'uym94kvm' /* Cantidad */,
+                          'ufdn2mn4' /* Cantidad */,
                         ),
                         style:
                             FlutterFlowTheme.of(context).labelMedium.override(
@@ -295,7 +301,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           hintText: FFLocalizations.of(context).getText(
-                            'e0n5pz3i' /* Ej: 50 */,
+                            '1wwf3qob' /* Ej: 50 */,
                           ),
                           hintStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -381,7 +387,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                     children: [
                       Text(
                         FFLocalizations.of(context).getText(
-                          '5dken9nm' /* Unidad */,
+                          '8vvv7nvk' /* Unidad */,
                         ),
                         style:
                             FlutterFlowTheme.of(context).labelMedium.override(
@@ -408,7 +414,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           hintText: FFLocalizations.of(context).getText(
-                            'am20x5a7' /* ml / g / oz / cucharadas / al ... */,
+                            '12sd3mv8' /* ml / g / oz / cucharadas / al ... */,
                           ),
                           hintStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -490,104 +496,49 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 20.0),
-                    child: InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        if ((_model.textController1.text == '') ||
-                            (_model.textController2.text == '') ||
-                            (_model.textController3.text == '')) {
-                          await showDialog(
-                            context: context,
-                            builder: (alertDialogContext) {
-                              return AlertDialog(
-                                title: Text('Ingredientes'),
-                                content: Text(
-                                    'Has dejado algún campo vacío, por favor, revíselo'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(alertDialogContext),
-                                    child: Text('Ok'),
-                                  ),
-                                ],
-                              );
-                            },
-                          );
-                        } else {
-                          _model.addToListaIngredientes(IngredientesStruct(
-                            nombre: _model.textController1.text,
-                            cantidad: int.tryParse(_model.textController2.text),
-                            unidad: _model.textController3.text,
-                          ));
-                          safeSetState(() {});
-                          safeSetState(() {
-                            _model.textController1?.clear();
-                            _model.textController2?.clear();
-                            _model.textController3?.clear();
-                          });
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Has añadido un ingrediente',
-                                style: TextStyle(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  fontSize: 15.0,
-                                ),
+                    child: Container(
+                      width: double.infinity,
+                      height: 52.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        borderRadius: BorderRadius.circular(14.0),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.add_rounded,
+                            color: Colors.white,
+                            size: 20.0,
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 8.0, 0.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                '1wyx1vwi' /* Añadir ingrediente */,
                               ),
-                              duration: Duration(milliseconds: 2000),
-                              backgroundColor: Color(0x00FFFFFF),
-                            ),
-                          );
-                        }
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        height: 52.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          borderRadius: BorderRadius.circular(14.0),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.add_rounded,
-                              color: Colors.white,
-                              size: 20.0,
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 8.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '67bklsmn' /* Añadir ingrediente */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      font: GoogleFonts.interTight(
-                                        fontWeight: FontWeight.bold,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontStyle,
-                                      ),
-                                      color: Colors.white,
-                                      fontSize: 15.0,
-                                      letterSpacing: 0.0,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    font: GoogleFonts.interTight(
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .fontStyle,
                                     ),
-                              ),
+                                    color: Colors.white,
+                                    fontSize: 15.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
+                                  ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -600,7 +551,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                       children: [
                         Text(
                           FFLocalizations.of(context).getText(
-                            'jmksszeh' /* Lista de ingredientes */,
+                            '9hlf829t' /* Lista de ingredientes */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).titleMedium.override(
@@ -661,7 +612,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                                     3.0, 4.0, 10.0, 4.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '233uck5d' /* items */,
+                                    '25h456m5' /* items */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -694,79 +645,72 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Builder(
-                          builder: (context) {
-                            final ingredientsList =
-                                _model.listaIngredientes.toList();
-
-                            return ListView.builder(
-                              padding: EdgeInsets.zero,
-                              shrinkWrap: true,
-                              scrollDirection: Axis.vertical,
-                              itemCount: ingredientsList.length,
-                              itemBuilder: (context, ingredientsListIndex) {
-                                final ingredientsListItem =
-                                    ingredientsList[ingredientsListIndex];
-                                return Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 10.0),
-                                  child: Container(
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 12.0,
-                                          color: Color(0x14000000),
-                                          offset: Offset(
-                                            0.0,
-                                            4.0,
-                                          ),
-                                        )
-                                      ],
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(12.0),
-                                      child: Row(
+                        ListView(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 10.0),
+                              child: Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 12.0,
+                                      color: Color(0x14000000),
+                                      offset: Offset(
+                                        0.0,
+                                        4.0,
+                                      ),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(12.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
                                         children: [
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Container(
-                                                width: 44.0,
-                                                height: 44.0,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFFFFEEE),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                ),
-                                                child: Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Icon(
-                                                    Icons.local_bar_outlined,
-                                                    color: Color(0xFFB0A600),
-                                                    size: 22.0,
-                                                  ),
-                                                ),
+                                          Container(
+                                            width: 44.0,
+                                            height: 44.0,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFFFFEEE),
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                            ),
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Icon(
+                                                Icons.local_bar_outlined,
+                                                color: Color(0xFFB0A600),
+                                                size: 22.0,
                                               ),
-                                              Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    ingredientsListItem.nombre,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
+                                            ),
+                                          ),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'rwy5heot' /*  */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
                                                           font: GoogleFonts
@@ -791,172 +735,162 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                                                                   .titleMedium
                                                                   .fontStyle,
                                                         ),
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 2.0,
+                                                                2.0, 0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'wikf7jy2' /*  */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodySmall
+                                                          .override(
+                                                            font: GoogleFonts
+                                                                .inter(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .normal,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .fontStyle,
+                                                            ),
+                                                            color: Color(
+                                                                0xFF6B7280),
+                                                            fontSize: 13.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmall
+                                                                    .fontStyle,
+                                                          ),
+                                                    ),
                                                   ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    2.0,
-                                                                    2.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          ingredientsListItem
-                                                              .cantidad
-                                                              .toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodySmall
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                  fontStyle: FlutterFlowTheme.of(
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 2.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '9zdicmkg' /*  */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodySmall
+                                                          .override(
+                                                            font: GoogleFonts
+                                                                .inter(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .normal,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodySmall
                                                                       .fontStyle,
-                                                                ),
-                                                                color: Color(
-                                                                    0xFF6B7280),
-                                                                fontSize: 13.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                            ),
+                                                            color: Color(
+                                                                0xFF6B7280),
+                                                            fontSize: 13.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodySmall
                                                                     .fontStyle,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    2.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          ingredientsListItem
-                                                              .unidad,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodySmall
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodySmall
-                                                                      .fontStyle,
-                                                                ),
-                                                                color: Color(
-                                                                    0xFF6B7280),
-                                                                fontSize: 13.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmall
-                                                                    .fontStyle,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ],
+                                                          ),
+                                                    ),
                                                   ),
                                                 ],
                                               ),
-                                            ].divide(SizedBox(width: 14.0)),
+                                            ],
                                           ),
-                                          InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              var confirmDialogResponse =
-                                                  await showDialog<bool>(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            title: Text(
-                                                                'Eliminar ingrediente'),
-                                                            content: Text(
-                                                                '¿Estas seguro de que quieres eliminar este ingrediente?'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext,
-                                                                        false),
-                                                                child: Text(
-                                                                    'Cancelar'),
-                                                              ),
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext,
-                                                                        true),
-                                                                child: Text(
-                                                                    'Confirmar'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        },
-                                                      ) ??
-                                                      false;
-                                              if (confirmDialogResponse) {
-                                                _model
-                                                    .removeFromListaIngredientes(
-                                                        ingredientsListItem);
-                                                safeSetState(() {});
-                                              }
-                                            },
-                                            child: Container(
-                                              width: 36.0,
-                                              height: 36.0,
-                                              decoration: BoxDecoration(
-                                                color: Color(0xFFFFF0F0),
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                              ),
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Icon(
-                                                  Icons.delete_outline_rounded,
-                                                  color: Color(0xFFEF4444),
-                                                  size: 18.0,
-                                                ),
-                                              ),
+                                        ].divide(SizedBox(width: 14.0)),
+                                      ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          var confirmDialogResponse =
+                                              await showDialog<bool>(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: Text(
+                                                            'Eliminar ingrediente'),
+                                                        content: Text(
+                                                            '¿Estas seguro de que quieres eliminar este ingrediente?'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    false),
+                                                            child: Text(
+                                                                'Cancelar'),
+                                                          ),
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    true),
+                                                            child: Text(
+                                                                'Confirmar'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  ) ??
+                                                  false;
+                                        },
+                                        child: Container(
+                                          width: 36.0,
+                                          height: 36.0,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFFFF0F0),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          child: Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Icon(
+                                              Icons.delete_outline_rounded,
+                                              color: Color(0xFFEF4444),
+                                              size: 18.0,
                                             ),
                                           ),
-                                        ],
+                                        ),
                                       ),
-                                    ),
+                                    ],
                                   ),
-                                );
-                              },
-                            );
-                          },
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -965,79 +899,11 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                     child: FFButtonWidget(
-                      onPressed: () async {
-                        for (int loop1Index = 0;
-                            loop1Index < _model.listaIngredientes.length;
-                            loop1Index++) {
-                          final currentLoop1Item =
-                              _model.listaIngredientes[loop1Index];
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                loop1Index.toString(),
-                                style: TextStyle(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                ),
-                              ),
-                              duration: Duration(milliseconds: 4000),
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                            ),
-                          );
-                          _model.selectIngredientes =
-                              await IngredientesTable().queryRows(
-                            queryFn: (q) => q.eqOrNull(
-                              'nombre',
-                              currentLoop1Item.nombre,
-                            ),
-                          );
-                          if (_model.selectIngredientes?.length == 0) {
-                            _model.insertIngrediente =
-                                await IngredientesTable().insert({
-                              'nombre': currentLoop1Item.nombre,
-                            });
-                            _model.idIngredienteActual =
-                                _model.insertIngrediente?.idIngr;
-                            safeSetState(() {});
-                            _model.insertRecetaIngredientes =
-                                await RecetaIngredienteTable().insert({
-                              'id_receta': widget.idReceta,
-                              'id_ingr': _model.idIngredienteActual,
-                              'cantidad': currentLoop1Item.cantidad,
-                              'unidad': currentLoop1Item.unidad,
-                            });
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(
-                                  'ingredientes y receta_ingredientes',
-                                  style: TextStyle(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                  ),
-                                ),
-                                duration: Duration(milliseconds: 4000),
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).secondary,
-                              ),
-                            );
-                          } else {
-                            _model.idIngredienteActual =
-                                _model.selectIngredientes?.firstOrNull?.idIngr;
-                            safeSetState(() {});
-                            await RecetaIngredienteTable().insert({
-                              'id_receta': widget.idReceta,
-                              'id_ingr': _model.idIngredienteActual,
-                              'cantidad': currentLoop1Item.cantidad,
-                              'unidad': currentLoop1Item.unidad,
-                            });
-                          }
-                        }
-
-                        safeSetState(() {});
+                      onPressed: () {
+                        print('Button pressed ...');
                       },
                       text: FFLocalizations.of(context).getText(
-                        'jajcf722' /* Guardar ingredientes */,
+                        'qcibcofg' /* Guardar ingredientes */,
                       ),
                       icon: Icon(
                         Icons.check_rounded,
@@ -1077,46 +943,11 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                     ),
                   ),
                   FFButtonWidget(
-                    onPressed: () async {
-                      var confirmDialogResponse = await showDialog<bool>(
-                            context: context,
-                            builder: (alertDialogContext) {
-                              return AlertDialog(
-                                title: Text('Continuar'),
-                                content: Text(
-                                    'Estás seguro que quieres dejar de editar lo ingredientes'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () => Navigator.pop(
-                                        alertDialogContext, false),
-                                    child: Text('No'),
-                                  ),
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(alertDialogContext, true),
-                                    child: Text('Si'),
-                                  ),
-                                ],
-                              );
-                            },
-                          ) ??
-                          false;
-                      if (confirmDialogResponse) {
-                        context.pushNamed(
-                          AnyadirPasosWidget.routeName,
-                          queryParameters: {
-                            'idReceta': serializeParam(
-                              widget.idReceta,
-                              ParamType.int,
-                            ),
-                          }.withoutNulls,
-                        );
-                      } else {
-                        context.pushNamed(AnyadirIngredienteWidget.routeName);
-                      }
+                    onPressed: () {
+                      print('Button pressed ...');
                     },
                     text: FFLocalizations.of(context).getText(
-                      '9ihhckzv' /* Continuar */,
+                      'nggire5f' /* Continuar */,
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,
