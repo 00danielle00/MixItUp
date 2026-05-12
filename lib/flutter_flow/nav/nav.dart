@@ -217,11 +217,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: EditarIngredientesWidget.routeName,
-          path: EditarIngredientesWidget.routePath,
-          builder: (context, params) => EditarIngredientesWidget(
-            idReceta: params.getParam(
-              'idReceta',
+          name: EditIngredientsWidget.routeName,
+          path: EditIngredientsWidget.routePath,
+          builder: (context, params) => EditIngredientsWidget(
+            recetaId: params.getParam(
+              'recetaId',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: EditPasosWidget.routeName,
+          path: EditPasosWidget.routePath,
+          builder: (context, params) => EditPasosWidget(
+            recetaId: params.getParam(
+              'recetaId',
               ParamType.int,
             ),
           ),

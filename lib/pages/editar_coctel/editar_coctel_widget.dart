@@ -1081,9 +1081,9 @@ class _EditarCoctelWidgetState extends State<EditarCoctelWidget> {
                             );
 
                             context.pushNamed(
-                              EditarIngredientesWidget.routeName,
+                              EditIngredientsWidget.routeName,
                               queryParameters: {
-                                'idReceta': serializeParam(
+                                'recetaId': serializeParam(
                                   widget.idReceta,
                                   ParamType.int,
                                 ),
@@ -1123,9 +1123,9 @@ class _EditarCoctelWidgetState extends State<EditarCoctelWidget> {
                             );
 
                             context.pushNamed(
-                              EditarIngredientesWidget.routeName,
+                              EditIngredientsWidget.routeName,
                               queryParameters: {
-                                'idReceta': serializeParam(
+                                'recetaId': serializeParam(
                                   widget.idReceta,
                                   ParamType.int,
                                 ),

@@ -873,80 +873,157 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // EditarIngredientes
+  // EditIngredients
   {
-    '1stuxa2m': {
+    'uipxk8u6': {
       'es': 'Editar Ingredientes',
       'en': '',
       'pt': '',
     },
-    'buq7w68d': {
-      'es': 'Ingrediente',
+    'f7bu9z14': {
+      'es': 'Elimina o añade nuevos ingredientes a tu cóctel',
       'en': '',
       'pt': '',
     },
-    'nqg0z95e': {
-      'es': 'Ej: Vodka',
+    'lyycy6zj': {
+      'es': 'Continuar',
       'en': '',
       'pt': '',
     },
-    'ufdn2mn4': {
+  },
+  // EditPasos
+  {
+    'kiv7d8gm': {
+      'es': 'Editar pasos',
+      'en': '',
+      'pt': '',
+    },
+    'nrkg6709': {
+      'es': 'Elimina o añade nuevos pasos a tu cóctel',
+      'en': '',
+      'pt': '',
+    },
+    'itcll6tf': {
+      'es': 'seg',
+      'en': '',
+      'pt': '',
+    },
+    'y8vttolq': {
+      'es': 'Finalizar',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // anyadirIngr
+  {
+    'i3fzpyt5': {
+      'es': 'Nuevo Ingrediente',
+      'en': '',
+      'pt': '',
+    },
+    '38b4g4wy': {
+      'es': 'Nombre del ingrediente',
+      'en': '',
+      'pt': '',
+    },
+    'cs6wx9b3': {
+      'es': 'Ej. Mojito',
+      'en': '',
+      'pt': '',
+    },
+    'djattq0m': {
       'es': 'Cantidad',
       'en': '',
       'pt': '',
     },
-    '1wwf3qob': {
-      'es': 'Ej: 50',
+    'tp9heuqx': {
+      'es': 'Ej. 20',
       'en': '',
       'pt': '',
     },
-    '8vvv7nvk': {
+    'ej9sr0w0': {
       'es': 'Unidad',
       'en': '',
       'pt': '',
     },
-    '12sd3mv8': {
-      'es': 'ml / g / oz / cucharadas / al gusto',
+    'z776vkyu': {
+      'es': 'Ej. ml, oz, g',
       'en': '',
       'pt': '',
     },
-    '1wyx1vwi': {
-      'es': 'Añadir ingrediente',
+    'qeh1px7v': {
+      'es': 'Guardar ingrediente',
       'en': '',
       'pt': '',
     },
-    '9hlf829t': {
-      'es': 'Lista de ingredientes',
+  },
+  // informationalDialog
+  {
+    'p6ej2fbr': {
+      'es': 'Receta Vacía',
       'en': '',
       'pt': '',
     },
-    '25h456m5': {
-      'es': 'items',
+    '372qm192': {
+      'es':
+          'El campo para editar los ingredientes de tu cóctel no puede estarningún campo vacío. Por favor, añadelos todos.',
       'en': '',
       'pt': '',
     },
-    'rwy5heot': {
-      'es': '',
+    '2cy0qwga': {
+      'es': 'Entendido',
       'en': '',
       'pt': '',
     },
-    'wikf7jy2': {
-      'es': '',
+  },
+  // pasos
+  {
+    'q10xmklj': {
+      'es': 'Nuevo paso',
       'en': '',
       'pt': '',
     },
-    '9zdicmkg': {
-      'es': '',
+    '7lkqrmv4': {
+      'es': 'Descripción del paso',
       'en': '',
       'pt': '',
     },
-    'qcibcofg': {
-      'es': 'Guardar ingredientes',
+    'lpshsfgr': {
+      'es': 'Ej. Cortar limones y machacarlos en la coctelera',
       'en': '',
       'pt': '',
     },
-    'nggire5f': {
-      'es': 'Continuar',
+    'fqjuhqcl': {
+      'es': 'Tiempo del paso',
+      'en': '',
+      'pt': '',
+    },
+    '8s6n2mzq': {
+      'es': 'Ej. 2 min',
+      'en': '',
+      'pt': '',
+    },
+    'zoarn9co': {
+      'es': 'Guardar paso',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // infPasos
+  {
+    'n84icu7q': {
+      'es': 'Pasos vacíos',
+      'en': '',
+      'pt': '',
+    },
+    'v890xu8n': {
+      'es':
+          'El campo para editar los pasos de tu cóctel no puede estar vacío. Por favor, añadelos todos.',
+      'en': '',
+      'pt': '',
+    },
+    'n519n5cr': {
+      'es': 'Entendido',
       'en': '',
       'pt': '',
     },

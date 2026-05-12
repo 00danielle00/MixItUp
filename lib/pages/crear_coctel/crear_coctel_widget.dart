@@ -925,6 +925,8 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                           builder: (alertDialogContext) {
                             return AlertDialog(
                               title: Text('Crear receta'),
+                              content:
+                                  Text('Complete todos los campos por favor'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
@@ -983,47 +985,29 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                           'imagen': _model.uploadedFileUrl_uploadImagen2,
                           'categoria': _model.dropDownValue2,
                         });
-                        if (_model.uploadedFileUrl_uploadImagen2 == 'FALSE') {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Receta creada exitósamente',
-                                style: TextStyle(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  fontSize: 16.0,
-                                ),
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Receta creada exitósamente',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 16.0,
                               ),
-                              duration: Duration(milliseconds: 4000),
-                              backgroundColor: Color(0xB97EFFF2),
                             ),
-                          );
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor: Color(0xB97EFFF2),
+                          ),
+                        );
 
-                          context.pushNamed(
-                            AnyadirIngredienteWidget.routeName,
-                            queryParameters: {
-                              'idReceta': serializeParam(
-                                _model.recetaEnviada?.recetaId,
-                                ParamType.int,
-                              ),
-                            }.withoutNulls,
-                          );
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'UPS, ha ocurrido un error',
-                                style: TextStyle(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  fontSize: 16.0,
-                                ),
-                              ),
-                              duration: Duration(milliseconds: 4000),
-                              backgroundColor: Color(0xBBFF5963),
+                        context.pushNamed(
+                          AnyadirIngredienteWidget.routeName,
+                          queryParameters: {
+                            'idReceta': serializeParam(
+                              _model.recetaEnviada?.recetaId,
+                              ParamType.int,
                             ),
-                          );
-                        }
+                          }.withoutNulls,
+                        );
                       }
 
                       safeSetState(() {});
