@@ -125,10 +125,23 @@ class _CategoriaWidgetState extends State<CategoriaWidget> {
                           ),
                         ),
                         Text(
-                          valueOrDefault<String>(
-                            widget.tipoCat,
-                            'cat',
-                          ),
+                          () {
+                            if (widget.tipoCat == 'Fuerte') {
+                              return 'fuertes';
+                            } else if (widget.tipoCat == 'Clásico') {
+                              return 'clásicos';
+                            } else if (widget.tipoCat == 'Sin Alcohol') {
+                              return 'sin alcohol';
+                            } else if (widget.tipoCat == 'Tropical') {
+                              return 'tropicales';
+                            } else if (widget.tipoCat == 'Ácido') {
+                              return 'ácidos';
+                            } else if (widget.tipoCat == 'Dulce') {
+                              return 'dulces';
+                            } else {
+                              return '';
+                            }
+                          }(),
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(

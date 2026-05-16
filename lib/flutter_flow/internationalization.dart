@@ -625,6 +625,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
+    '24b43is9': {
+      'es': 'Fuertes',
+      'en': '',
+      'pt': '',
+    },
     'dtbsklvp': {
       'es': 'Tropicales',
       'en': '',
@@ -647,11 +652,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0fgbob86': {
       'es': 'Sin Alcohol',
-      'en': '',
-      'pt': '',
-    },
-    '24b43is9': {
-      'es': 'Fuertes',
       'en': '',
       'pt': '',
     },
@@ -713,13 +713,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    'a6qbv5av': {
+    'hqycspyw': {
       'es': 'Mis Cócteles',
       'en': '',
       'pt': '',
     },
     'hkodpzpw': {
       'es': 'No has creado aún ninguna receta',
+      'en': '',
+      'pt': '',
+    },
+    'yovaxlcb': {
+      'es': 'Logros',
       'en': '',
       'pt': '',
     },
@@ -914,6 +919,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
+  // swipe
+  {
+    'o8u3c877': {
+      'es': 'Descubre',
+      'en': '',
+      'pt': '',
+    },
+    'cn33q9uh': {
+      'es': 'Desliza para encontrar tu próxima mezcla favorita',
+      'en': '',
+      'pt': '',
+    },
+  },
   // anyadirIngr
   {
     'i3fzpyt5': {
@@ -1024,6 +1042,70 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n519n5cr': {
       'es': 'Entendido',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // prineraReceta
+  {
+    'nkwvl7mm': {
+      'es': '¡Enhorabuena!',
+      'en': '',
+      'pt': '',
+    },
+    'ybplurqd': {
+      'es': 'Has creado tu primer cóctel con éxito. ¡Es hora de disfrutarlo!',
+      'en': '',
+      'pt': '',
+    },
+    'xjvpnx9b': {
+      'es': '¡Genial!',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // changePasswd
+  {
+    'dk4d1qdx': {
+      'es': 'Cambiar contraseña',
+      'en': '',
+      'pt': '',
+    },
+    'qud80vhp': {
+      'es': 'Nueva contraseña',
+      'en': '',
+      'pt': '',
+    },
+    'lu31fo41': {
+      'es': 'Repetir nueva contraseña',
+      'en': '',
+      'pt': '',
+    },
+    '379pef14': {
+      'es': 'Las contraseñas no coinciden',
+      'en': '',
+      'pt': '',
+    },
+    'gn97ug03': {
+      'es': 'Cancelar',
+      'en': '',
+      'pt': '',
+    },
+    'skjxqyzs': {
+      'es': 'Actualizar',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // ChatBotComponent
+  {
+    '9w0qqpvz': {
+      'es': 'MixItUp AI',
+      'en': '',
+      'pt': '',
+    },
+    '8iurrvl8': {
+      'es': 'Dame una receta...',
       'en': '',
       'pt': '',
     },

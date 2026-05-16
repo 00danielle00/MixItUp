@@ -22,4 +22,7 @@ class LogrosRow extends SupabaseDataRow {
 
   String? get descripcion => getField<String>('descripcion');
   set descripcion(String? value) => setField<String>('descripcion', value);
+
+  String? get icono => getField<String>('icono');
+  set icono(String? value) => setField<String>('icono', value);
 }

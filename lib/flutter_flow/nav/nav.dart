@@ -235,6 +235,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.int,
             ),
           ),
+        ),
+        FFRoute(
+          name: SwipeWidget.routeName,
+          path: SwipeWidget.routePath,
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'swipe') : SwipeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

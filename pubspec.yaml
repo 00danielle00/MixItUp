@@ -43,9 +43,11 @@ dependencies:
       ref: 514178337dfbea442f617daed39c704b57593fc9
       path: packages/dropdown_button2
   easy_debounce: 2.0.1
+  equatable: 2.0.7
   file_picker: 10.1.9
   flutter_animate: 4.5.0
   flutter_cache_manager: 3.4.1
+  flutter_card_swiper: 6.0.0
   flutter_plugin_android_lifecycle: 2.0.28
   flutter_secure_storage: 10.0.0-beta.4
   flutter_secure_storage_linux: 2.0.1
@@ -61,6 +63,7 @@ dependencies:
   gotrue: 2.12.0
   hive: 2.2.3
   html: 0.15.6
+  http: 1.4.0
   image_picker: 1.1.2
   image_picker_android: 0.8.12+23
   image_picker_for_web: 3.0.6

@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/chat_bot_component/chat_bot_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
@@ -79,6 +80,48 @@ class _HomeWidgetState extends State<HomeWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Color(0xFFF8F5F0),
+        floatingActionButton: Builder(
+          builder: (context) => FloatingActionButton(
+            onPressed: () async {
+              await showDialog(
+                barrierDismissible: false,
+                context: context,
+                builder: (dialogContext) {
+                  return Dialog(
+                    elevation: 0,
+                    insetPadding: EdgeInsets.zero,
+                    backgroundColor: Colors.transparent,
+                    alignment: AlignmentDirectional(0.0, 0.0)
+                        .resolve(Directionality.of(context)),
+                    child: GestureDetector(
+                      onTap: () {
+                        FocusScope.of(dialogContext).unfocus();
+                        FocusManager.instance.primaryFocus?.unfocus();
+                      },
+                      child: ChatBotComponentWidget(),
+                    ),
+                  );
+                },
+              );
+            },
+            backgroundColor: FlutterFlowTheme.of(context).primary,
+            elevation: 8.0,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(30.0),
+                  child: Image.asset(
+                    'assets/images/LogoApp_(1).png',
+                    width: 55.0,
+                    height: 225.3,
+                    fit: BoxFit.fitWidth,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
         body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -494,6 +537,90 @@ class _HomeWidgetState extends State<HomeWidget> {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: Image.network(
+                                'https://images.unsplash.com/photo-1654677608880-51f63b5dee97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxuZWdyb25pfGVufDB8fHx8MTc3NzM4ODI5NHww&ixlib=rb-4.1.0&q=80&w=1080',
+                              ).image,
+                            ),
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(
+                                CategoriaWidget.routeName,
+                                queryParameters: {
+                                  'tipoCat': serializeParam(
+                                    'Fuerte',
+                                    ParamType.String,
+                                  ),
+                                }.withoutNulls,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType:
+                                        PageTransitionType.leftToRight,
+                                    duration: Duration(milliseconds: 200),
+                                  ),
+                                },
+                              );
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              height: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Color(0x66000000),
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        '24b43is9' /* Fuertes */,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmall
+                                                      .fontStyle,
+                                            ),
+                                            color: Colors.white,
+                                            fontSize: 12.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmall
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(16.0),
+                        child: Container(
+                          width: 90.0,
+                          height: 100.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF2D2D44),
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.network(
                                 'https://images.unsplash.com/photo-1649310655776-0db8b266840c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzczMTU4Mjh8&ixlib=rb-4.1.0&q=80&w=1080',
                               ).image,
                             ),
@@ -513,6 +640,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ParamType.String,
                                   ),
                                 }.withoutNulls,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType:
+                                        PageTransitionType.leftToRight,
+                                    duration: Duration(milliseconds: 200),
+                                  ),
+                                },
                               );
                             },
                             child: Container(
@@ -589,6 +724,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ParamType.String,
                                   ),
                                 }.withoutNulls,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType:
+                                        PageTransitionType.leftToRight,
+                                    duration: Duration(milliseconds: 200),
+                                  ),
+                                },
                               );
                             },
                             child: Container(
@@ -665,6 +808,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ParamType.String,
                                   ),
                                 }.withoutNulls,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType:
+                                        PageTransitionType.leftToRight,
+                                    duration: Duration(milliseconds: 200),
+                                  ),
+                                },
                               );
                             },
                             child: Container(
@@ -741,6 +892,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ParamType.String,
                                   ),
                                 }.withoutNulls,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType:
+                                        PageTransitionType.leftToRight,
+                                    duration: Duration(milliseconds: 200),
+                                  ),
+                                },
                               );
                             },
                             child: Container(
@@ -802,6 +961,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 ParamType.String,
                               ),
                             }.withoutNulls,
+                            extra: <String, dynamic>{
+                              '__transition_info__': TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.leftToRight,
+                                duration: Duration(milliseconds: 200),
+                              ),
+                            },
                           );
                         },
                         child: ClipRRect(
@@ -835,82 +1001,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     Text(
                                       FFLocalizations.of(context).getText(
                                         '0fgbob86' /* Sin Alcohol */,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .fontStyle,
-                                            ),
-                                            color: Colors.white,
-                                            fontSize: 12.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(16.0),
-                        child: Container(
-                          width: 90.0,
-                          height: 100.0,
-                          decoration: BoxDecoration(
-                            color: Color(0xFF2D2D44),
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: Image.network(
-                                'https://images.unsplash.com/photo-1654677608880-51f63b5dee97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxuZWdyb25pfGVufDB8fHx8MTc3NzM4ODI5NHww&ixlib=rb-4.1.0&q=80&w=1080',
-                              ).image,
-                            ),
-                            borderRadius: BorderRadius.circular(16.0),
-                          ),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.pushNamed(
-                                CategoriaWidget.routeName,
-                                queryParameters: {
-                                  'tipoCat': serializeParam(
-                                    'Fuerte',
-                                    ParamType.String,
-                                  ),
-                                }.withoutNulls,
-                              );
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              height: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Color(0x66000000),
-                                borderRadius: BorderRadius.circular(16.0),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(10.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        '24b43is9' /* Fuertes */,
                                       ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
@@ -1481,6 +1571,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                   ].divide(SizedBox(height: 12.0)),
                 ),
+              ),
+              Divider(
+                thickness: 2.0,
+                color: FlutterFlowTheme.of(context).alternate,
               ),
             ].addToEnd(SizedBox(height: 32.0)),
           ),

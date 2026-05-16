@@ -22,3 +22,4 @@ export '/pages/categoria/categoria_widget.dart' show CategoriaWidget;
 export '/pages/edit_ingredients/edit_ingredients_widget.dart'
     show EditIngredientsWidget;
 export '/pages/edit_pasos/edit_pasos_widget.dart' show EditPasosWidget;
+export '/pages/swipe/swipe_widget.dart' show SwipeWidget;
