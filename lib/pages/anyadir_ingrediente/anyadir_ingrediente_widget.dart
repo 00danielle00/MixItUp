@@ -971,20 +971,6 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                             loop1Index++) {
                           final currentLoop1Item =
                               _model.listaIngredientes[loop1Index];
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                loop1Index.toString(),
-                                style: TextStyle(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                ),
-                              ),
-                              duration: Duration(milliseconds: 4000),
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                            ),
-                          );
                           _model.selectIngredientes =
                               await IngredientesTable().queryRows(
                             queryFn: (q) => q.eqOrNull(
@@ -1010,7 +996,7 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
-                                  'ingredientes y receta_ingredientes',
+                                  'ingredientes guardados correctamente',
                                   style: TextStyle(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
@@ -1031,6 +1017,20 @@ class _AnyadirIngredienteWidgetState extends State<AnyadirIngredienteWidget> {
                               'cantidad': currentLoop1Item.cantidad,
                               'unidad': currentLoop1Item.unidad,
                             });
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  'ingredientes guardados correctamente',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  ),
+                                ),
+                                duration: Duration(milliseconds: 4000),
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).secondary,
+                              ),
+                            );
                           }
                         }
 

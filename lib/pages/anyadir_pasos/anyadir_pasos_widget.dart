@@ -774,6 +774,19 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                         }
                         _model.listaDePasos = [];
                         safeSetState(() {});
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Pasos guardados correctamente',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
                       },
                       text: FFLocalizations.of(context).getText(
                         'milzhxjz' /* Guardar pasos */,
