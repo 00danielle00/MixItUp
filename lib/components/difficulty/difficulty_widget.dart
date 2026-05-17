@@ -62,6 +62,7 @@ class _DifficultyWidgetState extends State<DifficultyWidget> {
           ),
           child: Row(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Align(
                 alignment: AlignmentDirectional(0.0, 0.0),

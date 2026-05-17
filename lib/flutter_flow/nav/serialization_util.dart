@@ -254,16 +254,12 @@ dynamic deserializeParam<T>(
             return FavoritosRow(data);
           case IngredientesRow:
             return IngredientesRow(data);
-          case LogrosRow:
-            return LogrosRow(data);
           case PasosRow:
             return PasosRow(data);
           case RecetaIngredienteRow:
             return RecetaIngredienteRow(data);
           case RecetasRow:
             return RecetasRow(data);
-          case UserLogroRow:
-            return UserLogroRow(data);
           case UsersRow:
             return UsersRow(data);
           default:

@@ -1006,27 +1006,27 @@ class _GestionRecetaPageWidgetState extends State<GestionRecetaPageWidget> {
                                     widget.recetaiD,
                                   ),
                                 );
+
+                                context.pushNamed(ProfileWidget.routeName);
+
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Has eliminado la receta correctamente',
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 15.0,
+                                      ),
+                                    ),
+                                    duration: Duration(milliseconds: 4000),
+                                    backgroundColor: Color(0x8F7EFFF2),
+                                  ),
+                                );
                               } else {
                                 context.pushNamed(
                                     GestionRecetaPageWidget.routeName);
                               }
-
-                              context.pushNamed(ProfileWidget.routeName);
-
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'Has eliminado la receta correctamente',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 15.0,
-                                    ),
-                                  ),
-                                  duration: Duration(milliseconds: 4000),
-                                  backgroundColor: Color(0x8F7EFFF2),
-                                ),
-                              );
 
                               safeSetState(() {});
                             },

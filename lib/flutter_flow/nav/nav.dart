@@ -114,11 +114,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => NicknamePageWidget(),
         ),
         FFRoute(
-          name: SettingsWidget.routeName,
-          path: SettingsWidget.routePath,
-          builder: (context, params) => SettingsWidget(),
-        ),
-        FFRoute(
           name: PasoScreenWidget.routeName,
           path: PasoScreenWidget.routePath,
           builder: (context, params) => PasoScreenWidget(
@@ -235,12 +230,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.int,
             ),
           ),
-        ),
-        FFRoute(
-          name: SwipeWidget.routeName,
-          path: SwipeWidget.routePath,
-          builder: (context, params) =>
-              params.isEmpty ? NavBarPage(initialPage: 'swipe') : SwipeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

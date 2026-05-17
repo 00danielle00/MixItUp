@@ -7,6 +7,10 @@ import 'package:flutter/material.dart';
 class ListaDeCoctelesModel extends FlutterFlowModel<ListaDeCoctelesWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
   // Models for Difficulty dynamic component.
   late FlutterFlowDynamicModels<DifficultyModel> difficultyModels;
 
@@ -17,6 +21,9 @@ class ListaDeCoctelesModel extends FlutterFlowModel<ListaDeCoctelesWidget> {
 
   @override
   void dispose() {
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
+
     difficultyModels.dispose();
   }
 }

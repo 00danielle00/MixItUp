@@ -4,7 +4,6 @@ export '/pages/s_i_g_n_in/s_i_g_n_in_widget.dart' show SIGNInWidget;
 export '/pages/detalle_coctel/detalle_coctel_widget.dart'
     show DetalleCoctelWidget;
 export '/pages/nickname_page/nickname_page_widget.dart' show NicknamePageWidget;
-export '/pages/settings/settings_widget.dart' show SettingsWidget;
 export '/pages/paso_screen/paso_screen_widget.dart' show PasoScreenWidget;
 export '/pages/success_page/success_page_widget.dart' show SuccessPageWidget;
 export '/pages/crear_coctel/crear_coctel_widget.dart' show CrearCoctelWidget;
@@ -22,4 +21,3 @@ export '/pages/categoria/categoria_widget.dart' show CategoriaWidget;
 export '/pages/edit_ingredients/edit_ingredients_widget.dart'
     show EditIngredientsWidget;
 export '/pages/edit_pasos/edit_pasos_widget.dart' show EditPasosWidget;
-export '/pages/swipe/swipe_widget.dart' show SwipeWidget;

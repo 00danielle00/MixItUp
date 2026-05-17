@@ -153,7 +153,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'g2v4kwv8': {
-      'es': 'Let\'s get started by filling out the form below.',
+      'es': 'Comencemos rellenando el formulario que aparece a continuación.',
       'en': '',
       'pt': '',
     },
@@ -163,7 +163,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'ds8nmtuy': {
-      'es': 'Password',
+      'es': 'Contraseña',
       'en': '',
       'pt': '',
     },
@@ -172,28 +172,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    'ricag7zl': {
-      'es': 'Or sign up with',
-      'en': '',
-      'pt': '',
-    },
-    '43e77fva': {
-      'es': 'Continue with Google',
-      'en': '',
-      'pt': '',
-    },
-    'j9yfplwk': {
-      'es': 'Continue with Apple',
-      'en': '',
-      'pt': '',
-    },
     '18wqk1f7': {
-      'es': 'Don\'t have an account?  ',
+      'es': '¿No tienes una cuenta aún?  ',
       'en': '',
       'pt': '',
     },
     'j5bs8out': {
-      'es': 'Sign Up here',
+      'es': 'Regístrate aquí',
       'en': '',
       'pt': '',
     },
@@ -293,44 +278,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'f7xmr09m': {
       'es': 'Continuar',
-      'en': '',
-      'pt': '',
-    },
-  },
-  // Settings
-  {
-    'mpb9whk9': {
-      'es': 'Configuración',
-      'en': '',
-      'pt': '',
-    },
-    'k5acsfsx': {
-      'es': 'PERFIL',
-      'en': '',
-      'pt': '',
-    },
-    'cxqlq8qy': {
-      'es': 'Editar perfil',
-      'en': '',
-      'pt': '',
-    },
-    'v7h4fltx': {
-      'es': 'Cócteles favoritos',
-      'en': '',
-      'pt': '',
-    },
-    '7y48s077': {
-      'es': 'Mis cócteles',
-      'en': '',
-      'pt': '',
-    },
-    'potr0reo': {
-      'es': 'Cerrar Sesión',
-      'en': '',
-      'pt': '',
-    },
-    'wufaynkn': {
-      'es': 'Home',
       'en': '',
       'pt': '',
     },
@@ -607,6 +554,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
+    'mc7zjvex': {
+      'es': 'Escribe el nombre....',
+      'en': '',
+      'pt': '',
+    },
   },
   // Home
   {
@@ -665,26 +617,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    'e9obd0xp': {
-      'es': 'Recientes',
-      'en': '',
-      'pt': '',
-    },
-    'pg481wri': {
-      'es': 'Ver todos',
-      'en': '',
-      'pt': '',
-    },
-    '98y4bblb': {
-      'es': 'Aperol Spritz',
-      'en': '',
-      'pt': '',
-    },
-    '3mnzwqd4': {
-      'es': 'Aperol · Prosecco · Soda',
-      'en': '',
-      'pt': '',
-    },
   },
   // Profile
   {
@@ -704,7 +636,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'x1a2jq6v': {
-      'es': 'Editar Perfil',
+      'es': 'Editar contraseña',
       'en': '',
       'pt': '',
     },
@@ -723,8 +655,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    'yovaxlcb': {
-      'es': 'Logros',
+    'zv2bsiwp': {
+      'es': 'Cerrar Sesión',
       'en': '',
       'pt': '',
     },
@@ -919,19 +851,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // swipe
-  {
-    'o8u3c877': {
-      'es': 'Descubre',
-      'en': '',
-      'pt': '',
-    },
-    'cn33q9uh': {
-      'es': 'Desliza para encontrar tu próxima mezcla favorita',
-      'en': '',
-      'pt': '',
-    },
-  },
   // anyadirIngr
   {
     'i3fzpyt5': {
@@ -1106,6 +1025,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8iurrvl8': {
       'es': 'Dame una receta...',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // changeNickname
+  {
+    '5e0yzshm': {
+      'es': 'Cambiar Apodo',
+      'en': '',
+      'pt': '',
+    },
+    '8g7u70qi': {
+      'es': 'Nuevo nickname',
+      'en': '',
+      'pt': '',
+    },
+    'ffuprc6t': {
+      'es': 'Elige tu apodo...',
+      'en': '',
+      'pt': '',
+    },
+    'savl44xx': {
+      'es': 'Cancelar',
+      'en': '',
+      'pt': '',
+    },
+    '55xbqjib': {
+      'es': 'Actualizar',
       'en': '',
       'pt': '',
     },
