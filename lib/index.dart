@@ -21,3 +21,11 @@ export '/pages/categoria/categoria_widget.dart' show CategoriaWidget;
 export '/pages/edit_ingredients/edit_ingredients_widget.dart'
     show EditIngredientsWidget;
 export '/pages/edit_pasos/edit_pasos_widget.dart' show EditPasosWidget;
+export '/pages/collection_page/collection_page_widget.dart'
+    show CollectionPageWidget;
+export '/pages/crear_coleccion/crear_coleccion_widget.dart'
+    show CrearColeccionWidget;
+export '/pages/anyadir_rec_a_coll/anyadir_rec_a_coll_widget.dart'
+    show AnyadirRecACollWidget;
+export '/pages/lista_de_colecciones/lista_de_colecciones_widget.dart'
+    show ListaDeColeccionesWidget;

@@ -20,6 +20,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   List<UsersRow>? returneado;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<FavoritosRow>? favorites;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<ColeccionUsuarioRow>? coleccionUser;
 
   @override
   void initState(BuildContext context) {

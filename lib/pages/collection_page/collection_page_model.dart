@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'prinera_receta_widget.dart' show PrineraRecetaWidget;
+import '/index.dart';
+import 'collection_page_widget.dart' show CollectionPageWidget;
 import 'package:flutter/material.dart';
 
-class PrineraRecetaModel extends FlutterFlowModel<PrineraRecetaWidget> {
+class CollectionPageModel extends FlutterFlowModel<CollectionPageWidget> {
   @override
   void initState(BuildContext context) {}
 

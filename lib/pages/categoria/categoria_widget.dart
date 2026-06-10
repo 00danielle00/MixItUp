@@ -1,11 +1,14 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'categoria_model.dart';
 export 'categoria_model.dart';
 
@@ -335,25 +338,38 @@ class _CategoriaWidgetState extends State<CategoriaWidget> {
                                               ),
                                             ),
                                           ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 10.0, 12.0, 5.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  getJsonField(
-                                                    categoriasItem,
-                                                    r'''$.categoria''',
-                                                  ).toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        font: GoogleFonts.inter(
+                                          Expanded(
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      12.0, 10.0, 12.0, 5.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    getJsonField(
+                                                      categoriasItem,
+                                                      r'''$.categoria''',
+                                                    ).toString(),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelSmall
+                                                        .override(
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
+                                                          ),
+                                                          color:
+                                                              Color(0xFFD4AF6A),
+                                                          letterSpacing: 0.8,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                           fontStyle:
@@ -362,65 +378,64 @@ class _CategoriaWidgetState extends State<CategoriaWidget> {
                                                                   .labelSmall
                                                                   .fontStyle,
                                                         ),
-                                                        color:
-                                                            Color(0xFFD4AF6A),
-                                                        letterSpacing: 0.8,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontStyle:
+                                                  ),
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  2.0,
+                                                                  0.0,
+                                                                  4.0),
+                                                      child: Text(
+                                                        getJsonField(
+                                                          categoriasItem,
+                                                          r'''$.nombre''',
+                                                        ).toString(),
+                                                        style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .labelSmall
-                                                                .fontStyle,
+                                                                .titleSmall
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .interTight(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
                                                       ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 2.0, 0.0, 4.0),
-                                                  child: Text(
-                                                    getJsonField(
-                                                      categoriasItem,
-                                                      r'''$.nombre''',
-                                                    ).toString(),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleSmall
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontStyle,
-                                                        ),
+                                                    ),
                                                   ),
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Text(
-                                                      getJsonField(
-                                                        categoriasItem,
-                                                        r'''$.descripcion''',
-                                                      ).toString(),
-                                                      maxLines: 2,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Expanded(
+                                                        child: Text(
+                                                          getJsonField(
+                                                            categoriasItem,
+                                                            r'''$.descripcion''',
+                                                          ).toString(),
+                                                          maxLines: 2,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
                                                               .labelSmall
                                                               .override(
                                                                 font:
@@ -449,12 +464,14 @@ class _CategoriaWidgetState extends State<CategoriaWidget> {
                                                                     .labelSmall
                                                                     .fontStyle,
                                                               ),
-                                                      overflow:
-                                                          TextOverflow.clip,
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ],

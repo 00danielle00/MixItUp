@@ -4,10 +4,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'edit_ingredients_model.dart';
 export 'edit_ingredients_model.dart';
 
@@ -106,13 +108,13 @@ class _EditIngredientsWidgetState extends State<EditIngredientsWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                       child: FlutterFlowIconButton(
-                        borderRadius: 8.0,
-                        buttonSize: 40.0,
+                        borderRadius: 25.0,
+                        buttonSize: 48.0,
                         fillColor: FlutterFlowTheme.of(context).primaryText,
                         icon: Icon(
                           Icons.arrow_back,
                           color: FlutterFlowTheme.of(context).info,
-                          size: 24.0,
+                          size: 26.0,
                         ),
                         onPressed: () async {
                           context.safePop();

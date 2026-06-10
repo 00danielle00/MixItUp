@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +56,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
       );
       _model.listaRecetaPorUsuario =
           _model.usuarioReceta!.toList().cast<dynamic>();
+      safeSetState(() {});
+      _model.coleccionesUsuario = await actions.comprobarColecciones(
+        currentUserUid,
+      );
+      _model.listaColeccionUsuario =
+          _model.coleccionesUsuario!.toList().cast<dynamic>();
       safeSetState(() {});
     });
   }
@@ -821,7 +828,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                         .descripcion,
                                                                     'descripción',
                                                                   ),
-                                                                  maxLines: 3,
+                                                                  maxLines: 2,
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodySmall
@@ -898,80 +905,87 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'hqycspyw' /* Mis Cócteles */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    font: GoogleFonts.interTight(
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleLarge
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            if (_model.listaRecetaPorUsuario.length == 0)
-                              Container(
-                                height: 30.0,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFFFFABB),
-                                  borderRadius: BorderRadius.circular(15.0),
-                                  border: Border.all(
-                                    color: Color(0xFFFFE148),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 25.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'zy2das4p' /* Mis Cócteles */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          font: GoogleFonts.interTight(
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontStyle,
+                                        ),
                                   ),
-                                ),
-                                child: Visibility(
-                                  visible:
-                                      _model.listaRecetaPorUsuario.length == 0,
-                                  child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'hkodpzpw' /* No has creado aún ninguna rece... */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
+                                ],
+                              ),
+                            ),
+                            if (_model.listaRecetaPorUsuario.length == 0)
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: Container(
+                                  height: 30.0,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFFFABB),
+                                    borderRadius: BorderRadius.circular(15.0),
+                                    border: Border.all(
+                                      color: Color(0xFFFFE148),
+                                    ),
+                                  ),
+                                  child: Visibility(
+                                    visible:
+                                        _model.listaRecetaPorUsuario.length ==
+                                            0,
+                                    child: Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'hkodpzpw' /* No has creado aún ninguna rece... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.inter(
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              fontSize: 15.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .fontStyle,
                                             ),
-                                            fontSize: 15.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -1104,26 +1118,39 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                       .fontStyle,
                                                                 ),
                                                           ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        4.0,
-                                                                        0.0,
-                                                                        8.0),
-                                                            child: Text(
-                                                              getJsonField(
-                                                                listitaItem,
-                                                                r'''$.descripcion''',
-                                                              ).toString(),
-                                                              maxLines: 3,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodySmall
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .inter(
+                                                          Expanded(
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          8.0),
+                                                              child: Text(
+                                                                getJsonField(
+                                                                  listitaItem,
+                                                                  r'''$.descripcion''',
+                                                                ).toString(),
+                                                                maxLines: 2,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmall
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .inter(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodySmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodySmall
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodySmall
@@ -1132,26 +1159,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .fontStyle,
+                                                                      lineHeight:
+                                                                          1.4,
                                                                     ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmall
-                                                                        .fontStyle,
-                                                                    lineHeight:
-                                                                        1.4,
-                                                                  ),
-                                                              overflow:
-                                                                  TextOverflow
-                                                                      .ellipsis,
+                                                                overflow:
+                                                                    TextOverflow
+                                                                        .ellipsis,
+                                                              ),
                                                             ),
                                                           ),
                                                         ],
@@ -1180,6 +1194,343 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             ),
                                           ),
                                         ),
+                                      ),
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 25.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'hqycspyw' /* Mis Colecciones */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          font: GoogleFonts.interTight(
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            if (_model.listaColeccionUsuario.length == 0)
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: Container(
+                                  height: 30.0,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFFFABB),
+                                    borderRadius: BorderRadius.circular(15.0),
+                                    border: Border.all(
+                                      color: Color(0xFFFFE148),
+                                    ),
+                                  ),
+                                  child: Visibility(
+                                    visible:
+                                        _model.listaColeccionUsuario.length ==
+                                            0,
+                                    child: Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'ru9o9gua' /* No tienes ninguna colección gu... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.inter(
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              fontSize: 15.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            Builder(
+                              builder: (context) {
+                                final listaColle =
+                                    _model.listaColeccionUsuario.toList();
+
+                                return ListView.builder(
+                                  padding: EdgeInsets.zero,
+                                  primary: false,
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.vertical,
+                                  itemCount: listaColle.length,
+                                  itemBuilder: (context, listaColleIndex) {
+                                    final listaColleItem =
+                                        listaColle[listaColleIndex];
+                                    return Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 10.0, 10.0, 0.0),
+                                      child: FutureBuilder<List<ColeccionRow>>(
+                                        future: ColeccionTable().querySingleRow(
+                                          queryFn: (q) => q.eqOrNull(
+                                            'id',
+                                            getJsonField(
+                                              listaColleItem,
+                                              r'''$.id_coleccion''',
+                                            ),
+                                          ),
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          List<ColeccionRow>
+                                              containerColeccionRowList =
+                                              snapshot.data!;
+
+                                          final containerColeccionRow =
+                                              containerColeccionRowList
+                                                      .isNotEmpty
+                                                  ? containerColeccionRowList
+                                                      .first
+                                                  : null;
+
+                                          return InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                CollectionPageWidget.routeName,
+                                                queryParameters: {
+                                                  'idCollection':
+                                                      serializeParam(
+                                                    containerColeccionRow.id,
+                                                    ParamType.int,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
+                                            },
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
+                                              child: Container(
+                                                width: 350.0,
+                                                height: 135.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      blurRadius: 10.0,
+                                                      color: Color(0x14000000),
+                                                      offset: Offset(
+                                                        0.0,
+                                                        3.0,
+                                                      ),
+                                                    )
+                                                  ],
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(10.0, 10.0,
+                                                          10.0, 10.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                        child: Image.network(
+                                                          containerColeccionRow!
+                                                              .imagen!,
+                                                          width: 110.0,
+                                                          height: 120.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      15.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  containerColeccionRow
+                                                                      .nombre,
+                                                                  'nombre',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .interTight(
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                              ),
+                                                              Expanded(
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          8.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      containerColeccionRow
+                                                                          .descripcion,
+                                                                      'descr',
+                                                                    ),
+                                                                    maxLines: 2,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.inter(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                          ),
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .fontStyle,
+                                                                          lineHeight:
+                                                                              1.4,
+                                                                        ),
+                                                                    overflow:
+                                                                        TextOverflow
+                                                                            .ellipsis,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Icon(
+                                                            Icons.arrow_right,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .alternate,
+                                                            size: 24.0,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ].divide(
+                                                        SizedBox(width: 14.0)),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        },
                                       ),
                                     );
                                   },

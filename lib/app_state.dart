@@ -82,6 +82,35 @@ class FFAppState extends ChangeNotifier {
   void deleteNickname() {
     secureStorage.delete(key: 'ff_nickname');
   }
+
+  List<int> _coleccionesUsuario = [];
+  List<int> get coleccionesUsuario => _coleccionesUsuario;
+  set coleccionesUsuario(List<int> value) {
+    _coleccionesUsuario = value;
+  }
+
+  void addToColeccionesUsuario(int value) {
+    coleccionesUsuario.add(value);
+  }
+
+  void removeFromColeccionesUsuario(int value) {
+    coleccionesUsuario.remove(value);
+  }
+
+  void removeAtIndexFromColeccionesUsuario(int index) {
+    coleccionesUsuario.removeAt(index);
+  }
+
+  void updateColeccionesUsuarioAtIndex(
+    int index,
+    int Function(int) updateFn,
+  ) {
+    coleccionesUsuario[index] = updateFn(_coleccionesUsuario[index]);
+  }
+
+  void insertAtIndexInColeccionesUsuario(int index, int value) {
+    coleccionesUsuario.insert(index, value);
+  }
 }
 
 void _safeInit(Function() initializeField) {

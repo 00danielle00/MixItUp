@@ -544,17 +544,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // listaDeCocteles
   {
-    'z3jc55n4': {
+    'oz0olcyi': {
       'es': 'Cócteles',
       'en': '',
       'pt': '',
     },
-    'me9c4kxt': {
+    'kdxzuvmu': {
       'es': 'Descubre tu próxima bebida favorita',
       'en': '',
       'pt': '',
     },
-    'mc7zjvex': {
+    '3g6bof7z': {
       'es': 'Escribe el nombre....',
       'en': '',
       'pt': '',
@@ -562,58 +562,63 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Home
   {
-    'gbiamgfi': {
+    'lv1u00yy': {
       'es': 'Descubre tu cóctel perfecto',
       'en': '',
       'pt': '',
     },
-    'gvdh9a74': {
+    'ftlpecsz': {
       'es': 'Cóctel del día',
       'en': '',
       'pt': '',
     },
-    'tm8rzhg9': {
+    'ba3rd6bj': {
       'es': 'Categorías',
       'en': '',
       'pt': '',
     },
-    '24b43is9': {
+    'cvdgoatu': {
       'es': 'Fuertes',
       'en': '',
       'pt': '',
     },
-    'dtbsklvp': {
+    'hkrgifgb': {
       'es': 'Tropicales',
       'en': '',
       'pt': '',
     },
-    'qwgt7xv3': {
+    'k8zex4g0': {
       'es': 'Clásicos',
       'en': '',
       'pt': '',
     },
-    'uqixidzx': {
+    'zmtmiazn': {
       'es': 'Ácidos',
       'en': '',
       'pt': '',
     },
-    'ciwms7mz': {
+    '5butv9vg': {
       'es': 'Dulces',
       'en': '',
       'pt': '',
     },
-    '0fgbob86': {
+    '4lk2zzxt': {
       'es': 'Sin Alcohol',
       'en': '',
       'pt': '',
     },
-    'ovg4b9oa': {
+    '4labmwav': {
       'es': 'Explora nuestras recetas',
       'en': '',
       'pt': '',
     },
-    'e5h1d7i3': {
+    'hgwxa647': {
       'es': 'min',
+      'en': '',
+      'pt': '',
+    },
+    'y6mqlyxe': {
+      'es': 'Explora nuestras colecciones de recetas',
       'en': '',
       'pt': '',
     },
@@ -645,13 +650,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    'hqycspyw': {
+    'zy2das4p': {
       'es': 'Mis Cócteles',
       'en': '',
       'pt': '',
     },
     'hkodpzpw': {
       'es': 'No has creado aún ninguna receta',
+      'en': '',
+      'pt': '',
+    },
+    'hqycspyw': {
+      'es': 'Mis Colecciones',
+      'en': '',
+      'pt': '',
+    },
+    'ru9o9gua': {
+      'es': 'No tienes ninguna colección guardada',
       'en': '',
       'pt': '',
     },
@@ -851,6 +866,113 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
+  // collectionPage
+  {
+    'gv5qx611': {
+      'es': 'Recetas en esta colección',
+      'en': '',
+      'pt': '',
+    },
+    'jlfs7pbk': {
+      'es': 'Dificultad: ',
+      'en': '',
+      'pt': '',
+    },
+    'fu4mfqdp': {
+      'es': ' min',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // CrearColeccion
+  {
+    'f5hd9jul': {
+      'es': 'Crear Colección',
+      'en': '',
+      'pt': '',
+    },
+    'fo72sl46': {
+      'es': 'Haz clic para añadir la imagen\nde tu cóctel',
+      'en': '',
+      'pt': '',
+    },
+    'pyy3na6c': {
+      'es': 'Nombre de la categoría',
+      'en': '',
+      'pt': '',
+    },
+    'gwq2v7kf': {
+      'es': 'Ej. Pool party',
+      'en': '',
+      'pt': '',
+    },
+    '119aqn3t': {
+      'es': 'Descripción',
+      'en': '',
+      'pt': '',
+    },
+    '9x27ppoy': {
+      'es': 'Describe tu categoría...',
+      'en': '',
+      'pt': '',
+    },
+    'cwh6sax0': {
+      'es': 'Continuar',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // anyadirRecAColl
+  {
+    'igyuycz0': {
+      'es': 'Añadir recetas',
+      'en': '',
+      'pt': '',
+    },
+    '6mcu8ux1': {
+      'es': 'Selecciona recetas para esta colección',
+      'en': '',
+      'pt': '',
+    },
+    '9r8kid59': {
+      'es': 'Recetas disponibles',
+      'en': '',
+      'pt': '',
+    },
+    'hnjak19c': {
+      'es': 'Elige las recetas que quieres añadir',
+      'en': '',
+      'pt': '',
+    },
+    '1beegs6n': {
+      'es': 'Fácil • 20 min',
+      'en': '',
+      'pt': '',
+    },
+    'ij8tsbec': {
+      'es': 'Finalizar',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // listaDeColecciones
+  {
+    '48geqcc0': {
+      'es': 'Colecciones',
+      'en': '',
+      'pt': '',
+    },
+    'pkzwt32a': {
+      'es': 'Descubre tu próxima colección favorita',
+      'en': '',
+      'pt': '',
+    },
+    'kkd42ufg': {
+      'es': 'Escribe el nombre....',
+      'en': '',
+      'pt': '',
+    },
+  },
   // anyadirIngr
   {
     'i3fzpyt5': {
@@ -961,24 +1083,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n519n5cr': {
       'es': 'Entendido',
-      'en': '',
-      'pt': '',
-    },
-  },
-  // prineraReceta
-  {
-    'nkwvl7mm': {
-      'es': '¡Enhorabuena!',
-      'en': '',
-      'pt': '',
-    },
-    'ybplurqd': {
-      'es': 'Has creado tu primer cóctel con éxito. ¡Es hora de disfrutarlo!',
-      'en': '',
-      'pt': '',
-    },
-    'xjvpnx9b': {
-      'es': '¡Genial!',
       'en': '',
       'pt': '',
     },

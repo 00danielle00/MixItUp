@@ -4,10 +4,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'anyadir_pasos_model.dart';
 export 'anyadir_pasos_model.dart';
 
@@ -92,9 +94,9 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                           children: [
                             FlutterFlowIconButton(
                               borderColor: Colors.transparent,
-                              borderRadius: 10.0,
+                              borderRadius: 25.0,
                               borderWidth: 1.0,
-                              buttonSize: 35.0,
+                              buttonSize: 48.0,
                               fillColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               icon: Icon(

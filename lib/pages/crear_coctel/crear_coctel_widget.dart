@@ -7,11 +7,13 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'crear_coctel_model.dart';
 export 'crear_coctel_model.dart';
 
@@ -91,14 +93,14 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                       children: [
                         FlutterFlowIconButton(
                           borderColor: FlutterFlowTheme.of(context).primaryText,
-                          borderRadius: 8.0,
-                          buttonSize: 35.0,
+                          borderRadius: 20.0,
+                          buttonSize: 48.0,
                           fillColor: FlutterFlowTheme.of(context).primaryText,
                           icon: Icon(
                             Icons.arrow_back,
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
-                            size: 20.0,
+                            size: 26.0,
                           ),
                           onPressed: () async {
                             var confirmDialogResponse = await showDialog<bool>(
@@ -174,8 +176,8 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                       if (selectedMedia != null &&
                           selectedMedia.every((m) =>
                               validateFileFormat(m.storagePath, context))) {
-                        safeSetState(
-                            () => _model.isDataUploading_uploadDataS0p = true);
+                        safeSetState(() => _model
+                            .isDataUploading_uploadDataRecetaImagen = true);
                         var selectedUploadedFiles = <FFUploadedFile>[];
 
                         try {
@@ -190,12 +192,12 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                   ))
                               .toList();
                         } finally {
-                          _model.isDataUploading_uploadDataS0p = false;
+                          _model.isDataUploading_uploadDataRecetaImagen = false;
                         }
                         if (selectedUploadedFiles.length ==
                             selectedMedia.length) {
                           safeSetState(() {
-                            _model.uploadedLocalFile_uploadDataS0p =
+                            _model.uploadedLocalFile_uploadDataRecetaImagen =
                                 selectedUploadedFiles.first;
                           });
                         } else {
@@ -205,7 +207,7 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                       }
 
                       _model.imagenCoctel =
-                          _model.uploadedLocalFile_uploadDataS0p;
+                          _model.uploadedLocalFile_uploadDataRecetaImagen;
                       safeSetState(() {});
                     },
                     child: ClipRRect(
@@ -910,8 +912,8 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      if (((_model.uploadedLocalFile_uploadDataS0p.bytes
-                                      ?.isEmpty ??
+                      if (((_model.uploadedLocalFile_uploadDataRecetaImagen
+                                      .bytes?.isEmpty ??
                                   true)) ||
                           (_model.textController1.text == '') ||
                           (_model.textController2.text == '') ||

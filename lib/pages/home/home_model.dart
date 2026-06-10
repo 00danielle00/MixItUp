@@ -11,6 +11,8 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
   List<dynamic>? recetasList;
   // Stores action output result for [Backend Call - Query Rows] action in Home widget.
   List<FavoritosRow>? favorites;
+  // Stores action output result for [Backend Call - Query Rows] action in Home widget.
+  List<ColeccionUsuarioRow>? coleccionU;
 
   @override
   void initState(BuildContext context) {}

@@ -230,6 +230,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.int,
             ),
           ),
+        ),
+        FFRoute(
+          name: CollectionPageWidget.routeName,
+          path: CollectionPageWidget.routePath,
+          builder: (context, params) => CollectionPageWidget(
+            idCollection: params.getParam(
+              'idCollection',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: CrearColeccionWidget.routeName,
+          path: CrearColeccionWidget.routePath,
+          builder: (context, params) => CrearColeccionWidget(),
+        ),
+        FFRoute(
+          name: AnyadirRecACollWidget.routeName,
+          path: AnyadirRecACollWidget.routePath,
+          builder: (context, params) => AnyadirRecACollWidget(
+            idCol: params.getParam(
+              'idCol',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ListaDeColeccionesWidget.routeName,
+          path: ListaDeColeccionesWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'listaDeColecciones')
+              : ListaDeColeccionesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

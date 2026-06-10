@@ -517,6 +517,21 @@ class _LoginWidgetState extends State<LoginWidget>
                                             .toList()
                                             .cast<int>();
                                         safeSetState(() {});
+                                        _model.coleccionUser =
+                                            await ColeccionUsuarioTable()
+                                                .queryRows(
+                                          queryFn: (q) => q.eqOrNull(
+                                            'id_user',
+                                            currentUserUid,
+                                          ),
+                                        );
+                                        FFAppState().coleccionesUsuario = _model
+                                            .coleccionUser!
+                                            .map((e) => e.idColeccion)
+                                            .withoutNulls
+                                            .toList()
+                                            .cast<int>();
+                                        safeSetState(() {});
 
                                         context.pushNamedAuth(
                                           HomeWidget.routeName,
