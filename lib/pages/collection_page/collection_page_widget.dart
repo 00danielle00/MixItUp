@@ -3,8 +3,6 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -173,10 +171,10 @@ class _CollectionPageWidgetState extends State<CollectionPageWidget> {
                                         buttonSize: 40.0,
                                         fillColor: Color(0xCCFFFFFF),
                                         icon: Icon(
-                                          Icons.arrow_back_ios_new_rounded,
+                                          Icons.keyboard_arrow_left,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 20.0,
+                                          size: 24.0,
                                         ),
                                         onPressed: () async {
                                           context.safePop();
@@ -187,7 +185,7 @@ class _CollectionPageWidgetState extends State<CollectionPageWidget> {
                                         buttonSize: 40.0,
                                         fillColor: Color(0xCCFFFFFF),
                                         icon: Icon(
-                                          Icons.bookmark_border_rounded,
+                                          Icons.bookmark_outlined,
                                           color: FFAppState()
                                                       .coleccionesUsuario
                                                       .contains(widget

@@ -1163,6 +1163,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Miscellaneous
   {
+    'bhehl5eh': {
+      'es': '',
+      'en': '',
+      'pt': '',
+    },
+    'ga3qgwod': {
+      'es': '',
+      'en': '',
+      'pt': '',
+    },
     '3j4pyonz': {
       'es': '',
       'en': '',
