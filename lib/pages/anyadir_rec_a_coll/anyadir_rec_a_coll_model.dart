@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'anyadir_rec_a_coll_widget.dart' show AnyadirRecACollWidget;
@@ -16,6 +17,11 @@ class AnyadirRecACollModel extends FlutterFlowModel<AnyadirRecACollWidget> {
       recetasSeleccionadas.insert(index, item);
   void updateRecetasSeleccionadasAtIndex(int index, Function(int) updateFn) =>
       recetasSeleccionadas[index] = updateFn(recetasSeleccionadas[index]);
+
+  ///  State fields for stateful widgets in this page.
+
+  // Stores action output result for [Backend Call - Query Rows] action in anyadirRecAColl widget.
+  List<ColeccionRecetaRow>? queryColeccion;
 
   @override
   void initState(BuildContext context) {}

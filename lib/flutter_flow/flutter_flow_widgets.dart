@@ -1,3 +1,4 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -126,12 +127,16 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
     final onPressed = widget.onPressed != null
         ? (widget.showLoadingIndicator
             ? () async {
-                if (loading) return;
+                if (loading) {
+                  return;
+                }
                 setState(() => loading = true);
                 try {
                   await widget.onPressed!();
                 } finally {
-                  if (mounted) setState(() => loading = false);
+                  if (mounted) {
+                    setState(() => loading = false);
+                  }
                 }
               }
             : () => widget.onPressed!())
@@ -204,10 +209,9 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
       }),
     );
 
-    // ICON LOGIC — SIN FAICON
     if ((widget.icon != null || widget.iconData != null) && !loading) {
       Widget icon = widget.icon ??
-          Icon(
+          FaIcon(
             widget.iconData!,
             size: widget.options.iconSize,
             color: widget.options.iconColor,
@@ -236,7 +240,6 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
           ),
         );
       }
-
       return SizedBox(
         height: widget.options.height,
         width: widget.options.width,
@@ -292,10 +295,14 @@ extension _WithoutColorExtension on TextStyle {
         debugLabel: debugLabel,
         fontFamily: fontFamily,
         fontFamilyFallback: fontFamilyFallback,
+        // The _package field is private so unfortunately we can't set it here,
+        // but it's almost always unset anyway.
+        // package: _package,
         overflow: overflow,
       );
 }
 
+// Slightly hacky method of getting the layout width of the provided text.
 double? _getTextWidth(String? text, TextStyle? style, int maxLines) =>
     text != null
         ? (TextPainter(
@@ -306,3 +313,118 @@ double? _getTextWidth(String? text, TextStyle? style, int maxLines) =>
             .size
             .width
         : null;
+
+class FFFocusIndicator extends StatefulWidget {
+  final Widget Function(FocusNode focusNode)? builder;
+  final Widget? child;
+  final Border? border;
+  final BorderRadius? borderRadius;
+  final EdgeInsetsGeometry? padding;
+  final void Function()? onTap;
+  final void Function()? onLongPress;
+  final void Function()? onDoubleTap;
+
+  const FFFocusIndicator({
+    super.key,
+    this.builder,
+    this.child,
+    this.border,
+    this.borderRadius,
+    this.padding,
+    this.onTap,
+    this.onLongPress,
+    this.onDoubleTap,
+  }) : assert(
+          builder != null || child != null,
+          'Either builder or child must be provided',
+        );
+
+  @override
+  State<FFFocusIndicator> createState() => _FFFocusIndicatorState();
+}
+
+class _FFFocusIndicatorState extends State<FFFocusIndicator> {
+  late FocusNode _focusNode;
+  bool _hasFocus = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode = FocusNode();
+    _focusNode.addListener(_onFocusChange);
+  }
+
+  @override
+  void dispose() {
+    _focusNode.removeListener(_onFocusChange);
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  void _onFocusChange() {
+    if (mounted) {
+      if (_focusNode.hasFocus) {
+        // No single ScrollPositionAlignmentPolicy scrolls in both directions.
+        // keepVisibleAtEnd scrolls DOWN (handles Shift+Tab wrap first → last).
+        // keepVisibleAtStart scrolls UP (handles Tab wrap last → first).
+        // Each is a no-op when the widget is already visible. We call
+        // keepVisibleAtEnd first so that keepVisibleAtStart gets the final
+        // say — ensuring the top of the widget is shown when it's taller
+        // than the viewport.
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted && _focusNode.hasFocus) {
+            Scrollable.ensureVisible(
+              context,
+              alignmentPolicy: ScrollPositionAlignmentPolicy.keepVisibleAtEnd,
+            );
+            Scrollable.ensureVisible(
+              context,
+              alignmentPolicy: ScrollPositionAlignmentPolicy.keepVisibleAtStart,
+            );
+          }
+        });
+      }
+      setState(() {
+        _hasFocus = _focusNode.hasFocus;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final bool hasInteractions = widget.onTap != null ||
+        widget.onLongPress != null ||
+        widget.onDoubleTap != null;
+
+    Widget childWidget;
+    if (widget.builder != null) {
+      // Builder mode: pass focus node to builder
+      childWidget = widget.builder!(_focusNode);
+    } else if (hasInteractions) {
+      // Child mode with interactions: wrap in InkWell
+      childWidget = InkWell(
+        splashColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        focusNode: _focusNode,
+        onTap: widget.onTap,
+        onLongPress: widget.onLongPress,
+        onDoubleTap: widget.onDoubleTap,
+        child: widget.child!,
+      );
+    } else {
+      // Child mode without interactions: just use child
+      childWidget = widget.child!;
+    }
+
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
+      padding: _hasFocus ? widget.padding : null,
+      decoration: BoxDecoration(
+        border: _hasFocus ? widget.border : null,
+        borderRadius: widget.borderRadius ?? BorderRadius.circular(4),
+      ),
+      child: childWidget,
+    );
+  }
+}

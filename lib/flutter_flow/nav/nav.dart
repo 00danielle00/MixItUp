@@ -1,12 +1,17 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/backend/schema/structs/index.dart';
+
+
 import '/auth/base_auth_user_provider.dart';
+
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+
 import '/index.dart';
 
 export 'package:go_router/go_router.dart';
@@ -27,6 +32,11 @@ class AppStateNotifier extends ChangeNotifier {
   bool showSplashImage = true;
   String? _redirectLocation;
 
+  /// Determines whether the app will refresh and build again when a sign
+  /// in or sign out happens. This is useful when the app is launched or
+  /// on an unexpected logout. However, this must be turned off when we
+  /// intend to sign in/out and then navigate or perform any actions after.
+  /// Otherwise, this will trigger a refresh and interrupt the action(s).
   bool notifyOnAuthChange = true;
 
   bool get loading => user == null || showSplashImage;
@@ -39,6 +49,8 @@ class AppStateNotifier extends ChangeNotifier {
   void setRedirectLocationIfUnset(String loc) => _redirectLocation ??= loc;
   void clearRedirectLocation() => _redirectLocation = null;
 
+  /// Mark as not needing to notify on a sign in / out when we intend
+  /// to perform subsequent actions (such as navigation) afterwards.
   void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
 
   void update(BaseAuthUser newUser) {
@@ -46,11 +58,13 @@ class AppStateNotifier extends ChangeNotifier {
         user?.uid == null || newUser.uid == null || user?.uid != newUser.uid;
     initialUser ??= newUser;
     user = newUser;
-
+    // Refresh the app on auth change unless explicitly marked otherwise.
+    // No need to update unless the user has changed.
     if (notifyOnAuthChange && shouldUpdate) {
       notifyListeners();
     }
-
+    // Once again mark the notifier as needing to update on auth change
+    // (in order to catch sign in / out events).
     updateNotifyOnAuthChange(true);
   }
 
@@ -88,7 +102,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: DetalleCoctelWidget.routeName,
           path: DetalleCoctelWidget.routePath,
           builder: (context, params) => DetalleCoctelWidget(
-            idReceta: params.getParam('idReceta', ParamType.int),
+            idReceta: params.getParam(
+              'idReceta',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
@@ -100,9 +117,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: PasoScreenWidget.routeName,
           path: PasoScreenWidget.routePath,
           builder: (context, params) => PasoScreenWidget(
-            recetaId: params.getParam('recetaId', ParamType.int),
-            pasosNumActual: params.getParam('pasosNumActual', ParamType.int),
-            totalPasos: params.getParam('totalPasos', ParamType.int),
+            recetaId: params.getParam(
+              'recetaId',
+              ParamType.int,
+            ),
+            pasosNumActual: params.getParam(
+              'pasosNumActual',
+              ParamType.int,
+            ),
+            totalPasos: params.getParam(
+              'totalPasos',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
@@ -119,14 +145,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: AnyadirIngredienteWidget.routeName,
           path: AnyadirIngredienteWidget.routePath,
           builder: (context, params) => AnyadirIngredienteWidget(
-            idReceta: params.getParam('idReceta', ParamType.int),
+            idReceta: params.getParam(
+              'idReceta',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
           name: AnyadirPasosWidget.routeName,
           path: AnyadirPasosWidget.routePath,
           builder: (context, params) => AnyadirPasosWidget(
-            idReceta: params.getParam('idReceta', ParamType.int),
+            idReceta: params.getParam(
+              'idReceta',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
@@ -153,42 +185,60 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: GestionRecetaPageWidget.routeName,
           path: GestionRecetaPageWidget.routePath,
           builder: (context, params) => GestionRecetaPageWidget(
-            recetaiD: params.getParam('recetaiD', ParamType.int),
+            recetaiD: params.getParam(
+              'recetaiD',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
           name: EditarCoctelWidget.routeName,
           path: EditarCoctelWidget.routePath,
           builder: (context, params) => EditarCoctelWidget(
-            idReceta: params.getParam('idReceta', ParamType.int),
+            idReceta: params.getParam(
+              'idReceta',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
           name: CategoriaWidget.routeName,
           path: CategoriaWidget.routePath,
           builder: (context, params) => CategoriaWidget(
-            tipoCat: params.getParam('tipoCat', ParamType.String),
+            tipoCat: params.getParam(
+              'tipoCat',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: EditIngredientsWidget.routeName,
           path: EditIngredientsWidget.routePath,
           builder: (context, params) => EditIngredientsWidget(
-            recetaId: params.getParam('recetaId', ParamType.int),
+            recetaId: params.getParam(
+              'recetaId',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
           name: EditPasosWidget.routeName,
           path: EditPasosWidget.routePath,
           builder: (context, params) => EditPasosWidget(
-            recetaId: params.getParam('recetaId', ParamType.int),
+            recetaId: params.getParam(
+              'recetaId',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
           name: CollectionPageWidget.routeName,
           path: CollectionPageWidget.routePath,
           builder: (context, params) => CollectionPageWidget(
-            idCollection: params.getParam('idCollection', ParamType.int),
+            idCollection: params.getParam(
+              'idCollection',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
@@ -200,7 +250,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: AnyadirRecACollWidget.routeName,
           path: AnyadirRecACollWidget.routePath,
           builder: (context, params) => AnyadirRecACollWidget(
-            idCol: params.getParam('idCol', ParamType.int),
+            idCol: params.getParam(
+              'idCol',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
@@ -210,6 +263,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ? NavBarPage(initialPage: 'listaDeColecciones')
               : ListaDeColeccionesWidget(),
         ),
+        FFRoute(
+          name: EditarCollectionWidget.routeName,
+          path: EditarCollectionWidget.routePath,
+          builder: (context, params) => EditarCollectionWidget(
+            idReceta: params.getParam(
+              'idReceta',
+              ParamType.int,
+            ),
+          ),
+        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 
@@ -225,8 +288,8 @@ extension NavigationExtensions on BuildContext {
   void goNamedAuth(
     String name,
     bool mounted, {
-    Map<String, String> pathParameters = const {},
-    Map<String, String> queryParameters = const {},
+    Map<String, String> pathParameters = const <String, String>{},
+    Map<String, String> queryParameters = const <String, String>{},
     Object? extra,
     bool ignoreRedirect = false,
   }) =>
@@ -242,8 +305,8 @@ extension NavigationExtensions on BuildContext {
   void pushNamedAuth(
     String name,
     bool mounted, {
-    Map<String, String> pathParameters = const {},
-    Map<String, String> queryParameters = const {},
+    Map<String, String> pathParameters = const <String, String>{},
+    Map<String, String> queryParameters = const <String, String>{},
     Object? extra,
     bool ignoreRedirect = false,
   }) =>
@@ -257,6 +320,8 @@ extension NavigationExtensions on BuildContext {
             );
 
   void safePop() {
+    // If there is only one route on the stack, navigate to the initial
+    // page instead of popping.
     if (canPop()) {
       pop();
     } else {
@@ -274,6 +339,8 @@ extension GoRouterExtensions on GoRouter {
   bool shouldRedirect(bool ignoreRedirect) =>
       !ignoreRedirect && appState.hasRedirect();
   void clearRedirectLocation() => appState.clearRedirectLocation();
+  void setRedirectLocationIfUnset(String location) =>
+      appState.updateNotifyOnAuthChange(false);
 }
 
 extension _GoRouterStateExtensions on GoRouterState {
@@ -283,11 +350,9 @@ extension _GoRouterStateExtensions on GoRouterState {
     ..addAll(pathParameters)
     ..addAll(uri.queryParameters)
     ..addAll(extraMap);
-
-  TransitionInfo get transitionInfo =>
-      extraMap.containsKey(kTransitionInfoKey)
-          ? extraMap[kTransitionInfoKey] as TransitionInfo
-          : TransitionInfo.appDefault();
+  TransitionInfo get transitionInfo => extraMap.containsKey(kTransitionInfoKey)
+      ? extraMap[kTransitionInfoKey] as TransitionInfo
+      : TransitionInfo.appDefault();
 }
 
 class FFParameters {
@@ -298,16 +363,15 @@ class FFParameters {
 
   Map<String, dynamic> futureParamValues = {};
 
+  // Parameters are empty if the params map is empty or if the only parameter
+  // present is the special extra parameter reserved for the transition info.
   bool get isEmpty =>
       state.allParams.isEmpty ||
       (state.allParams.length == 1 &&
           state.extraMap.containsKey(kTransitionInfoKey));
-
   bool isAsyncParam(MapEntry<String, dynamic> param) =>
       asyncParams.containsKey(param.key) && param.value is String;
-
   bool get hasFutures => state.allParams.entries.any(isAsyncParam);
-
   Future<bool> completeFutures() => Future.wait(
         state.allParams.entries.where(isAsyncParam).map(
           (param) async {
@@ -335,11 +399,11 @@ class FFParameters {
       return null;
     }
     final param = state.allParams[paramName];
-
+    // Got parameter from `extras`, so just directly return it.
     if (param is! String) {
       return param;
     }
-
+    // Return serialized value.
     return deserializeParam<T>(
       param,
       type,
@@ -385,19 +449,17 @@ class FFRoute {
         pageBuilder: (context, state) {
           fixStatusBarOniOS16AndBelow(context);
           final ffParams = FFParameters(state, asyncParams);
-
           final page = ffParams.hasFutures
               ? FutureBuilder(
                   future: ffParams.completeFutures(),
                   builder: (context, _) => builder(context, ffParams),
                 )
               : builder(context, ffParams);
-
           final child = appStateNotifier.loading
               ? Center(
                   child: SizedBox(
-                    width: 50,
-                    height: 50,
+                    width: 50.0,
+                    height: 50.0,
                     child: CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(
                         FlutterFlowTheme.of(context).primary,
@@ -408,33 +470,29 @@ class FFRoute {
               : page;
 
           final transitionInfo = state.transitionInfo;
-
-          if (!transitionInfo.hasTransition) {
-            return MaterialPage(
-              key: state.pageKey,
-              name: state.name,
-              child: child,
-            );
-          }
-
-          return CustomTransitionPage(
-            key: state.pageKey,
-            name: state.name,
-            child: child,
-            transitionDuration: transitionInfo.duration,
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) {
-              final curve = CurvedAnimation(
-                parent: animation,
-                curve: Curves.easeInOut,
-              );
-
-              return FadeTransition(
-                opacity: curve,
-                child: child,
-              );
-            },
-          );
+          return transitionInfo.hasTransition
+              ? CustomTransitionPage(
+                  key: state.pageKey,
+                  name: state.name,
+                  child: child,
+                  transitionDuration: transitionInfo.duration,
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) =>
+                          PageTransition(
+                    type: transitionInfo.transitionType,
+                    duration: transitionInfo.duration,
+                    reverseDuration: transitionInfo.duration,
+                    alignment: transitionInfo.alignment,
+                    child: child,
+                  ).buildTransitions(
+                    context,
+                    animation,
+                    secondaryAnimation,
+                    child,
+                  ),
+                )
+              : MaterialPage(
+                  key: state.pageKey, name: state.name, child: child);
         },
         routes: routes,
       );
@@ -443,11 +501,15 @@ class FFRoute {
 class TransitionInfo {
   const TransitionInfo({
     required this.hasTransition,
+    this.transitionType = PageTransitionType.fade,
     this.duration = const Duration(milliseconds: 300),
+    this.alignment,
   });
 
   final bool hasTransition;
+  final PageTransitionType transitionType;
   final Duration duration;
+  final Alignment? alignment;
 
   static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }

@@ -29,3 +29,5 @@ export '/pages/anyadir_rec_a_coll/anyadir_rec_a_coll_widget.dart'
     show AnyadirRecACollWidget;
 export '/pages/lista_de_colecciones/lista_de_colecciones_widget.dart'
     show ListaDeColeccionesWidget;
+export '/pages/editar_collection/editar_collection_widget.dart'
+    show EditarCollectionWidget;

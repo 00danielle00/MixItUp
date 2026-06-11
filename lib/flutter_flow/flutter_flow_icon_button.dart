@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FlutterFlowIconButton extends StatefulWidget {
   const FlutterFlowIconButton({
@@ -59,27 +60,29 @@ class _FlutterFlowIconButtonState extends State<FlutterFlowIconButton> {
   }
 
   void _updateIcon() {
-    // Solo soportamos Icon nativo
-    if (widget.icon is Icon) {
-      final icon = widget.icon as Icon;
-      effectiveIcon = Icon(
+    final isFontAwesome = widget.icon is FaIcon;
+    if (isFontAwesome) {
+      FaIcon icon = widget.icon as FaIcon;
+      effectiveIcon = FaIcon(
         icon.icon,
         size: icon.size,
-        color: icon.color,
       );
       iconSize = icon.size;
       iconColor = icon.color;
     } else {
-      // Si alguien pasa otro widget, lo usamos tal cual
-      effectiveIcon = widget.icon;
-      iconSize = null;
-      iconColor = null;
+      Icon icon = widget.icon as Icon;
+      effectiveIcon = Icon(
+        icon.icon,
+        size: icon.size,
+      );
+      iconSize = icon.size;
+      iconColor = icon.color;
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final style = ButtonStyle(
+    ButtonStyle style = ButtonStyle(
       shape: WidgetStateProperty.resolveWith<OutlinedBorder>(
         (states) {
           if (states.contains(WidgetState.hovered)) {
@@ -133,17 +136,16 @@ class _FlutterFlowIconButtonState extends State<FlutterFlowIconButton> {
               widget.hoverColor != null) {
             return widget.hoverColor;
           }
+
           return widget.fillColor;
         },
       ),
-      overlayColor: WidgetStateProperty.resolveWith<Color?>(
-        (states) {
-          if (states.contains(WidgetState.pressed)) {
-            return null;
-          }
-          return widget.hoverColor == null ? null : Colors.transparent;
-        },
-      ),
+      overlayColor: WidgetStateProperty.resolveWith<Color?>((states) {
+        if (states.contains(WidgetState.pressed)) {
+          return null;
+        }
+        return widget.hoverColor == null ? null : Colors.transparent;
+      }),
     );
 
     return SizedBox(
@@ -155,10 +157,10 @@ class _FlutterFlowIconButtonState extends State<FlutterFlowIconButton> {
           useMaterial3: true,
         ),
         child: IgnorePointer(
-          ignoring: widget.showLoadingIndicator && loading,
+          ignoring: (widget.showLoadingIndicator && loading),
           child: IconButton(
             icon: (widget.showLoadingIndicator && loading)
-                ? SizedBox(
+                ? Container(
                     width: iconSize,
                     height: iconSize,
                     child: CircularProgressIndicator(
@@ -171,12 +173,16 @@ class _FlutterFlowIconButtonState extends State<FlutterFlowIconButton> {
             onPressed: widget.onPressed == null
                 ? null
                 : () async {
-                    if (loading) return;
+                    if (loading) {
+                      return;
+                    }
                     setState(() => loading = true);
                     try {
                       await widget.onPressed!();
                     } finally {
-                      if (mounted) setState(() => loading = false);
+                      if (mounted) {
+                        setState(() => loading = false);
+                      }
                     }
                   },
             splashRadius: widget.buttonSize,

@@ -3,6 +3,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
+import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -368,12 +369,15 @@ class _ListaDeColeccionesWidgetState extends State<ListaDeColeccionesWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       child: FutureBuilder<List<ColeccionRow>>(
-                        future: ColeccionTable().queryRows(
-                          queryFn: (q) => q.ilike(
-                            'nombre',
-                            '%${_model.textController.text}%',
-                          ),
-                        ),
+                        future: (_model.requestCompleter ??=
+                                Completer<List<ColeccionRow>>()
+                                  ..complete(ColeccionTable().queryRows(
+                                    queryFn: (q) => q.ilike(
+                                      'nombre',
+                                      '%${_model.textController.text}%',
+                                    ),
+                                  )))
+                            .future,
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
@@ -422,6 +426,49 @@ class _ListaDeColeccionesWidgetState extends State<ListaDeColeccionesWidget> {
                                       ),
                                     }.withoutNulls,
                                   );
+                                },
+                                onLongPress: () async {
+                                  var confirmDialogResponse = await showDialog<
+                                          bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: Text('Eliminar colección'),
+                                            content: Text(
+                                                '¿Estás seguro de que quieres eliminar esta colección?'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: Text('Cancelar'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: Text('Aceptar'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
+                                  if (confirmDialogResponse) {
+                                    await ColeccionTable().delete(
+                                      matchingRows: (rows) => rows.eqOrNull(
+                                        'id',
+                                        listViewColeccionRow.id,
+                                      ),
+                                    );
+                                    safeSetState(
+                                        () => _model.requestCompleter = null);
+                                    await _model.waitForRequestCompleted();
+
+                                    context.pushNamed(
+                                        ListaDeColeccionesWidget.routeName);
+                                  } else {
+                                    context.pushNamed(
+                                        ListaDeColeccionesWidget.routeName);
+                                  }
                                 },
                                 child: Container(
                                   width: double.infinity,

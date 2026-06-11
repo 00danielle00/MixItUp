@@ -883,6 +883,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
+    'g4lgaysq': {
+      'es': 'Añadir más recetas',
+      'en': '',
+      'pt': '',
+    },
   },
   // CrearColeccion
   {
@@ -969,6 +974,44 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kkd42ufg': {
       'es': 'Escribe el nombre....',
+      'en': '',
+      'pt': '',
+    },
+  },
+  // EditarCollection
+  {
+    'k2k7jam8': {
+      'es': 'Editar colección',
+      'en': '',
+      'pt': '',
+    },
+    'kqck5c5i': {
+      'es': 'Haz clic para añadir la imagen\nde tu cóctel',
+      'en': '',
+      'pt': '',
+    },
+    '78d06onn': {
+      'es': 'Nombre de la colección',
+      'en': '',
+      'pt': '',
+    },
+    '6ekf4ldg': {
+      'es': 'Ej. Mojito Tropical',
+      'en': '',
+      'pt': '',
+    },
+    'tm80sfxp': {
+      'es': 'Descripción',
+      'en': '',
+      'pt': '',
+    },
+    'y7ug06t0': {
+      'es': 'Describe tu cóctel...',
+      'en': '',
+      'pt': '',
+    },
+    'f1d0kild': {
+      'es': 'Guardar y salir',
       'en': '',
       'pt': '',
     },

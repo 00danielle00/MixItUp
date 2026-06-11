@@ -98,7 +98,7 @@ class _AnyadirPasosWidgetState extends State<AnyadirPasosWidget> {
                               fillColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               icon: Icon(
-                                Icons.arrow_back_rounded,
+                                Icons.arrow_back,
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
                                 size: 20.0,
