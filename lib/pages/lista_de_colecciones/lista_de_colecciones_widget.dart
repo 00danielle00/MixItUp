@@ -428,46 +428,54 @@ class _ListaDeColeccionesWidgetState extends State<ListaDeColeccionesWidget> {
                                   );
                                 },
                                 onLongPress: () async {
-                                  var confirmDialogResponse = await showDialog<
-                                          bool>(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('Eliminar colección'),
-                                            content: Text(
-                                                '¿Estás seguro de que quieres eliminar esta colección?'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, false),
-                                                child: Text('Cancelar'),
-                                              ),
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, true),
-                                                child: Text('Aceptar'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      ) ??
-                                      false;
-                                  if (confirmDialogResponse) {
-                                    await ColeccionTable().delete(
-                                      matchingRows: (rows) => rows.eqOrNull(
-                                        'id',
-                                        listViewColeccionRow.id,
-                                      ),
-                                    );
-                                    safeSetState(
-                                        () => _model.requestCompleter = null);
-                                    await _model.waitForRequestCompleted();
+                                  if (listaDeColeccionesUsersRow?.rol ==
+                                      'admin') {
+                                    var confirmDialogResponse =
+                                        await showDialog<bool>(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: Text(
+                                                      'Eliminar colección'),
+                                                  content: Text(
+                                                      '¿Estás seguro de que quieres eliminar esta colección?'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              false),
+                                                      child: Text('Cancelar'),
+                                                    ),
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              true),
+                                                      child: Text('Aceptar'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ) ??
+                                            false;
+                                    if (confirmDialogResponse) {
+                                      await ColeccionTable().delete(
+                                        matchingRows: (rows) => rows.eqOrNull(
+                                          'id',
+                                          listViewColeccionRow.id,
+                                        ),
+                                      );
+                                      safeSetState(
+                                          () => _model.requestCompleter = null);
+                                      await _model.waitForRequestCompleted();
 
-                                    context.pushNamed(
-                                        ListaDeColeccionesWidget.routeName);
-                                  } else {
-                                    context.pushNamed(
-                                        ListaDeColeccionesWidget.routeName);
+                                      context.pushNamed(
+                                          ListaDeColeccionesWidget.routeName);
+                                    } else {
+                                      context.pushNamed(
+                                          ListaDeColeccionesWidget.routeName);
+                                    }
                                   }
                                 },
                                 child: Container(

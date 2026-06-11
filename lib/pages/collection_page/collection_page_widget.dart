@@ -65,7 +65,7 @@ class _CollectionPageWidgetState extends State<CollectionPageWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: Color(0xFFF8F5F0),
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -93,7 +93,7 @@ class _CollectionPageWidgetState extends State<CollectionPageWidget> {
           },
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: Color(0xFFF8F5F0),
             body: FutureBuilder<List<UsersRow>>(
               future: UsersTable().querySingleRow(
                 queryFn: (q) => q.eqOrNull(

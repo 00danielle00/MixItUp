@@ -562,11 +562,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Home
   {
-    'lv1u00yy': {
-      'es': 'Descubre tu cóctel perfecto',
-      'en': '',
-      'pt': '',
-    },
     'ftlpecsz': {
       'es': 'Cóctel del día',
       'en': '',
@@ -936,16 +931,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6mcu8ux1': {
       'es': 'Selecciona recetas para esta colección',
-      'en': '',
-      'pt': '',
-    },
-    '9r8kid59': {
-      'es': 'Recetas disponibles',
-      'en': '',
-      'pt': '',
-    },
-    'hnjak19c': {
-      'es': 'Elige las recetas que quieres añadir',
       'en': '',
       'pt': '',
     },

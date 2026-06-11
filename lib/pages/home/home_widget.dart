@@ -140,35 +140,6 @@ class _HomeWidgetState extends State<HomeWidget> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
-                child: Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 16.0, 16.0),
-                  child: Text(
-                    FFLocalizations.of(context).getText(
-                      'lv1u00yy' /* Descubre tu cóctel perfecto */,
-                    ),
-                    textAlign: TextAlign.start,
-                    style: FlutterFlowTheme.of(context).displaySmall.override(
-                          font: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .displaySmall
-                                .fontStyle,
-                          ),
-                          color: Color(0xFFD4AF6A),
-                          fontSize: 24.0,
-                          letterSpacing: 0.5,
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .fontStyle,
-                          lineHeight: 1.3,
-                        ),
-                  ),
-                ),
-              ),
               InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -196,7 +167,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         borderRadius: BorderRadius.circular(0.0),
                         child: Container(
                           width: double.infinity,
-                          height: 280.0,
+                          height: 290.0,
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [Color(0xD1000000), Color(0xC37E3D00)],
@@ -221,7 +192,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         r'''$.imagen''',
                                       ).toString(),
                                       width: double.infinity,
-                                      height: 280.0,
+                                      height: 290.0,
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -229,7 +200,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsets.all(24.0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 40.0, 24.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:

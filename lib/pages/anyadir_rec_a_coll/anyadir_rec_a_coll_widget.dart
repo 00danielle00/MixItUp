@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -123,7 +122,7 @@ class _AnyadirRecACollWidgetState extends State<AnyadirRecACollWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFFF8F5F0),
         body: Padding(
           padding: EdgeInsets.all(20.0),
           child: SingleChildScrollView(
@@ -160,99 +159,38 @@ class _AnyadirRecACollWidgetState extends State<AnyadirRecACollWidget> {
                               lineHeight: 1.4,
                             ),
                       ),
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          '6mcu8ux1' /* Selecciona recetas para esta c... */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.inter(
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '6mcu8ux1' /* Selecciona recetas para esta c... */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                font: GoogleFonts.inter(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                letterSpacing: 0.0,
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .fontWeight,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .fontStyle,
+                                lineHeight: 1.4,
                               ),
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                              lineHeight: 1.4,
-                            ),
+                        ),
                       ),
                     ].divide(SizedBox(height: 4.0)),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF5F5F5),
-                      borderRadius: BorderRadius.circular(12.0),
-                      shape: BoxShape.rectangle,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              '9r8kid59' /* Recetas disponibles */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  font: GoogleFonts.interTight(
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'hnjak19c' /* Elige las recetas que quieres ... */,
-                            ),
-                            style:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .fontStyle,
-                                      ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontStyle,
-                                      lineHeight: 1.4,
-                                    ),
-                          ),
-                        ].divide(SizedBox(height: 4.0)),
-                      ),
-                    ),
                   ),
                 ),
                 Padding(
@@ -295,11 +233,18 @@ class _AnyadirRecACollWidgetState extends State<AnyadirRecACollWidget> {
                                   listViewRecetasRowList[listViewIndex];
                               return Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 7.0),
+                                    0.0, 0.0, 0.0, 10.0),
                                 child: Container(
+                                  height: 125.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
+                                    boxShadow: [
+                                      FlutterFlowTheme.of(context)
+                                          .designToken
+                                          .shadow
+                                          .sm
+                                    ],
                                     borderRadius: BorderRadius.circular(16.0),
                                     shape: BoxShape.rectangle,
                                   ),
@@ -314,25 +259,12 @@ class _AnyadirRecACollWidgetState extends State<AnyadirRecACollWidget> {
                                       children: [
                                         ClipRRect(
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          child: Container(
-                                            width: 80.0,
-                                            height: 80.0,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                              shape: BoxShape.rectangle,
-                                            ),
-                                            child: CachedNetworkImage(
-                                              fadeInDuration:
-                                                  Duration(milliseconds: 0),
-                                              fadeOutDuration:
-                                                  Duration(milliseconds: 0),
-                                              imageUrl:
-                                                  listViewRecetasRow.imagen!,
-                                              fit: BoxFit.cover,
-                                              alignment: Alignment(0.0, 0.0),
-                                            ),
+                                              BorderRadius.circular(8.0),
+                                          child: Image.network(
+                                            listViewRecetasRow.imagen!,
+                                            width: 120.0,
+                                            height: 120.0,
+                                            fit: BoxFit.cover,
                                           ),
                                         ),
                                         Expanded(
