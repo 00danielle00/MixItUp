@@ -957,7 +957,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'pt': '',
     },
-    'kkd42ufg': {
+    'mn4paiat': {
       'es': 'Escribe el nombre....',
       'en': '',
       'pt': '',

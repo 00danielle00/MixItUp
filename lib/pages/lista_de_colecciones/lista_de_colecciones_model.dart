@@ -9,10 +9,10 @@ class ListaDeColeccionesModel
     extends FlutterFlowModel<ListaDeColeccionesWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  // State field(s) for TextField4 widget.
+  FocusNode? textField4FocusNode;
+  TextEditingController? textField4TextController;
+  String? Function(BuildContext, String?)? textField4TextControllerValidator;
   Completer<List<ColeccionRow>>? requestCompleter;
 
   @override
@@ -20,8 +20,8 @@ class ListaDeColeccionesModel
 
   @override
   void dispose() {
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+    textField4FocusNode?.dispose();
+    textField4TextController?.dispose();
   }
 
   /// Additional helper methods.

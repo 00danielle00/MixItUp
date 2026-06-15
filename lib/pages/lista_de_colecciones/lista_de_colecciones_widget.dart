@@ -45,8 +45,8 @@ class _ListaDeColeccionesWidgetState extends State<ListaDeColeccionesWidget> {
     super.initState();
     _model = createModel(context, () => ListaDeColeccionesModel());
 
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.textField4TextController ??= TextEditingController();
+    _model.textField4FocusNode ??= FocusNode();
   }
 
   @override
@@ -228,13 +228,22 @@ class _ListaDeColeccionesWidgetState extends State<ListaDeColeccionesWidget> {
                                 child: Container(
                                   width: 200.0,
                                   child: TextFormField(
-                                    controller: _model.textController,
-                                    focusNode: _model.textFieldFocusNode,
+                                    controller: _model.textField4TextController,
+                                    focusNode: _model.textField4FocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.textController',
+                                      '_model.textField4TextController',
                                       Duration(milliseconds: 600),
-                                      () => safeSetState(() {}),
+                                      () async {
+                                        safeSetState(() =>
+                                            _model.requestCompleter = null);
+                                        await _model.waitForRequestCompleted();
+                                      },
                                     ),
+                                    onFieldSubmitted: (_) async {
+                                      safeSetState(
+                                          () => _model.requestCompleter = null);
+                                      await _model.waitForRequestCompleted();
+                                    },
                                     autofocus: false,
                                     enabled: true,
                                     textInputAction: TextInputAction.search,
@@ -266,7 +275,7 @@ class _ListaDeColeccionesWidgetState extends State<ListaDeColeccionesWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        'kkd42ufg' /* Escribe el nombre.... */,
+                                        'mn4paiat' /* Escribe el nombre.... */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -355,7 +364,8 @@ class _ListaDeColeccionesWidgetState extends State<ListaDeColeccionesWidget> {
                                     cursorColor: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     enableInteractiveSelection: true,
-                                    validator: _model.textControllerValidator
+                                    validator: _model
+                                        .textField4TextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -374,7 +384,7 @@ class _ListaDeColeccionesWidgetState extends State<ListaDeColeccionesWidget> {
                                   ..complete(ColeccionTable().queryRows(
                                     queryFn: (q) => q.ilike(
                                       'nombre',
-                                      '%${_model.textController.text}%',
+                                      '%${_model.textField4TextController.text}%',
                                     ),
                                   )))
                             .future,
