@@ -135,13 +135,13 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           FlutterFlowIconButton(
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
+                            borderRadius: 29.0,
+                            buttonSize: 48.0,
                             fillColor: FlutterFlowTheme.of(context).primaryText,
                             icon: Icon(
-                              Icons.arrow_back,
+                              Icons.keyboard_arrow_left,
                               color: FlutterFlowTheme.of(context).info,
-                              size: 24.0,
+                              size: 26.0,
                             ),
                             onPressed: () async {
                               var confirmDialogResponse =
@@ -252,45 +252,19 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                                 ),
                               ],
                             ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'muozfel0' /* Paso  */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            font: GoogleFonts.interTight(
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .displaySmall
-                                                      .fontStyle,
-                                            ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 36.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .displaySmall
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 7.0, 0.0),
-                                      child: Text(
-                                        valueOrDefault<String>(
-                                          widget.pasosNumActual?.toString(),
-                                          '1',
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 26.0, 0.0, 0.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'muozfel0' /* Paso  */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
@@ -314,85 +288,120 @@ class _PasoScreenWidgetState extends State<PasoScreenWidget> {
                                                       .fontStyle,
                                             ),
                                       ),
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'a9sn4rm7' /* de  */,
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 7.0, 0.0),
+                                        child: Text(
+                                          valueOrDefault<String>(
+                                            widget.pasosNumActual?.toString(),
+                                            '1',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .displaySmall
+                                              .override(
+                                                font: GoogleFonts.interTight(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displaySmall
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 36.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            font: GoogleFonts.interTight(
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'a9sn4rm7' /* de  */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              font: GoogleFonts.interTight(
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmall
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 36.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmall
                                                       .fontStyle,
                                             ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 36.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .displaySmall
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                    Text(
-                                      valueOrDefault<String>(
-                                        widget.totalPasos?.toString(),
-                                        '7',
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            font: GoogleFonts.interTight(
+                                      Text(
+                                        valueOrDefault<String>(
+                                          widget.totalPasos?.toString(),
+                                          '7',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              font: GoogleFonts.interTight(
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmall
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 36.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmall
                                                       .fontStyle,
                                             ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 36.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .displaySmall
-                                                    .fontStyle,
-                                          ),
+                                      ),
+                                    ],
+                                  ),
+                                  Container(
+                                    width: double.infinity,
+                                    height: 8.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      borderRadius:
+                                          BorderRadius.circular(100.0),
+                                      border: Border.all(
+                                        color: Color(0xFFD4D4D4),
+                                      ),
                                     ),
-                                  ],
-                                ),
-                                Container(
-                                  width: double.infinity,
-                                  height: 8.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(100.0),
-                                    border: Border.all(
-                                      color: Color(0xFFD4D4D4),
+                                    child: LinearPercentIndicator(
+                                      percent: functions.calcularProgreso(
+                                          widget.pasosNumActual!,
+                                          widget.totalPasos!),
+                                      lineHeight: 15.0,
+                                      animation: true,
+                                      animateFromLastPercent: true,
+                                      progressColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      backgroundColor: Color(0xFFD3D3D3),
+                                      padding: EdgeInsets.zero,
                                     ),
                                   ),
-                                  child: LinearPercentIndicator(
-                                    percent: functions.calcularProgreso(
-                                        widget.pasosNumActual!,
-                                        widget.totalPasos!),
-                                    lineHeight: 15.0,
-                                    animation: true,
-                                    animateFromLastPercent: true,
-                                    progressColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    backgroundColor: Color(0xFFD3D3D3),
-                                    padding: EdgeInsets.zero,
-                                  ),
-                                ),
-                              ].divide(SizedBox(height: 8.0)),
+                                ].divide(SizedBox(height: 8.0)),
+                              ),
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,

@@ -110,7 +110,7 @@ class _EditIngredientsWidgetState extends State<EditIngredientsWidget> {
                         buttonSize: 48.0,
                         fillColor: FlutterFlowTheme.of(context).primaryText,
                         icon: Icon(
-                          Icons.arrow_back,
+                          Icons.keyboard_arrow_left,
                           color: FlutterFlowTheme.of(context).info,
                           size: 26.0,
                         ),

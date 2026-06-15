@@ -87,12 +87,12 @@ class _CategoriaWidgetState extends State<CategoriaWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         FlutterFlowIconButton(
-                          borderRadius: 8.0,
-                          buttonSize: 40.0,
+                          borderRadius: 9999.0,
+                          buttonSize: 48.0,
                           fillColor: FlutterFlowTheme.of(context).primaryText,
                           icon: Icon(
-                            Icons.arrow_back,
-                            color: FlutterFlowTheme.of(context).info,
+                            Icons.keyboard_arrow_left,
+                            color: Colors.white,
                             size: 24.0,
                           ),
                           onPressed: () async {

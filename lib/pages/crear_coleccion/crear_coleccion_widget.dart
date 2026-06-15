@@ -78,11 +78,11 @@ class _CrearColeccionWidgetState extends State<CrearColeccionWidget> {
                   children: [
                     FlutterFlowIconButton(
                       borderColor: FlutterFlowTheme.of(context).primaryText,
-                      borderRadius: 20.0,
+                      borderRadius: 29.0,
                       buttonSize: 48.0,
                       fillColor: FlutterFlowTheme.of(context).primaryText,
                       icon: Icon(
-                        Icons.arrow_back,
+                        Icons.keyboard_arrow_left,
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         size: 26.0,
                       ),

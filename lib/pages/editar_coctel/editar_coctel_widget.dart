@@ -123,15 +123,15 @@ class _EditarCoctelWidgetState extends State<EditarCoctelWidget> {
                             FlutterFlowIconButton(
                               borderColor:
                                   FlutterFlowTheme.of(context).primaryText,
-                              borderRadius: 8.0,
-                              buttonSize: 35.0,
+                              borderRadius: 29.0,
+                              buttonSize: 48.0,
                               fillColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               icon: Icon(
-                                Icons.arrow_back,
+                                Icons.chevron_left,
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                size: 20.0,
+                                size: 25.0,
                               ),
                               onPressed: () async {
                                 var confirmDialogResponse =

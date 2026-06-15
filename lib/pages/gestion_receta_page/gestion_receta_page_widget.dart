@@ -105,21 +105,21 @@ class _GestionRecetaPageWidgetState extends State<GestionRecetaPageWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(14.0, 20.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           FlutterFlowIconButton(
                             borderColor: Colors.transparent,
-                            borderRadius: 10.0,
+                            borderRadius: 29.0,
                             borderWidth: 1.0,
-                            buttonSize: 35.0,
+                            buttonSize: 48.0,
                             fillColor: FlutterFlowTheme.of(context).primaryText,
                             icon: Icon(
-                              Icons.arrow_back_rounded,
+                              Icons.keyboard_arrow_left,
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
-                              size: 20.0,
+                              size: 26.0,
                             ),
                             onPressed: () async {
                               context.safePop();

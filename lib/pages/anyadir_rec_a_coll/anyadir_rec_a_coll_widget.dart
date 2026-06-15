@@ -425,7 +425,7 @@ class _AnyadirRecACollWidgetState extends State<AnyadirRecACollWidget> {
                                                             context)
                                                         .warning
                                                     : Colors.black,
-                                                size: 26.0,
+                                                size: 30.0,
                                               ),
                                               onPressed: () async {
                                                 if (_model.recetasSeleccionadas
@@ -520,7 +520,15 @@ class _AnyadirRecACollWidgetState extends State<AnyadirRecACollWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      context.pushNamed(HomeWidget.routeName);
+                      context.pushNamed(
+                        CollectionPageWidget.routeName,
+                        queryParameters: {
+                          'idCollection': serializeParam(
+                            widget.idCol,
+                            ParamType.int,
+                          ),
+                        }.withoutNulls,
+                      );
                     },
                     text: FFLocalizations.of(context).getText(
                       'ij8tsbec' /* Finalizar */,

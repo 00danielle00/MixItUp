@@ -91,11 +91,11 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                       children: [
                         FlutterFlowIconButton(
                           borderColor: FlutterFlowTheme.of(context).primaryText,
-                          borderRadius: 20.0,
+                          borderRadius: 29.0,
                           buttonSize: 48.0,
                           fillColor: FlutterFlowTheme.of(context).primaryText,
                           icon: Icon(
-                            Icons.arrow_back,
+                            Icons.keyboard_arrow_left,
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
                             size: 26.0,
@@ -107,7 +107,7 @@ class _CrearCoctelWidgetState extends State<CrearCoctelWidget> {
                                     return AlertDialog(
                                       title: Text('Crear receta'),
                                       content: Text(
-                                          '¿Estás seguro que quieres salir de esta pantalla?'),
+                                          '¿Estás seguro que dejar de crear una receta?'),
                                       actions: [
                                         TextButton(
                                           onPressed: () => Navigator.pop(

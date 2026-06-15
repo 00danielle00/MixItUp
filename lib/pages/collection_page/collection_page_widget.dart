@@ -161,114 +161,125 @@ class _CollectionPageWidgetState extends State<CollectionPageWidget> {
                               child: Padding(
                                 padding: EdgeInsets.all(20.0),
                                 child: Container(
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      FlutterFlowIconButton(
-                                        borderRadius: 9999.0,
-                                        buttonSize: 40.0,
-                                        fillColor: Color(0xCCFFFFFF),
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_left,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 24.0,
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        FlutterFlowIconButton(
+                                          borderRadius: 9999.0,
+                                          buttonSize: 48.0,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_left,
+                                            color: Colors.white,
+                                            size: 24.0,
+                                          ),
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                                ListaDeColeccionesWidget
+                                                    .routeName);
+                                          },
                                         ),
-                                        onPressed: () async {
-                                          context.safePop();
-                                        },
-                                      ),
-                                      FlutterFlowIconButton(
-                                        borderRadius: 9999.0,
-                                        buttonSize: 40.0,
-                                        fillColor: Color(0xCCFFFFFF),
-                                        icon: Icon(
-                                          Icons.bookmark_outlined,
-                                          color: FFAppState()
-                                                      .coleccionesUsuario
-                                                      .contains(widget
-                                                          .idCollection) ==
-                                                  true
-                                              ? FlutterFlowTheme.of(context)
-                                                  .warning
-                                              : Color(0xFFB5B5B5),
-                                          size: 20.0,
-                                        ),
-                                        onPressed: () async {
-                                          if (FFAppState()
-                                                  .coleccionesUsuario
-                                                  .contains(
-                                                      widget.idCollection) ==
-                                              true) {
-                                            await ColeccionUsuarioTable()
-                                                .delete(
-                                              matchingRows: (rows) => rows
-                                                  .eqOrNull(
-                                                    'id_coleccion',
+                                        FlutterFlowIconButton(
+                                          borderRadius: 9999.0,
+                                          buttonSize: 48.0,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          icon: Icon(
+                                            Icons.bookmark_outlined,
+                                            color: FFAppState()
+                                                        .coleccionesUsuario
+                                                        .contains(widget
+                                                            .idCollection) ==
+                                                    true
+                                                ? FlutterFlowTheme.of(context)
+                                                    .warning
+                                                : Colors.white,
+                                            size: 20.0,
+                                          ),
+                                          onPressed: () async {
+                                            if (FFAppState()
+                                                    .coleccionesUsuario
+                                                    .contains(
+                                                        widget.idCollection) ==
+                                                true) {
+                                              await ColeccionUsuarioTable()
+                                                  .delete(
+                                                matchingRows: (rows) => rows
+                                                    .eqOrNull(
+                                                      'id_coleccion',
+                                                      widget.idCollection,
+                                                    )
+                                                    .eqOrNull(
+                                                      'id_user',
+                                                      currentUserUid,
+                                                    ),
+                                              );
+                                              FFAppState()
+                                                  .removeFromColeccionesUsuario(
+                                                      widget.idCollection!);
+                                              safeSetState(() {});
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'colección quitada',
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  duration: Duration(
+                                                      milliseconds: 4000),
+                                                  backgroundColor:
+                                                      Color(0xFFB6FFF6),
+                                                ),
+                                              );
+                                            } else {
+                                              await ColeccionUsuarioTable()
+                                                  .insert({
+                                                'id_coleccion':
                                                     widget.idCollection,
-                                                  )
-                                                  .eqOrNull(
-                                                    'id_user',
-                                                    currentUserUid,
+                                                'id_user': currentUserUid,
+                                              });
+                                              FFAppState()
+                                                  .addToColeccionesUsuario(
+                                                      widget.idCollection!);
+                                              safeSetState(() {});
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'colección añadida',
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
                                                   ),
-                                            );
-                                            FFAppState()
-                                                .removeFromColeccionesUsuario(
-                                                    widget.idCollection!);
-                                            safeSetState(() {});
-                                            ScaffoldMessenger.of(context)
-                                                .showSnackBar(
-                                              SnackBar(
-                                                content: Text(
-                                                  'colección quitada',
-                                                  style: TextStyle(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                  ),
+                                                  duration: Duration(
+                                                      milliseconds: 4000),
+                                                  backgroundColor:
+                                                      Color(0xFFB6FFF6),
                                                 ),
-                                                duration: Duration(
-                                                    milliseconds: 4000),
-                                                backgroundColor:
-                                                    Color(0xFFB6FFF6),
-                                              ),
-                                            );
-                                          } else {
-                                            await ColeccionUsuarioTable()
-                                                .insert({
-                                              'id_coleccion':
-                                                  widget.idCollection,
-                                              'id_user': currentUserUid,
-                                            });
-                                            FFAppState()
-                                                .addToColeccionesUsuario(
-                                                    widget.idCollection!);
-                                            safeSetState(() {});
-                                            ScaffoldMessenger.of(context)
-                                                .showSnackBar(
-                                              SnackBar(
-                                                content: Text(
-                                                  'colección añadida',
-                                                  style: TextStyle(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                  ),
-                                                ),
-                                                duration: Duration(
-                                                    milliseconds: 4000),
-                                                backgroundColor:
-                                                    Color(0xFFB6FFF6),
-                                              ),
-                                            );
-                                          }
-                                        },
-                                      ),
-                                    ],
+                                              );
+                                            }
+                                          },
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -927,35 +938,45 @@ class _CollectionPageWidgetState extends State<CollectionPageWidget> {
                           ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            20.0, 0.0, 20.0, 20.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed(
-                              AnyadirRecACollWidget.routeName,
-                              queryParameters: {
-                                'idCol': serializeParam(
-                                  widget.idCollection,
-                                  ParamType.int,
-                                ),
-                              }.withoutNulls,
-                            );
-                          },
-                          text: FFLocalizations.of(context).getText(
-                            'g4lgaysq' /* Añadir más recetas */,
-                          ),
-                          options: FFButtonOptions(
-                            height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: Colors.black,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  font: GoogleFonts.interTight(
+                      if (columnUsersRow?.rol == 'admin')
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 20.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              context.pushNamed(
+                                AnyadirRecACollWidget.routeName,
+                                queryParameters: {
+                                  'idCol': serializeParam(
+                                    widget.idCollection,
+                                    ParamType.int,
+                                  ),
+                                }.withoutNulls,
+                              );
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              'g4lgaysq' /* Añadir más recetas */,
+                            ),
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: Colors.black,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    font: GoogleFonts.interTight(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .fontWeight,
@@ -963,20 +984,11 @@ class _CollectionPageWidgetState extends State<CollectionPageWidget> {
                                         .titleSmall
                                         .fontStyle,
                                   ),
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(8.0),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
                           ),
                         ),
-                      ),
                     ],
                   ),
                 );

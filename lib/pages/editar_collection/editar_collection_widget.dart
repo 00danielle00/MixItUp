@@ -123,10 +123,10 @@ class _EditarCollectionWidgetState extends State<EditarCollectionWidget> {
                               fillColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               icon: Icon(
-                                Icons.arrow_back,
+                                Icons.keyboard_arrow_left,
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                size: 20.0,
+                                size: 26.0,
                               ),
                               onPressed: () async {
                                 var confirmDialogResponse =

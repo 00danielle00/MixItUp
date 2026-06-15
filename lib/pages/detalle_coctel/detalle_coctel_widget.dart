@@ -134,11 +134,11 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             FlutterFlowIconButton(
-                                              borderRadius: 10.0,
-                                              buttonSize: 40.0,
+                                              borderRadius: 26.0,
+                                              buttonSize: 48.0,
                                               fillColor: Colors.black,
                                               icon: Icon(
-                                                Icons.arrow_back,
+                                                Icons.chevron_left,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
@@ -158,8 +158,8 @@ class _DetalleCoctelWidgetState extends State<DetalleCoctelWidget> {
                                               CrossAxisAlignment.end,
                                           children: [
                                             FlutterFlowIconButton(
-                                              borderRadius: 10.0,
-                                              buttonSize: 40.0,
+                                              borderRadius: 1290.0,
+                                              buttonSize: 48.0,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,

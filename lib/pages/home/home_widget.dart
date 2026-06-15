@@ -447,8 +447,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             child: FaIcon(
                                                               FontAwesomeIcons
                                                                   .cocktail,
-                                                              color: Color(
-                                                                  0xFFCE8400),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
                                                               size: 15.0,
                                                             ),
                                                           ),
@@ -467,21 +468,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           .inter(
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w600,
+                                                                            .bold,
                                                                     fontStyle: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodySmall
                                                                         .fontStyle,
                                                                   ),
-                                                                  color: Color(
-                                                                      0xFFCE8400),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
                                                                   fontSize:
-                                                                      13.0,
+                                                                      14.0,
                                                                   letterSpacing:
                                                                       2.0,
                                                                   fontWeight:
                                                                       FontWeight
-                                                                          .w600,
+                                                                          .bold,
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodySmall
@@ -1191,17 +1193,17 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     font:
                                                         GoogleFonts.interTight(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                          FontWeight.w600,
                                                       fontStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .bodyMedium
                                                               .fontStyle,
                                                     ),
-                                                    color: Color(0xFFD4AF6A),
+                                                    color: Color(0xFF643F00),
                                                     fontSize: 12.0,
                                                     letterSpacing: 1.0,
-                                                    fontWeight: FontWeight.w500,
+                                                    fontWeight: FontWeight.w600,
                                                     fontStyle:
                                                         FlutterFlowTheme.of(
                                                                 context)
